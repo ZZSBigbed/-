@@ -1,0 +1,87 @@
+body{
+    /*!*background-image: url("/img/background1.3.jpeg");*!*/
+    /*background-image: url("../img/background1.3.jpeg");*/
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0 auto;
+}
+
+
+.loginout{
+    background-color:rgba(89,89,89,0.5);
+    height: 330px;
+    float: none;
+    margin: 0 auto;
+    margin-left: auto;
+    margin-top: 10%;
+    /*position:fixed;*/
+    /*position:absolute;*/
+}
+.loginout form{
+    display: block;
+    margin-top: 5%;
+    /*maigin: 0 auto;*/
+}
+.loginout .form-group{
+    /*margin:0 auto;*/
+    margin-left: 15%;
+}
+.loginout label{
+    display: inline-block;
+    margin: 0 auto;
+    /*margin-left: 15%;*/
+    width: 20%;
+    color:  rgba(240, 240, 240, 0.8);;
+}
+.loginout input{
+    display:inline-block;
+    margin: auto;
+    width:55%;
+}
+.loginout .title {
+    display: -moz-box; /*兼容Firefox*/
+    display: -webkit-box; /*兼容FSafari、Chrome*/
+
+    -moz-box-align: center; /*兼容Firefox*/
+    -webkit-box-align: center; /*兼容FSafari、Chrome */
+
+    -moz-box-pack: center; /*兼容Firefox*/
+    -webkit-box-pack: center; /*兼容FSafari、Chrome */
+
+    height: 100px;
+    /*background-color: #898989;*/
+
+    /*background-color: rgba(89, 89, 89, 0.5);*/
+    color: rgba(240, 240, 240, 0.8);
+
+    border-bottom: 2px;
+
+    border-bottom-style: inset;
+    border-bottom-color: rgba(234,248,248,0.5);
+
+}
+
+.mybutton{
+    /*background-color: white;*/
+    margin-top:30px;
+    margin-bottom: 30px;
+}
+
+.mybutton button{
+    display: inline-block;
+    width: 30%;
+    /*margin: 0 auto;*/
+    margin-left: 33%;
+    height: 40px;
+
+}
+.mybottom{
+    /*background-color: white;*/
+    float: right;
+}
+.mybottom a{
+    margin-left: 30px;
+    color: rgba(247,247,247,0.8);
+}
