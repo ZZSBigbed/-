@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link href="./bootstrap/css/ifocss.css" rel="stylesheet">
+    <style>
+        body{
+            background-image: url("img/background2.1.png");
+            width: 100%;
+            /*background-image: url("../img/background2.1.png");*/
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            margin: 0 auto;
+        }
+        .smallmain{
+            background-color: rgba(204,204,204,0.7);
+            width: 70%;
+            height: 150px;
+            margin: 0 auto;
+            margin-top: 3px;
+        }
+        .formdiv{
+            background-color: rgba(204,204,204,0.7);
+            width: 70%;
+            /*height: 150px;*/
+            margin: 0 auto;
+            margin-top: 3px;
+        }
+        button{
+            width: 80px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="head">这是一个head</div>
+<div class="ifochange">
+    <div class="smallmain">
+
+<!--        <div class="himg"></div>-->
+        <div class="ifo">
+            <div class="name">
+                NAME
+            </div>
+            <div class="kind">
+                同学
+            </div>
+            <!--            <br/>-->
+            <!--            <br/>-->
+            <div class="line">
+                <div class="sex">
+                    女            </div>
+                <div class="cla">
+                    软件1710
+                </div>
+<!--                <div class="KC">-->
+<!--                    梦创俱乐部-->
+<!--                </div>-->
+                <div class="stuid">
+                    201792417
+                </div>
+            </div>
+<!--            <div class="line">-->
+<!--                &lt;!&ndash;                <br/>&ndash;&gt;-->
+<!--                <div class="email">-->
+<!--                    9861854677@qq.com-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            &lt;!&ndash;            <br/>&ndash;&gt;-->
+<!--            <div class="line">-->
+<!--                <div class="dic">-->
+<!--                    web前端，数学建模，UI设计-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+    </div>
+    <div class="formdiv">
+        <form  method="post" action="">
+    <!--           method规定如何发送表单数据      常用值：get|post）-->
+    <!--   action（表示向何处发送表单数据）-->
+    <!--        姓名不能改-->
+    <!--        学号不能改-->
+    <!--        班级不能改-->
+    <!--        性别不能改-->
+    <!--        -->
+            <div class="formlist ">  邮箱：<input name="name" type="text" class="formemail">  </div>
+            <div>  创中组别：<input type="checkbox" name="club" value="dreamarts" />梦创俱乐部</p>
+                <input type="checkbox" name="club" value="citi" />花旗俱乐部</p>
+                <input type="checkbox" name="club" value="tencent" />腾讯俱乐部</p>
+                。。。未补完
+            </div>
+                <!--                <input name="name" type="text" >  </div>-->
+            <div>兴趣方向：
+                <input type="checkbox" name="dir" value="front" />web前端</p>
+                <input type="checkbox" name="dir" value="ui" />UI设计</p>
+                <input type="checkbox" name="dir" value="back-end" />后端</p>
+                <input type="checkbox" name="dir" value="ios" />ios开发</p>
+                <input type="checkbox" name="dir" value="Android" />Android开发</p>
+                <input type="checkbox" name="dir" value="digfax" />数学建模</p>
+                <input type="checkbox" name="dir" value="MS" />机器学习</p>
+
+            </div>
+            <div> <button>提交</button></div>
+    </form>
+    </div>
+
+</div>
+</body>
+</html>
