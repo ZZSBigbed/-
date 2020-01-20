@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Chain Responsive Bootstrap3 Admin</title>
+
+        <link href="../css/style.default.css" rel="stylesheet">
+
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+        <![endif]-->
+        
+        <style>
+						
+			
+        </style>
+        
+    </head>
+    <body>
+		<div class="contentpanel contentpanel-mediamanager">
+      
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label"><strong>抵店<strong></label>
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="yyyy/mm/dd" name="arr_d">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                </div><!-- input-group -->
+                            </div>
+                        </div><!-- form-group --> 
+                    </div><!-- row -->
+
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label"><strong>间夜<strong></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="nights" class="form-control" />
+                            </div>
+                        </div><!-- form-group --> 
+                    </div><!-- row -->
+                    
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label"><strong>离店<strong></label>
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="yyyy/mm/dd" name="exp_dep_d">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                </div><!-- input-group -->
+                            </div>
+                        </div><!-- form-group --> 
+                    </div><!-- row -->
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">成人</label>
+                            <div class="col-sm-4 right-1px">
+                                <input type="text" name="adults" class="form-control" />
+                            </div>
+                        </div><!-- form-group --> 
+                    </div><!-- row -->
+
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">儿童</label>
+                            <div class="col-sm-4 left-1px">
+                                <input type="text" name="child" class="form-control" />
+                            </div>
+                        </div><!-- form-group --> 
+                    </div><!-- row -->
+                    
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label"><strong>房数<strong></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="rooms" class="form-control" />
+                            </div>
+                        </div><!-- form-group --> 
+                    </div><!-- row -->
+                    
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label"><strong>房型<strong></label>
+                            <div class="col-sm-5">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="rmtype" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default"  onclick="rmtype_available()">选</button>
+                                    </span>
+                                </div><!--input-group -->                                    
+                            </div>
+                        </div><!-- form-group --> 
+                    </div><!-- row -->
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">公司</label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <input name="company" type="text" class="form-control" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default">选</button>
+                                    </span>
+                                </div><!--input-group -->                                    
+                            </div>
+                        </div><!-- form-group --> 
+                    </div><!-- row -->
+                </div><!-- panel-body -->
+                <div class="panel-footer">
+                    <button id ="btn-ok" class="btn btn-primary mr5"> 选择确认 </button>
+                    <button id ="btn-cancel" type="reset" class="btn btn-default"> 取消 </button>
+                </div><!-- panel-footer -->
+            </div><!-- panel -->
+                    
+   	</div>        
+        
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/jquery-migrate-1.2.1.min.js"></script>
+        <script src="js/jquery-ui-1.10.3.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/modernizr.min.js"></script>
+        <script src="js/pace.min.js"></script>
+        <script src="js/retina.min.js"></script>
+        <script src="js/jquery.cookies.js"></script>
+
+        <script src="js/custom.js"></script>   
+       
+    </body>
+</html>

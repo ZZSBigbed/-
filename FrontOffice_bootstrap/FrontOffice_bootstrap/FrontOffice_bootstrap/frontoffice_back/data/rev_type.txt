@@ -1,0 +1,1 @@
+﻿[{"c_sort":2,"text":"意向性订房","code":"1"},{"c_sort":3,"text":"已确认订房","code":"2"},{"c_sort":4,"text":"担保","code":"3"},{"c_sort":6,"text":"无担保","code":"4"}]

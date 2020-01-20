@@ -1,0 +1,1 @@
+﻿{"data":[{"rmtype":"ST","c_ava":"1","ho_rmtype_text":"标准间","seq":"","oo":"0","block":"0","occ":"0","rooms":"10"},{"rmtype":"SK","c_ava":"1","ho_rmtype_text":"单人间","seq":"","oo":"0","block":"0","occ":"0","rooms":"10"},{"rmtype":"DK","c_ava":"1","ho_rmtype_text":"套间","seq":"","oo":"0","block":"0","occ":"0","rooms":"30"}]}

@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<title>Form Elements - Ace Admin</title>
+
+		<meta name="description" content="Common form elements and layouts" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+		<!-- bootstrap & fontawesome -->
+		<link rel="stylesheet" href="../assets/css/bootstrap.css" />
+		<link rel="stylesheet" href="../assets/css/font-awesome.css" />
+
+		<!-- page specific plugin styles -->
+		<link rel="stylesheet" href="../assets/css/jquery-ui.custom.css" />
+		<link rel="stylesheet" href="../assets/css/chosen.css" />
+		<link rel="stylesheet" href="../assets/css/datepicker.css" />
+		<link rel="stylesheet" href="../assets/css/bootstrap-timepicker.css" />
+		<link rel="stylesheet" href="../assets/css/daterangepicker.css" />
+		<link rel="stylesheet" href="../assets/css/bootstrap-datetimepicker.css" />
+		<link rel="stylesheet" href="../assets/css/colorpicker.css" />
+
+		<!-- text fonts -->
+		<link rel="stylesheet" href="../assets/css/ace-fonts.css" />
+
+		<!-- ace styles -->
+		<link rel="stylesheet" href="../assets/css/ace.css" class="ace-main-stylesheet" id="main-ace-style" />
+
+
+        <link href="css/artDialog.default.css" rel="stylesheet">
+        <link href="css/artDialog/skins/default.css" rel="stylesheet">
+		<!--[if lte IE 9]>
+			<link rel="stylesheet" href="../assets/css/ace-part2.css" class="ace-main-stylesheet" />
+		<![endif]-->
+
+		<!--[if lte IE 9]>
+		  <link rel="stylesheet" href="../assets/css/ace-ie.css" />
+		<![endif]-->
+
+		<!-- inline styles related to this page -->
+
+		<!-- ace settings handler -->
+		<script src="../assets/js/ace-extra.js"></script>
+
+		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+		<!--[if lte IE 8]>
+		<script src="../assets/js/html5shiv.js"></script>
+		<script src="../assets/js/respond.js"></script>
+		<![endif]-->
+        
+		<style type="text/css"> 
+			label {
+				font-size: 13px;
+			}
+		     
+        	.form-group {
+		    	margin-bottom: 4px;
+			}
+			.page-content {
+				background-color: #FFF;
+				position: relative;
+				margin: 0px;
+				padding: 0px 10px 14px;
+			}
+			.widget-header {
+				box-sizing: content-box;
+				position: relative;
+				height: 20px;
+				background: #F7F7F7 linear-gradient(to bottom, #FFF 0%, #EEE 100%) repeat-x scroll 0% 0%;
+				color: #669FC7;
+				border-bottom: 1px solid #DDD;
+				padding-left: 12px;
+			}			
+			
+			.panel-body {
+			   padding-bottom:6px;
+			   padding-top:6px;
+			   padding-left:15px;
+			   padding-right:15px;
+			}
+			
+			textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
+				border-radius: 0px !important;
+				color: #858585;
+				background-color: #FFF;
+				border: 1px solid #D5D5D5;
+				padding: 0px 6px 0px 6px !important;;
+				font-size: 13px;
+				font-family: inherit;
+				box-shadow: none !important;
+				transition-duration: 0.1s;
+			}
+			
+			select.form-control {
+				padding: 0px 6px;
+			}			
+			
+			hr {
+				margin-top: 10px;
+				margin-bottom: 10px;
+				border-width: 1px 0px 0px;
+				border-style: solid none none;
+				border-color: #EEE -moz-use-text-color -moz-use-text-color;
+				-moz-border-top-colors: none;
+				-moz-border-right-colors: none;
+				-moz-border-bottom-colors: none;
+				-moz-border-left-colors: none;
+				border-image: none;
+			}			
+			
+        </style>         
+	</head>
+
+	<body class="no-skin">
+		<div class="main-container" id="main-container">
+			<div class="page-content">
+            <div class="row page-header">
+                <div class="pull-left">
+                    <div class="btn-toolbar">
+                        <div class="btn-group">
+                             <button class="btn btn-purple btn-sm" type="button"> 上翻</button>
+                             <button class="btn btn-purple btn-sm" type="button"> 下翻</button>
+                        </div>                        
+                        <div class="btn-group">
+                            <button class="btn btn-primary btn-sm"><i class="fa fa-envelope mr5"></i> 复制</button>
+                            <button class="btn btn-primary btn-sm"><i class="fa fa-download mr5"></i> 小组</button>
+                            <button class="btn btn-primary btn-sm"><i class="fa fa-download mr5"></i> 小组排房</button>
+                        </div> 
+                        <div class="btn-group">                       
+                            <button class="btn btn-primary btn-sm"><i class="fa fa-download mr5"></i> 钥匙</button>
+                            <button id="btn-ledger" class="btn btn-primary btn-sm"><i class="fa fa-download mr5"></i> 客人帐</button>
+                        </div> 
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary btn-sm"> 其它选项</button>
+                            <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
+                              <span class="caret"></span>
+                              <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <ul class="dropdown-menu pull-right" role="menu">
+                              <li><a href="#">Action</a></li>
+                              <li><a href="#">Another action</a></li>
+                              <li><a href="#">Something else here</a></li>
+                              <li class="divider"></li>
+                              <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </div><!-- btn-group -->
+                    </div><!-- btn-toolbar -->
+                </div>
+                <div class="pull-right">
+                    <div class="btn-group media-option-group" data-toggle="buttons">
+                        <div class="btn-group">
+                             <button class="btn btn-success btn-sm" type="button"> 确认保存</button>
+                             <button id="btn-cancel" class="btn btn-pink btn-sm" type="button"> 取消</button>
+                        </div>                            
+                    </div><!-- btn-group -->
+                </div>
+            </div><!-- media-options -->
+            
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="widget-box">
+                        <div class="widget-header">
+                            <h5 class="widget-title">客人信息</h5>
+    
+                            <div class="widget-toolbar">
+                                <a href="#" data-action="collapse">
+                                    <span class="label label-info arrowed-in-right">在住</span>
+                                </a>
+    
+                            </div>
+                        </div>                
+                    
+                    
+                        <div class="panel-body">
+                        	<form id="frm_profile" class="form-horizontal">
+                            <div class="col-md-3"> 
+                                 <div class="row">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label no-padding-right" for="gname"><strong>姓名</strong></label>
+                                        <div class="col-sm-9">
+                                            <input type="text" name="gname" class="form-control" />
+                                        </div>
+                                    </div><!-- form-group --> 
+                                 </div><!-- row -->
+                                 <div class="row">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label no-padding-right" for="fname">别名</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" name="fname" class="form-control" />
+                                        </div>
+                                    </div><!-- form-group --> 
+                                 </div><!-- row -->
+                                 <div class="row">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label no-padding-right">性别</label>
+                                        <div class="col-sm-4">
+                                            <input type="text" name="sex" class="form-control" />
+                                        </div>
+                                        <div class="col-sm-5 left-1px">
+                                            <input type="text" name="str9" class="form-control" placeholder="民族"/>
+                                        </div>
+                                    </div><!-- form-group --> 
+                                 </div><!-- row -->
+                        
+                                                
+                            </div>
+                            <div class="col-md-4"> 
+                                 <div class="row">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label no-padding-right">证件类别</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" name="pass" class="form-control" />
+                                        </div>
+                                    </div><!-- form-group --> 
+                                 </div><!-- row -->
+                                 <div class="row">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label no-padding-right">证件号</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" name="passno" class="form-control" />
+                                        </div>
+                                    </div><!-- form-group --> 
+                                 </div><!-- row -->
+                                 <div class="row">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label no-padding-right">地址</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" name="addr" class="form-control" />
+                                        </div>
+                                    </div><!-- form-group --> 
+                                 </div><!-- row -->
+                                
+                            </div>
+                            <div class="col-md-2"> 
+                                 <div class="row">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label no-padding-right">语种</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" name="language" class="form-control" />
+                                        </div>
+                                    </div><!-- form-group --> 
+                                 </div><!-- row -->
+                                 <div class="row">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label no-padding-right">国家</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" name="country" class="form-control" />
+                                        </div>
+                                    </div><!-- form-group --> 
+                                 </div><!-- row -->
+                                 <div class="row">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label no-padding-right">VIP</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" name="vip" class="form-control" />
+                                        </div>
+                                    </div><!-- form-group --> 
+                                 </div><!-- row -->
+                                
+                            </div>
+                            <div class="col-md-3"> 
+                                 <div class="row">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label no-padding-right">电话</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" name="tel" class="form-control" />
+                                        </div>
+                                    </div><!-- form-group --> 
+                                 </div><!-- row -->
+                                 <div class="row">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label no-padding-right">生日</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" name="birthday" class="form-control" />
+                                        </div>
+                                    </div><!-- form-group --> 
+                                 </div><!-- row -->
+                                 <div class="row">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label no-padding-right">会员卡号</label>
+                                        <div class="col-sm-9">
+	                                         <div class="input-group">
+	                                            <input type="text" name="m_card" class="form-control" />
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-sm btn-default" onclick="m_card()">
+                                                        <i class="ace-icon fa fa-comments bigger-110"></i>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                        
+                                    </div><!-- form-group --> 
+                                 </div><!-- row -->
+                            </div>
+	                        </form>
+                        </div><!-- panel-body -->
+                        </div>
+            </div><!--col-xs-12-->
+         </div>                       									
+
+        <div class="row">
+	        <form id="frm_guest" class="form-horizontal">
+            <div class="col-xs-12 col-sm-4">
+                <div class="widget-box">
+                    <div class="widget-header">
+                        <h5 class="widget-title">入住信息</h5>
+                    </div>
+
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label"><strong>抵店</strong></label>
+                                <div class="col-sm-6">
+									<div class="input-group">
+                                        <input class="form-control date-picker" type="text" data-date-format="yyyy-mm-dd" name="arr_d"/>
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-calendar bigger-110"></i>
+                                        </span>
+									</div>                                    
+                                </div>
+                            </div><!-- form-group --> 
+                        </div><!-- row -->
+    
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label"><strong>间夜</strong></label>
+                                <div class="col-sm-3">
+                                    <input type="text" id="nights" name="nights" class="form-control" />
+                                </div>
+                            </div><!-- form-group --> 
+                        </div><!-- row -->
+                        
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label"><strong>离店</strong></label>
+                                <div class="col-sm-6">
+									<div class="input-group">
+                                        <input class="form-control date-picker" type="text" data-date-format="yyyy-mm-dd" name="exp_dep_d"/>
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-calendar bigger-110"></i>
+                                        </span>
+									</div>                                    
+                                </div>
+                            </div><!-- form-group --> 
+                        </div><!-- row -->
+                        
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label"><strong>房数</strong></label>
+                                <div class="col-sm-3">
+                                    <input type="text" id="rooms" name="rooms" class="form-control" />
+                                </div>
+                            </div><!-- form-group --> 
+                        </div><!-- row -->
+                        
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label"><strong>费率代码</strong></label>
+                                <div class="col-sm-5">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="rcode" />
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-sm btn-default" onclick="rcode_search()">
+                                                <i class="ace-icon fa fa-comments bigger-110"></i>
+                                            </button>
+                                        </span>
+                                    </div><!--input-group -->                                    
+                                </div>
+                            </div><!-- form-group --> 
+                        </div><!-- row -->
+    
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label"><strong>费率</strong></label>
+                                <div class="col-sm-7">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="rate" />
+                                        <span class="input-group-addon"><input type="checkbox" /> 自调整 </span> 
+                                   
+                                    </div><!-- input-group -->                                
+                                </div>
+                            </div><!-- form-group -->
+                             
+                        </div><!-- row -->
+    
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label"><strong>房型</strong></label>
+                                <div class="col-sm-5">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="rmtype" />
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-sm btn-default" onclick="rmtype_available()">
+                                                <i class="ace-icon fa fa-comments bigger-110"></i>
+                                            </button>
+                                        </span>
+                                    </div><!--input-group -->                                    
+                                </div>
+                            </div><!-- form-group --> 
+                        </div><!-- row -->
+                  
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label"><strong>房号</strong></label>
+                                <div class="col-sm-5">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="room"/>
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-sm btn-default" onclick="rooms_serach()">
+                                                <i class="ace-icon fa fa-comments bigger-110"></i>
+                                            </button>
+                                        </span>
+                                        
+                                    </div><!--input-group -->                                    
+                                </div>
+                            </div><!-- form-group --> 
+                        </div><!-- row -->
+                        
+                        <hr>
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">包费</label>
+                                <div class="col-sm-6">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name ="package"/>
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-sm btn-default">
+                                                <i class="ace-icon fa fa-comments bigger-110"></i>
+                                            </button>
+                                        </span>
+                                    </div><!--input-group -->                                    
+                                </div>
+                            </div><!-- form-group --> 
+                        </div><!-- row -->
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">抵离时间</label>
+                                <div class="col-sm-4 right-1px">
+                                    <div class="input-group">
+                                        <div class="bootstrap-timepicker"><input id="timepicker" type="text" class="form-control" name ="arr_t"/></div>
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                                    </div><!-- input-group -->                                        
+                                </div>
+                                <div class="col-sm-4 left-1px">
+                                    <div class="input-group">
+                                        <div class="bootstrap-timepicker"><input id="timepicker" type="text" class="form-control" name="exp_dep_t"/></div>
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                                    </div><!-- input-group -->                                        
+                                </div>
+                            </div><!-- form-group --> 
+                        </div><!-- row -->
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">成人/儿童数</label>
+                                <div class="col-sm-3 right-1px">
+                                    <input type="text" id="adults" name="adults" placeholder="成人" class="form-control" />
+                                </div>
+                                <div class="col-sm-3 left-1px">
+                                    <input type="text" id ="child" name="child" placeholder="儿童" class="form-control" />
+                                </div>
+                            </div><!-- form-group --> 
+                        </div><!-- row -->
+                        <hr>
+                        <div class="row form-inline">
+                            <h6 class="lg-title mb5">创建:<code>20150406 17:00</code>操作:<code>L01</code>入住:<code>L01</code>离店:<code>L01</code></h5>
+                        </div>
+                    </div><!-- panel-body -->												
+            </div>
+        </div><!-- /.span -->
+
+        <div class="col-xs-12 col-sm-4">
+            <div class="widget-box">
+                <div class="widget-header">
+                    <h6 class="widget-title">财务及统计信息</h5>
+                </div>
+
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">预定类型</label>
+                            <div class="col-sm-5">
+                               <select name="rev_type" id="select_rev_type" data-placeholder="Choose One" class="form-control">
+                               </select>
+                            </div>
+                        </div>
+                    </div><!-- row -->
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">市场</label>
+                            <div class="col-sm-5">
+                                <select name="market" id="select_market" data-placeholder="Choose One" class="form-control">
+                                </select>                                
+                            </div>
+                        </div>
+                    </div><!-- row -->
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">来源</label>
+                            <div class="col-sm-5">
+                                <select name="source" id="select_source" data-placeholder="Choose One" class="form-control">
+                                </select>                                
+                            </div>
+                        </div>
+                    </div><!-- row -->
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label"><strong>付款方式</strong></label>
+                            <div class="col-sm-6">
+                                <select name="payment" id="select_payment" data-placeholder="Choose One" class="form-control">
+                                </select>                                
+                            </div>
+                        </div><!-- form-group --> 
+                    </div><!-- row -->
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">账(票)号</label>
+                            <div class="col-sm-7">
+                                <div class="input-group">
+                                    <input name="cc_no" type="text" class="form-control" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-default">
+                                            <i class="ace-icon fa fa-comments bigger-110"></i>
+                                        </button>
+                                    </span>
+                                </div><!--input-group -->                                    
+                            </div>
+                        </div><!-- form-group --> 
+                    </div><!-- row -->
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label"><strong>消费限额</strong></label>
+                            <div class="col-sm-5">
+                                <div class="input-group">
+                                    <input name="limit" type="text" class="form-control" />
+                                </div><!-- input-group -->                                
+                            </div>
+                        </div><!-- form-group -->
+                         
+                    </div><!-- row -->
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">公司</label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <input name="company" type="text" class="form-control" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-default">
+                                            <i class="ace-icon fa fa-comments bigger-110"></i>
+                                        </button>
+                                    </span>
+                                </div><!--input-group -->                                    
+                            </div>
+                        </div><!-- form-group --> 
+                    </div><!-- row -->
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">销售员</label>
+                            <div class="col-sm-5">
+                                <div class="input-group">
+                                    <input name="sales" type="text" class="form-control" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-default">
+                                            <i class="ace-icon fa fa-comments bigger-110"></i>
+                                        </button>
+                                    </span>
+                                </div><!--input-group -->                                    
+                            </div>
+                        </div><!-- form-group --> 
+                    </div><!-- row -->
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">结账提示</label>
+                            <div class = "col-sm-9" >
+                                <textarea name="co_mess" class="form-control" rows="2" ></textarea>
+                            </div>
+                        </div><!-- form-group --> 
+                    </div><!-- row -->
+                    <hr>
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">选房特征</label>
+                            <div class="col-sm-7">
+                                <div class="input-group">
+                                    <input name="comp_features" type="text" class="form-control" onkeyup="this.value=this.value.toUpperCase()"/>
+                                    <span class="input-group-btn">
+                                        <button onclick="select('comp_features')" type="button" class="btn btn-sm btn-default">
+                                            <i class="ace-icon fa fa-comments bigger-110"></i>
+                                        </button>
+                                    </span>
+                                    
+                                </div><!--input-group -->                                    
+                            </div>
+                        </div><!-- form-group --> 
+                    </div><!-- row -->
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">特殊要求</label>
+                            <div class="col-sm-7">
+                                <div class="input-group">
+                                    <input name="special" type="text" class="form-control" onkeyup="this.value=this.value.toUpperCase()" />
+                                    <span class="input-group-btn">
+                                        <button onclick="select('special')" type="button" class="btn btn-sm btn-default">
+                                            <i class="ace-icon fa fa-comments bigger-110"></i>
+                                        </button>
+                                    </span>
+                                </div><!--input-group -->                                    
+                            </div>
+                        </div><!-- form-group --> 
+                    </div><!-- row -->
+                    
+                </div><!-- panel-body -->                        
+            </div>
+        </div><!-- /.span -->
+
+        <div class="col-xs-12 col-sm-4">
+            <div class="widget-box">
+                <div class="widget-header">
+                    <h5 class="widget-title">订房信息</h5>
+                </div>
+    
+                <div class="widget-body">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <input type="text" name="str4" placeholder="订房人" class="form-control" />
+                            </div>
+                            <div class="form-group col-md-4 leftright-1px">
+                                <input type="text" name="str7" placeholder="电话" class="form-control" />
+                            </div>
+                            <div class="form-group col-md-4">
+                                <input type="email" name="str6" placeholder="Email" class="form-control" />
+                            </div>
+                        </div><!-- row -->
+                        
+                        <textarea name="remark" class="form-control form-group" rows="2" placeholder="备注"></textarea>
+                    </div><!-- panel-body -->                        
+                </div>
+            </div>
+            <div id="accordion" class="accordion-style1 panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                <i class="ace-icon fa fa-angle-down bigger-110" data-icon-hide="ace-icon fa fa-angle-down" data-icon-show="ace-icon fa fa-angle-right"></i>
+                                &nbsp;陪同
+                            </a>
+                        </h4>
+                    </div>
+            
+                    <div class="panel-collapse collapse in" id="collapseOne">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <input type="text" name="acc_name1" placeholder="姓名" class="form-control" />
+                                </div>
+                                <div class="form-group col-md-2 leftright-1px">
+                                    <input type="email" name="acc_sex1" placeholder="性别" class="form-control" />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input type="url" name="acc_idcard1" placeholder="证件号" class="form-control" />
+                                </div>
+                            </div><!-- row -->
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <input type="text" name="acc_name2" placeholder="姓名" class="form-control" />
+                                </div>
+                                <div class="form-group col-md-2 leftright-1px">
+                                    <input type="email" name="acc_sex2" placeholder="性别" class="form-control" />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input type="url" name="acc_idcard2" placeholder="证件号" class="form-control" />
+                                </div>
+                            </div><!-- row -->
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                <i class="ace-icon fa fa-angle-right bigger-110" data-icon-hide="ace-icon fa fa-angle-down" data-icon-show="ace-icon fa fa-angle-right"></i>
+                                &nbsp;同住客人
+                            </a>
+                        </h4>
+                    </div>
+            
+                    <div class="panel-collapse collapse" id="collapseTwo">
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                <i class="ace-icon fa fa-angle-right bigger-110" data-icon-hide="ace-icon fa fa-angle-down" data-icon-show="ace-icon fa fa-angle-right"></i>
+                                &nbsp;小组成员
+                            </a>
+                        </h4>
+                    </div>
+            
+                    <div class="panel-collapse collapse" id="collapseThree">
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                        </div>
+                    </div>
+                </div>
+                
+				<div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                                <i class="ace-icon fa fa-angle-right bigger-110" data-icon-hide="ace-icon fa fa-angle-down" data-icon-show="ace-icon fa fa-angle-right"></i>
+                                &nbsp;团队
+                            </a>
+                        </h4>
+                    </div>
+            
+                    <div class="panel-collapse collapse" id="collapseFour">
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                        </div>
+                    </div>
+                </div>                
+            </div>            
+            
+            
+            
+        </div><!-- /.span -->
+        </form>
+        </div>
+    </div><!-- /.row -->
+    
+    <label id="Parameter" style="display:none;">{"action":"修改","gno":"39239"}</label>
+    
+</div>
+	<!--
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='../assets/js/jquery.js'>"+"<"+"/script>");
+		</script>
+
+		<script type="text/javascript">
+			if('ontouchstart' in document.documentElement) document.write("<script src='../assets/js/jquery.mobile.custom.js'>"+"<"+"/script>");
+		</script>
+     -->    
+		<script src="../assets/js/jquery.js"></script>
+		<script src="../assets/js/bootstrap.js"></script>
+
+		<!-- page specific plugin scripts -->
+
+		<!--[if lte IE 8]>
+		  <script src="../assets/js/excanvas.js"></script>
+		<![endif]-->
+		<script src="../assets/js/jquery-ui.custom.js"></script>
+		<script src="../assets/js/jquery.ui.touch-punch.js"></script>
+		<script src="../assets/js/chosen.jquery.js"></script>
+		<script src="../assets/js/fuelux/fuelux.spinner.js"></script>
+		<script src="../assets/js/date-time/bootstrap-datepicker.js"></script>
+		<script src="../assets/js/date-time/bootstrap-timepicker.js"></script>
+		<script src="../assets/js/date-time/moment.js"></script>
+		<script src="../assets/js/date-time/daterangepicker.js"></script>
+		<script src="../assets/js/date-time/bootstrap-datetimepicker.js"></script>
+		<script src="../assets/js/bootstrap-colorpicker.js"></script>
+		<script src="../assets/js/jquery.knob.js"></script>
+		<script src="../assets/js/jquery.autosize.js"></script>
+		<script src="../assets/js/jquery.inputlimiter.1.3.1.js"></script>
+		<script src="../assets/js/jquery.maskedinput.js"></script>
+		<script src="../assets/js/bootstrap-tag.js"></script>
+
+		<!-- ace scripts -->
+		<script src="../assets/js/ace/elements.scroller.js"></script>
+		<script src="../assets/js/ace/elements.colorpicker.js"></script>
+		<script src="../assets/js/ace/elements.fileinput.js"></script>
+		<script src="../assets/js/ace/elements.typeahead.js"></script>
+		<script src="../assets/js/ace/elements.wysiwyg.js"></script>
+		<script src="../assets/js/ace/elements.spinner.js"></script>
+		<script src="../assets/js/ace/elements.treeview.js"></script>
+		<script src="../assets/js/ace/elements.wizard.js"></script>
+		<script src="../assets/js/ace/elements.aside.js"></script>
+		<script src="../assets/js/ace/ace.js"></script>
+		<script src="../assets/js/ace/ace.ajax-content.js"></script>
+		<script src="../assets/js/ace/ace.touch-drag.js"></script>
+		<script src="../assets/js/ace/ace.sidebar.js"></script>
+		<script src="../assets/js/ace/ace.sidebar-scroll-1.js"></script>
+		<script src="../assets/js/ace/ace.submenu-hover.js"></script>
+		<script src="../assets/js/ace/ace.widget-box.js"></script>
+		<script src="../assets/js/ace/ace.settings.js"></script>
+		<script src="../assets/js/ace/ace.settings-rtl.js"></script>
+		<script src="../assets/js/ace/ace.settings-skin.js"></script>
+		<script src="../assets/js/ace/ace.widget-on-reload.js"></script>
+		<script src="../assets/js/ace/ace.searchbox-autocomplete.js"></script>
+
+		<!-- inline scripts related to this page -->
+		<script src="js/artDialog.min.js"></script>
+        <script src="js/artDialog.plugins.min.js"></script>
+        <script src="js/jquery.artDialog.min.js"></script>
+		<script src="js/artDialog.source.js?skin=default" type="text/javascript"></script>
+        <script src="js/iframeTools.source.js" type="text/javascript"></script>        
+             
+        <script src="js/cookies.js"></script>
+        <script src="js/reservation.js"></script>        
+        
+		<script type="text/javascript">
+		
+   			jQuery(function($) {
+				window.para = '{"ok":"0"}';
+				
+				open();
+				
+				
+				$('.date-picker').datepicker({
+					autoclose: true
+				})				
+				
+				
+				
+				
+                
+            });
+			
+		document.getElementById("btn-ledger").onclick = function () {
+//
+//				var cwin = window.parent.document.getElementById("tab_Document5");
+//				window.parent.document.getElementById("tab_Document5").style.height=document.body.scrollHeight;
+//
+//				var cwin = $('#Document5_content Iframe',parent.document);
+//				var h = cwin.Document.body.scrollHeight ;
+//				
+//				cwin.trigger('onload');
+//			$(window.parent.document).find("#tab_Document5").load(function(){
+	
+			//	$(window.parent.document).test();
+				var main = $(window.parent.document).find("#tab_Document5");
+				var thisheight = $(document).height()+20;
+				main.height(thisheight);
+//			});
+
+
+		}			
+
+
+
+
+
+		</script>
+
+		<!-- the following scripts are used in demo only for onpage help and you don't need them -->
+		<link rel="stylesheet" href="../assets/css/ace.onpage-help.css" />
+		<link rel="stylesheet" href="../docs/assets/js/themes/sunburst.css" />
+
+		<script type="text/javascript"> ace.vars['base'] = '..'; </script>
+		<script src="../assets/js/ace/elements.onpage-help.js"></script>
+		<script src="../assets/js/ace/ace.onpage-help.js"></script>
+		<script src="../docs/assets/js/rainbow.js"></script>
+		<script src="../docs/assets/js/language/generic.js"></script>
+		<script src="../docs/assets/js/language/html.js"></script>
+		<script src="../docs/assets/js/language/css.js"></script>
+		<script src="../docs/assets/js/language/javascript.js"></script>
+	</body>
+</html>

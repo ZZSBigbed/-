@@ -1,0 +1,1 @@
+[{"rmtype":"ST","rooms":"10"},{"rmtype":"SK","rooms":"2"},{"rmtype":"DK","rooms":"12"}]

@@ -1,0 +1,90 @@
+<table style="width:100%;">
+    <tbody>
+        <tr>
+            <td style="width:50%">
+                <img src="images/themeforest.png" class="img-responsive mb10" alt="" />
+                <p><strong>名前: </strong> <span class="fill" id="gname_fname"></span></p>
+                <p><strong>部屋番号: </strong> <span class="fill" id="room"></span></p>
+                <address>
+                    <strong>会社名前/小组/Group: </strong><br>
+                    <span class="fill" id="company"></span><br>
+                    <span class="fill" id="party_s"></span><br>
+                    <span class="fill" id="group"></span><br>
+                </address>
+            </td>
+            <td style="width:50%">
+               <div class="text-right" >
+                    <h5 class="subtitle mb10">Invoice No.</h5>
+                    <h5 class="text-primary fill" id="gno"></h5>
+                    <p><strong>到着期日: </strong><span class="fill" id="arr_d"></span></p> 
+                    <p><strong>出発期日: </strong><span class="fill" id="exp_dep_d"></span></p>
+
+                    <address>
+                        <strong>操作:</strong><br>
+                        <span class="fill" id="userid"></span><span class="fill" id="username"></span><br>
+                        タイピング時間:<span class="fill" id="printtime"><br>
+                    </address>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>                    
+
+<div class="table-responsive" style=" padding-top:1px; padding-bottom:1px;">
+
+ <table id="tblDetail" class="table mb30 table-invoice-bill">
+    <thead>
+      <tr>
+        <th>期日</th>
+        <th>内容</th>
+        <th>#</th>
+        <th>借方</th>
+        <th>貸し方</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+ <table id="tblTotal" class="table mb30 table-invoice-bill">
+    <tbody>
+    </tbody>
+</table>
+
+</div><!-- table-responsive -->
+<table style="width:100%;">
+    <tbody>
+        <tr>
+            <td style="width:50%;font-size:9px">
+                <address>
+                     I AGREE THAT MY LIABILITY FOR THIS BILL IS NOT WAIVED AND<br>
+                     AGREE TO BE HELD PERSONALLY LIABLE IN THE EVENT THAT<br>
+                     THE INDICATED PERSON,COMPANY,OR ASSOCIATION FAILS TO<br>
+                     PAY FOR ANY PART OR THE FULL AMOUNT OF THESE CHARGES.
+                </address>
+                <address>
+                     中国大連開発区金馬路135号  郵便番号:116600<br>
+                     No.135, Jinma Road Development Zone, Dalian China<br>
+                     電話：（86-411）39968888  ファックス：（86-411）87618770
+                </address>
+            </td>
+            <td style="width:50%">
+                <div class="text-right" >
+                    <p><strong>余额:</strong><span class="fill" id="balance">0.00</span></p>
+                </div>
+                <table class="table table-total">
+                      <tbody>
+                         <tr>
+                            <td>消费合计 Total:</td>
+                            <td class="fill" id="total_debit"></td>
+                        </tr>
+                    </tbody>
+                </table> 
+                
+                <address class="text-right">
+                     --------------------------<br>
+                     客人签名/Signature<br>
+                </address>
+            </td>
+        </tr>
+    </tbody>
+</table> 

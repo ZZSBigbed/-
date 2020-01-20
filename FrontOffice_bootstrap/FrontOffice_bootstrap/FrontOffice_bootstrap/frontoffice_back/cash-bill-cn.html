@@ -1,0 +1,89 @@
+<table style="width:100%;">
+    <tbody>
+        <tr>
+            <td style="width:50%">
+                <img src="images/themeforest.png" class="img-responsive mb10" alt="" />
+                <p><strong>客人(Name): </strong> <span class="fill" id="gname_fname"></span></p>
+                <p><strong>房号(Room): </strong> <span class="fill" id="room"></span></p>
+                <address>
+                    <strong>公司/小组/团队: </strong><br>
+                    (Company/Party/Group)<br>
+                    <span class="fill" id="company"></span><br>
+                    <span class="fill" id="party_s"></span><br>
+                    <span class="fill" id="group"></span><br>
+                </address>
+            </td>
+            <td style="width:50%">
+               <div class="text-right" >
+                    <h5 class="subtitle mb10">Invoice No.</h5>
+                    <h5 class="text-primary fill" id="gno"></h5>
+                    <p><strong>抵店(Arrival): </strong><span class="fill" id="arr_d"></span></p> 
+                    <p><strong>离店(Departure): </strong><span class="fill" id="exp_dep_d"></span></p>
+
+                    <address>
+                        <strong>操作(Operator):</strong><br>
+                        <span class="fill" id="userid"></span><span class="fill" id="username"></span><br>
+                        打印(Print by):<span class="fill" id="printtime"><br>
+                    </address>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>                    
+
+<div class="table-responsive" style=" padding-top:1px; padding-bottom:1px;">
+
+ <table id="tblDetail" class="table mb30 table-invoice-bill">
+    <thead>
+      <tr>
+        <th>时间</th>
+        <th>项目</th>
+        <th>#</th>
+        <th>消费</th>
+        <th>支付</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+ <table id="tblTotal" class="table mb30 table-invoice-bill">
+    <tbody>
+    </tbody>
+</table>
+<div class="text-right" >
+    <p><strong>余额:</strong><span class="fill" id="balance">0.00</span></p>
+</div>
+
+</div><!-- table-responsive -->
+<table style="width:100%;">
+    <tbody>
+        <tr>
+            <td style="width:50%;font-size:9px">
+                <address>
+                     我确认该账单，所列收费账项准确无误。<br>
+                     All charges are confirmed correctiy.
+                </address>
+                <address>
+                     地址:大连<br>
+                     Add：Slaburg,Shuangtai Town,Gaizhou,Yingkou City,Liaoning Prov,China<br>
+                     电话（Tel）：0417-6688888  传真（Fax）：0417-6688999 
+                </address>
+            </td>
+            <td style="width:50%">
+                <table class="table table-total">
+                      <tbody>
+                         <tr>
+                            <td>消费合计 Total:</td>
+                            <td class="fill" id="total_debit"></td>
+                        </tr>
+                    </tbody>
+                </table> 
+                
+                <address class="text-right">
+                     --------------------------<br>
+                     客人签名/Signature<br>
+                </address>
+            </td>
+        </tr>
+    </tbody>
+</table> 

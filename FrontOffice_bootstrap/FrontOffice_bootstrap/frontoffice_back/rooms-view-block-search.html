@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Chain Responsive Bootstrap3 Admin</title>
+
+        <link href="../css/style.default.css" rel="stylesheet">
+        <link href="../css/select2.css" rel="stylesheet" />
+        <link href="../css/style.datatables.css" rel="stylesheet">
+        <link href="../css/dataTables.responsive.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+        <![endif]-->
+        
+        <link href="../css/frontoffice/datatable.css" rel="stylesheet">
+        <style>
+	        .dataTable .selected{ background:#FFFDDD;}
+			.form-inline .form-control {
+				display: inline-block;
+				width: 120px;
+				vertical-align: middle;
+				padding: 5px 10px;
+			}
+			.table-h{ height:500px;}
+        </style>
+        
+    </head>
+
+    <body onselectstart="return false">
+        <div class="contentpanel contentpanel-mediamanager" onmouseup="mouseUp(event)">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-btns">
+                        <a href="" class="panel-close tooltips" data-toggle="tooltip" title="Close Panel"><i class="fa fa-times"></i></a>
+                    </div><!-- panel-btns -->
+                    <div class="form-inline">
+                        <input type="text" class="form-control" id="select-guest-search" placeholder="查询...">
+                        <button id ="btn-guest-search" type="reset" class="btn btn-info btn-sm"> 查找 </button>
+                        <button id ="btn-guest-retrieve" type="reset" class="btn btn-default btn-sm"> 刷新 </button>
+                        <button id ="btn-guest-filter" type="reset" class="btn btn-default btn-sm" onClick="filter"> 条件 </button>
+                    </div>
+                </div>
+                <div class="table-responsive table-h">
+                    <table id="tblGuest" class="table table-dark mb30 table-huasheng" onmousedown="mouseDown(this,event)" onmousemove="mouseMove(event)" onmouseup="mouseUp(event)">
+                        <thead>
+                            <tr class="tt">
+                                <th ><input type="checkbox" id="chkAll" value="" /></th>
+                                <th name ="gno" >GNO</th>
+                                <th name ="gname" >姓名</th>
+                                <th >房号</th>
+                                <th >房价</th>
+                                <th >状态</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>                                
+               </div><!-- table-responsive -->
+                <div class="panel-footer">
+                    <div class="ckbox ckbox-default mr20 inline-block">
+                        <input type="checkbox" checked="checked" id="chk_avall" value="0">
+                        <label for="chk_avall">可用房(所有房型)</label>
+                    </div><!-- ckbox -->
+                    <div class="ckbox ckbox-default mr20 inline-block">
+                        <input type="checkbox" checked="checked" id="chk_vc" value="1">
+                        <label for="chk_vc">可用房(净房)</label>
+                    </div><!-- ckbox -->
+                    
+                </div><!-- panel-footer -->
+             </div><!-- panel -->
+        </div>
+   
+        <script src="../js/jquery-1.11.1.min.js"></script>
+        <script src="../js/jquery-migrate-1.2.1.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        
+        <script src="../js/jquery.dataTables.min.js"></script>
+        <script src="../js/dataTables.bootstrap.js"></script>
+        <script src="../js/dataTables.responsive.js"></script>
+        <script src="../js/select2.min.js"></script>
+        <script src="../js/frontoffice/table-huasheng.js"></script>
+        
+   
+	    <script>
+			
+
+           document.getElementById("btn-guest-retrieve").onclick = function () {
+			  var jsonArg = {}; 
+			  var str = document.getElementById("select-guest-search").value
+			  if(str.length!=0){
+				  jsonArg.fuzzysearch = str;
+			   }
+			   if(jQuery.isEmptyObject(jsonArg)){
+			   	  //alert( "无查询条件" );
+				  return;
+				}
+				
+			  tblGuestRetrieve( jsonArg );
+			  
+                jQuery('.odd').each(function() {
+                          
+                    // create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
+                    // it doesn't need to have a start or end
+                    var eventObject = {
+                        title: $.trim($(this).text()) // use the element's text as the event title
+                    };
+                                  
+                    // store the Event Object in the DOM element so we can get to it later
+                    jQuery(this).data('eventObject', eventObject);
+                                  
+                    // make the event draggable using jQuery UI
+                    jQuery(this).draggable({
+                        zIndex: 999,
+                        revert: true,      // will cause the event to go back to its
+                        revertDuration: 0  //  original position after the drag
+                    });
+                });		
+			  
+			  
+			  
+			  
+        	};
+			
+			
+			function tblGuestRetrieve( jsonArg ){		
+				//resultDataTable.fnClearTable(false);
+                var exTable = jQuery('#tblGuest').DataTable({
+                    responsive: true,
+					"bDestroy":true,
+					
+                    "ajax": "data/objects1.txt",
+					"fnServerParams": function ( aoData ) { 
+					//aoData.push( {"id":"用户id","au":"授权号","ac":"retrieve1","json":{"gname": "张三", "sex": "男"}})
+				    aoData.push( { "name": "uid", "value": "L01" } ,
+						 		 { "name": "au", "value": "授权号" } ,
+								 { "name": "fu", "value": "retrieve1" },
+								 { "name": "jn", "value": JSON.stringify(jsonArg)} )					
+						} ,
+					
+					//测试
+                    "bLengthChange":false,
+                    "bPaginate":false,
+	            	"bFilter": false,
+					"bSort":false,
+					//
+					
+					"oLanguage": {                          //汉化
+						"sLengthMenu": "每页显示 _MENU_ 条记录",
+						"sZeroRecords": "没有检索到数据",
+						"sInfo": "当前数据为从第 _START_ 到第 _END_ 条数据；总共有 _TOTAL_ 条记录",
+						"sInfoEmtpy": "没有数据",
+						"sProcessing": "正在加载数据...",
+						"oPaginate": {
+							"sFirst": "首页",
+							"sPrevious": "前页",
+							"sNext": "后页",
+							"sLast": "尾页"
+		            }},					
+					"columnDefs":[
+									{"targets": 0,
+                                     "data": null,
+                                     "render": function ( ) {
+                                               return '<input type="checkbox" value="" name="tablechoice1" />';}
+                                     },											
+                                  ],
+					
+                    "columns": [
+
+                        { "data": "" },
+                        { "data": "gno" },
+                        { "data": "gname" },
+                        { "data": "room" },
+                        { "data": "rate"},
+                        { "data": "status" }
+                    ],
+                    "order": [[1, 'asc']],
+				 
+                });
+				
+			};
+			
+			document.getElementById("btn-guest-filter").onclick = function () {
+				alert( selectRows() );					
+			};
+			
+			$(document).ready(function () { 
+				$(".table-huasheng").alterBgColor({ style: "4" }).find("th"); //可以链式操作  
+			});				
+			
+			function selectRows (){
+				var arrArg = new Array();
+				var jsonData = {};
+				var i = 0;
+				$('#tblGuest tbody tr').each( function() {
+					var chk=$(this).find('td').eq(0).find('input');
+					if (chk.attr("checked")=="checked"){
+						var arg={};
+						var nTds = $('td', this);
+						arg.sGno = $(nTds[1]).text();
+						arg.sRoom = $(nTds[2]).text();
+						arg.sGname = $(nTds[4]).text();
+						
+						arrArg[i] = arg;
+						
+						i++;
+					}
+				} );
+				return JSON.stringify(arrArg);
+			}	
+
+		function mouseDown(){
+			//alert( selectRows() );
+			window.jBlockData = selectRows();
+				
+			if (window.jBlockData!="[]"){;	
+				parent.window.bBlock = true;
+				document.body.style.cursor = "move";
+			}
+		}
+		function mouseMove(){
+			if (window.bBlock){
+				document.body.style.cursor = "move";	
+			};
+		}
+		function mouseUp(){
+			if (parent.window.bBlock){
+//				alert(parent.window.bRoom);
+				parent.window.bRoom ="";
+				parent.window.bBlock = false;
+				document.body.style.cursor = "auto";
+			}
+		}
+	
+		function filter(){
+	
+		}
+	
+	
+       </script>
+    </body>
+</html>

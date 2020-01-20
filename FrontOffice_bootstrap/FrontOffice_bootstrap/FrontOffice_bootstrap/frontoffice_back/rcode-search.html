@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Chain Responsive Bootstrap3 Admin</title>
+
+        <link href="../css/style.default.css" rel="stylesheet">
+        <link href="../css/select2.css" rel="stylesheet" />
+        <link href="../css/style.datatables.css" rel="stylesheet">
+        <link href="../css/dataTables.responsive.css" rel="stylesheet">
+        <link href="../css/jquery.gritter.css" rel="stylesheet">
+        
+        
+
+
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+        <![endif]-->
+        
+        <link href="../css/frontoffice/datatable.css" rel="stylesheet">
+        <style>
+	        .dataTable .selected{ background:#3071A9;}
+	        .selected{ background:rgb(51,153,255);color:#FFF;}
+	        .selected0{ color:#F0F;font-weight:bolder;font-style:italic;text-decoration:underline;}
+			
+			.form-inline .form-control {
+				display: inline-block;
+				width: 120px;
+				vertical-align: middle;
+				padding: 5px 10px;
+			}
+			.table-h{ height:500px;}
+			
+			tbody > tr > td.item {
+ 				   background-color: #F7F7F7;
+			}
+			p {
+				margin: 0;
+			}
+			
+        </style>
+        
+    </head>
+    <body onload="IFrameResize()">
+		<div class="contentpanel contentpanel-mediamanager">
+			<div class="media-options">
+                <div class="pull-left">
+                    条件: 
+                    <div class="btn-group media-option-group" data-toggle="buttons">
+                        <label class="btn btn-default btn-sm active">
+                          <input type="radio" name="radio_select" id="opPrivate"> 私有
+                        </label>
+                        <label class="btn btn-default btn-sm ">
+                          <input type="radio" name="radio_select" id="opALL" checked> 全部
+                        </label>
+                    </div><!-- btn-group -->
+                </div>
+                <div class="pull-right">
+                    <div class="form-inline">
+                        <button id ="btn-condition" type="reset" class="btn btn-default btn-sm"> 其它条件 </button>
+                        <button id ="btn-ok" type="reset" class="btn btn-primary btn-sm"> 选择确认 </button>
+                        <button id ="btn-cancel" type="reset" class="btn btn-default btn-sm"> 取消 </button>
+                    </div>
+              </div>
+            </div><!-- media-options -->            
+      
+            <div class="row">
+                <div class="table-responsive">
+                    <table id="tblRcode" class="table table-bordered responsive">
+                        <thead>
+                            <tr>
+                                <th name ="rcode" style="width:100px"><p class="text-muted">Item</p><p class="text-muted">项目</p><p class="text-primary">3</p></th>
+                                <th name ="text" style="width:300px"><p class="text-muted">Text</p><p class="text-muted">名称</p><p class="text-primary">3</p></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                      
+                        </tbody>
+                    </table>                                
+               </div><!-- table-responsive -->
+	      </div>
+   	</div>        
+        
+        <script src="../js/jquery-1.11.1.min.js"></script>
+        <script src="../js/jquery-migrate-1.2.1.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        
+        <script src="../js/jquery.dataTables.min.js"></script>
+        <script src="../js/dataTables.bootstrap.js"></script>
+        <script src="../js/dataTables.responsive.js"></script>
+        <script src="../js/select2.min.js"></script>
+        <script src="../js/frontoffice/table-huasheng.js"></script>
+		
+		<script src="../js/frontoffice/cookies.js"></script>
+        <script src="../js/frontoffice/jquery.contextmenu.r2.js"></script>        
+        
+        <script src="../js/frontoffice/artDialog.source.js?skin=default" type="text/javascript"></script>
+        <script src="../js/frontoffice/iframeTools.source.js" type="text/javascript"></script>        
+      
+        <script src="../js/frontoffice/rcode-search.js"></script>
+
+        <script src="../js/jquery.gritter.min.js"></script>
+        <script src="../js/custom.js"></script>        
+   
+	    <script>
+		
+			$(document).ready(function () {
+				window.para = '{"ok":"0"}';
+				
+				 
+				//var sTitle = $.parseJSON(art.dialog.data('aParameter')).title;
+				
+				retrieve_rmtype();
+				retrieve_rate();
+				
+				$(".table-huasheng").alterBgColor({ style: "4" }).find("rmtype"); //可以链式操作
+				
+				setTimeout("IFrameResize()",10);    //延时自适应高度
+			});			
+		
+
+			
+
+       </script>
+       
+    </body>
+</html>

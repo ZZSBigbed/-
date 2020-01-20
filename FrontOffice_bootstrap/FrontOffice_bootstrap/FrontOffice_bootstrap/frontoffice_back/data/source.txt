@@ -1,0 +1,1 @@
+﻿[{"c_sort":1,"text":"省内","code":"2"},{"c_sort":2,"text":"北京","code":"4"},{"c_sort":3,"text":"国外","code":"8"},{"c_sort":4,"text":"上海","code":"5"},{"c_sort":6,"text":"东三省","code":"3"},{"c_sort":7,"text":"本地","code":"1"},{"c_sort":9,"text":"外市","code":"7"},{"c_sort":10,"text":"港台澳","code":"6"},{"c_sort":11,"text":"国内","code":"9"}]

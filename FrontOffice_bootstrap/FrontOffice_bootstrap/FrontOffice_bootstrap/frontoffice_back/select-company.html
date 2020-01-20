@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Chain Responsive Bootstrap3 Admin</title>
+
+        <link href="../css/style.default.css" rel="stylesheet">
+        <link href="../css/select2.css" rel="stylesheet" />
+        <link href="../css/style.datatables.css" rel="stylesheet">
+        <link href="../css/dataTables.responsive.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+        <![endif]-->
+        
+        <link href="../css/frontoffice/datatable.css" rel="stylesheet">
+        <style>
+	        .dataTable .selected{ background:#FFFDDD;}
+			.form-inline .form-control {
+				display: inline-block;
+				width: 120px;
+				vertical-align: middle;
+				padding: 5px 10px;
+			}
+			.table-h{ height:500px;}
+			
+        </style>
+        
+    </head>
+
+    <body>
+        <div class="contentpanel contentpanel-mediamanager">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-btns">
+                        <a href="" class="panel-close tooltips" data-toggle="tooltip" title="Close Panel"><i class="fa fa-times"></i></a>
+                    </div><!-- panel-btns -->
+                    <div class="form-inline">
+                        <input type="text" class="form-control" id="select-guest-search" placeholder="查询...">
+                        <button id ="btn-search" type="reset" class="btn btn-default btn-sm"> 查找 </button>
+                        <button id ="btn-ok" type="reset" class="btn btn-primary btn-sm"> 确认 </button>
+                        <button id ="btn-cancel" type="reset" class="btn btn-default btn-sm"> 取消 </button>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table id="tblDict" class="table table-dark mb30 table-huasheng">
+                        <thead>
+                            <tr>
+                                <th ><input type="checkbox" id="chkAll" value="" /></th>
+                                <th name ="code" >代码</th>
+                                <th name ="text" >内容</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>                                
+        		</div>
+                
+		   </div>
+        </div>
+        <script src="../js/jquery-1.11.1.min.js"></script>
+        <script src="../js/jquery-migrate-1.2.1.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        
+        <script src="../js/jquery.dataTables.min.js"></script>
+        <script src="../js/dataTables.bootstrap.js"></script>
+        <script src="../js/dataTables.responsive.js"></script>
+        <script src="../js/select2.min.js"></script>
+        <script src="../js/frontoffice/table-huasheng.js"></script>
+		
+		<script src="../js/frontoffice/cookies.js"></script>
+        <script src="../js/frontoffice/jquery.contextmenu.r2.js"></script>        
+        <script src="../js/frontoffice/artDialog.min.js"></script>
+        <script src="../js/frontoffice/artDialog.plugins.min.js"></script>
+        <script src="../js/frontoffice/jquery.artDialog.min.js"></script>
+        
+        <script src="../js/frontoffice/artDialog.source.js?skin=default" type="text/javascript"></script>
+        <script src="../js/frontoffice/iframeTools.source.js" type="text/javascript"></script>        
+      
+   
+	    <script>
+		
+			$(document).ready(function () { 
+				document.getElementById('select-guest-search').value = art.dialog.data('aParameter');// 读取A页面的数据
+				$(".table-huasheng").alterBgColor({ style: "4" }).find("th"); //可以链式操作
+				var jsonArg = {};
+				tblGuestRetrieve( jsonArg );
+				
+				  
+			});			
+		
+			function tblGuestRetrieve( jsonArg ){		
+				//resultDataTable.fnClearTable(false);
+                var exTable = jQuery('#tblDict').DataTable({
+                    responsive: true,
+					"bDestroy":true,
+                    "fnInitComplete": function(oSettings) {
+						jQuery('#tblDict').css("width","100%");
+						add_parameter( art.dialog.data('aParameter') );
+                    },					
+					
+					
+                    "ajax": "data/features.txt",
+					"fnServerParams": function ( aoData ) { 
+					//aoData.push( {"id":"用户id","au":"授权号","ac":"retrieve1","json":{"gname": "张三", "sex": "男"}})
+				    aoData.push( { "name": "uid", "value": "L01" } ,
+						 		 { "name": "au", "value": "授权号" } ,
+								 { "name": "fu", "value": "retrieve1" },
+								 { "name": "jn", "value": JSON.stringify(jsonArg)} )					
+						} ,
+					
+					//测试
+                    "bLengthChange":false,
+                    "bPaginate":false,
+	            	"bFilter": false,
+					"bSort":false,
+					//
+					
+					"columnDefs":[
+									{"targets": 0,
+                                     "data": null,
+                                     "render": function ( ) {
+                                               return '<input type="checkbox" value="" name="tablechoice1" />';}
+                                     },											
+                                  ],
+					
+                    "columns": [
+
+                        { "data": "" },
+                        { "data": "code" },
+                        { "data": "text" }
+                    ],
+                    "order": [[1, 'asc']],
+				 
+                });
+
+			};
+			
+			document.getElementById("btn-search").onclick = function () {
+				alert( selectRows() );	
+				add_parameter( art.dialog.data('aParameter') );
+			};
+			
+			function selectRows (){
+				var sArg = "";
+				var arrArg = new Array();
+				var jsonData = {};
+				var i = 0;
+				$('#tblDict tbody tr').each( function() {
+					var chk=$(this).find('td').eq(0).find('input');
+					if (chk.attr("checked")=="checked"){
+						var arg={};
+						var nTds = $('td', this);
+						arg.sCode = $(nTds[1]).text();
+						arg.sText = $(nTds[2]).text();
+						
+						arrArg[i] = arg;
+						
+						sArg += $(nTds[1]).text() + ",";
+						i++;
+					}
+				} );
+				return sArg;
+			}	
+			
+			// 返回数据给A页面
+			document.getElementById('btn-ok').onclick = function () {
+				var bValue = document.getElementById('bInput').value;
+				art.dialog.data('bValue', bValue);// 存储数据
+				art.dialog.close();
+			};
+			
+			// 刷新A页面
+			document.getElementById('reload').onclick = function () {
+				var win = art.dialog.open.origin;
+				win.location.reload(); // 注意：如果父页面重载或者关闭其子对话框全部会关闭
+				return false;
+			};
+
+			function add_parameter(sParameter){
+				var t = $('#tblDict tbody tr');
+				$('#tblDict tbody tr').each( function() {
+					var this_tr = $(this);    //本行的tr
+					var chk=this_tr.find('td').eq(0).find('input');
+					var nTds = $('td', this);
+					if(sParameter.indexOf($(nTds[1]).text()+',') > 0){
+						chk.attr("checked",true);
+						this_tr.addClass("selected");   
+					}
+				} );
+			}
+
+       </script>
+       
+    </body>
+</html>

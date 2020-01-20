@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Chain Responsive Bootstrap3 Admin</title>
+
+        <link href="../css/style.default.css" rel="stylesheet">
+        <link href="../css/select2.css" rel="stylesheet" />
+        <link href="../css/style.datatables.css" rel="stylesheet">
+        <link href="../css/dataTables.responsive.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="../js/html5shiv.js"></script>
+        <script src="../js/respond.min.js"></script>
+        <![endif]-->
+        
+		<style type="text/css">       
+            .panel-heading {padding: 18px 20px 30px;}
+			.row.row-stat{border-bottom: 1px solid #EEE;margin-bottom: 20px;}
+			.sorting_disabled.details-control{display:none;}
+			.details-control{display:none;}
+        </style>        
+        
+    </head>
+
+    <body>
+        <div class="contentpanel">
+                        
+                        <div class="row row-stat">
+                            <div class="col-md-2">
+                                <div class="panel panel-success-alt noborder">
+                                    <div class="panel-heading noborder">
+                                        <div class="media-body">
+                                            <h5 class="md-title nomargin">&nbsp;</h5>
+                                            <h5 class="mt5">房态盘&nbsp;</h1>
+                                        </div><!-- media-body -->
+                                    </div><!-- panel-body -->
+                                </div><!-- panel -->
+                            </div><!-- col-md-4 -->
+                            
+                            <div class="col-md-2">
+                                <div class="panel panel-primary noborder">
+                                    <div class="panel-heading noborder">
+                                        <div class="media-body">
+                                            <h5 class="md-title nomargin">&nbsp;</h5>
+                                            <h5 class="mt5">客人列表</h1>
+                                        </div><!-- media-body -->
+                                    </div><!-- panel-body -->
+                                </div><!-- panel -->
+                            </div><!-- col-md-4 -->
+                            
+                            <div class="col-md-2">
+                                <div class="panel panel-dark noborder">
+                                    <div class="panel-heading noborder">
+                                        <div class="media-body">
+                                            <h5 class="md-title nomargin">&nbsp;</h5>
+                                            <h5 class="mt5">可用房型</h1>
+                                        </div><!-- media-body -->
+                                       
+                                    </div><!-- panel-body -->
+                                </div><!-- panel -->
+                            </div><!-- col-md-4 -->
+                            
+							<div class="col-md-2">
+                                <div class="panel panel-danger noborder">
+                                    <div class="panel-heading noborder">
+                                        <div class="media-body">
+                                            <h5 class="md-title nomargin">&nbsp;</h5>
+                                            <h5 class="mt5">房价查询</h1>
+                                        </div><!-- media-body -->
+                                    </div><!-- panel-body -->
+                                </div><!-- panel -->
+                            </div><!-- col-md-2 -->                            
+							<div class="col-md-2">
+                                <div class="panel panel-warning noborder">
+                                    <div class="panel-heading noborder">
+                                        <div class="media-body">
+                                            <h5 class="md-title nomargin">&nbsp;</h5>
+                                            <h5 class="mt5">房间搜索</h1>
+                                        </div><!-- media-body -->
+                                    </div><!-- panel-body -->
+                                </div><!-- panel -->
+                          	</div><!-- col-md-2 -->                            
+                            
+	          </div><!-- row -->
+                        
+
+
+                        <div class="row">
+                            <div class="col-md-4">
+                              <h5 class="lg-title mb5">房间汇总及房务状态</h5>
+                              <p class="mb20"><code>长修房(OO)</code>不占开房率 <code>维护房(OS)</code>也是可卖房</p>
+                              <div class="table-responsive">
+                              <table id="rmSummary" class="table table-hover mb30" >
+                                <thead>
+                                  <tr>
+                                    <th></th>
+                                    <th>#</th>
+                                    <th>项目</th>
+                                    <th>房数</th>
+                                  </tr>
+                                </thead>
+                              </table>
+                              </div><!-- table-responsive -->
+                            </div><!-- col-md-4 -->
+
+                            
+                            <div class="col-md-4">
+                                <div class="panel panel-default">
+                                    <div class="panel-body padding15">
+                                        <h5 class="md-title mt0 mb10">当前在住按房型分类</h5>
+                                        <div id="rmTypeSummary" class="flotChart"></div>
+                                    </div><!-- panel-body -->
+                                    <div class="panel-footer">
+                                        <div class="tinystat pull-left">
+                                            <div class="datainfo">
+                                                <span class="text-muted">平均房价</span>
+                                                <h4>281.00</h4>
+                                            </div>
+                                        </div><!-- tinystat -->
+                                        <div class="tinystat pull-right">
+                                            <div id="sparkline6" class="chart mt5"></div>
+                                            <div class="datainfo">
+                                                <span class="text-muted">总开房率</span>
+                                                <h4>88%</h4>
+                                            </div>
+                                        </div><!-- tinystat -->
+                                    </div><!-- panel-footer -->
+                                </div><!-- panel -->
+                            </div><!-- col-md-4 -->
+                            
+
+							<div class="col-md-4">
+                                <div class="panel panel-default">
+                                    <div class="panel-body padding15">
+                                        <h5 class="md-title mt0 mb10">当前在住按市场分类</h5>
+										<div id="marketSummary" class="flotChart"></div>                                        
+                                    </div><!-- panel-body -->
+                                    <div class="panel-footer">
+                                        <div class="tinystat pull-left">
+                                            <div id="sparkline5" class="chart mt5"></div>
+                                            <div class="datainfo">
+                                                <span class="text-muted">平均房价</span>
+                                                <h4>281.00</h4>
+                                            </div>
+                                        </div><!-- tinystat -->
+                                        <div class="tinystat pull-right">
+                                            <div id="sparkline6" class="chart mt5"></div>
+                                            <div class="datainfo">
+                                                <span class="text-muted">总开房率</span>
+                                                <h4>88%</h4>
+                                            </div>
+                                        </div><!-- tinystat -->
+                                    </div><!-- panel-footer -->
+                                </div><!-- panel -->
+                            </div>                            
+                            
+                        </div><!-- row -->
+                        
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="table-responsive">
+                                    <table class="table table-primary mb30">
+                                       <thead>
+                                            <tr>
+                                                <th class="head1">#</th>
+                                                <th width="30%" class="head0">项目(变动情况)</th>
+                                                <th width="10%" class="head1">房数</th>
+                                                <th width="10%" class="head0">人数</th>
+                                                <th class="head1">#</th>
+                                                <th width="30%" class="head0">项目(变动情况)</th>
+                                                <th width="10%" class="head1">房数</th>
+                                                <th width="10%" class="head0">人数</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>预期离店</td>
+                                                <td class="center"><a href="">8</a></td>
+                                                <td class="center">1</td>
+                                                <td>6</td>
+                                                <td>延住</td>
+                                                <td class="center"><a href="">8</a></td>
+                                                <td class="center">6</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>实际离店</td>
+                                                <td class="center"><a href="">8</a></td>
+                                                <td class="center">2</td>
+                                                <td>7</td>
+                                                <td>提前离店</td>
+                                                <td class="center"><a href="">8</a></td>
+                                                <td class="center">7</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>预期到店</td>
+                                                <td class="center"><a href="">8</a></td>
+                                                <td class="center">3</td>
+                                                <td>8</td>
+                                                <td>日用房</td>
+                                                <td class="center"><a href="">8</a></td>
+                                                <td class="center">8</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>预分配房间</td>
+                                                <td class="center"><a href="">8</a></td>
+                                                <td class="center">4</td>
+                                                <td>9</td>
+                                                <td>当日所做预定</td>
+                                                <td class="center"><a href="">8</a></td>
+                                                <td class="center">9</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>实际到店</td>
+                                                <td class="center"><a href="">8</a></td>
+                                                <td class="center">5</td>
+                                                <td>10</td>
+                                                <td>上门客(WALKIN)</td>
+                                                <td class="center"><a href="">8</a></td>
+                                                <td class="center">10</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div><!-- table-responsive -->
+                            </div><!--col-md-8-->
+                            
+                            <div class="col-md-4">
+                                <div class="table-responsive">
+                                    <table class="table table-success mb30">
+                                           <thead>
+                                                <tr>
+                                                    <th class="head1">#</th>
+                                                    <th class="head0">项目(当晚预测)</th>
+                                                    <th class="head1">房数</th>
+                                                    <th class="head0">人数</th>
+                                                    <th class="head1">%</th>
+                                                </tr>
+                                          </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>当晚可用房</td>
+                                                    <td class="center"><a href="">80</a></td>
+                                                    <td class="center">80</td>
+                                                    <td class="center"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>当晚在住</td>
+                                                    <td class="center"><a href="">12</a></td>
+                                                    <td class="center">12</td>
+                                                    <td class="center">12</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>控房</td>
+                                                    <td class="center"><a href="">8</a></td>
+                                                    <td class="center">10</td>
+                                                    <td class="center"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>个人</td>
+                                                    <td class="center"><a href="">10</a></td>
+                                                    <td class="center">10</td>
+                                                    <td class="center"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>团队</td>
+                                                    <td class="center"><a href="">10</a></td>
+                                                    <td class="center">10</td>
+                                                    <td class="center"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>6</td>
+                                                    <td>当前在住</td>
+                                                    <td class="center"><a href="">12</a></td>
+                                                    <td class="center">12</td>
+                                                    <td class="center">12</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>7</td>
+                                                    <td>房费(平均,总)</td>
+                                                    <td class="center">10</td>
+                                                    <td class="center">10</td>
+                                                    <td class="center"></td>
+                                                </tr>
+                                            </tbody>
+                                            </table>
+
+                                </div><!-- table-responsive -->
+                            </div><!-- col-md-4 -->
+                        </div><!-- row -->
+        		</div>
+        <script src="../js/jquery-1.11.1.min.js"></script>
+        <script src="../js/jquery-migrate-1.2.1.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/modernizr.min.js"></script>
+        <script src="../js/pace.min.js"></script>
+        <script src="../js/retina.min.js"></script>
+        <script src="../js/jquery.cookies.js"></script>
+        
+        <script src="../js/flot/jquery.flot.min.js"></script>
+        <script src="../js/flot/jquery.flot.resize.min.js"></script>
+        <script src="../js/flot/jquery.flot.symbol.min.js"></script>
+        <script src="../js/flot/jquery.flot.crosshair.min.js"></script>
+        <script src="../js/flot/jquery.flot.categories.min.js"></script>
+        <script src="../js/flot/jquery.flot.pie.min.js"></script>
+        <script src="../js/morris.min.js"></script>
+        <script src="../js/raphael-2.1.0.min.js"></script>
+        <script src="../js/jquery.sparkline.min.js"></script>
+
+        <script src="../js/jquery.dataTables.min.js"></script>
+        <script src="../js/dataTables.bootstrap.js"></script>
+        <script src="../js/dataTables.responsive.js"></script>
+        <script src="../js/select2.min.js"></script>
+
+        <script src="../js/custom.js"></script>
+
+        <script src="../js/frontoffice/main.js"></script>
+       
+        <script>
+                    
+            jQuery(document).ready(function(){
+
+                	var rmSummary = jQuery('#rmSummary').DataTable({
+                    responsive: true,
+                    "fnDrawCallback": function(oSettings) {
+                        jQuery('#exRowTable_paginate ul').addClass('pagination-active-success');
+                    },
+                    "ajax": "data/rmSummary.txt",
+					
+					//测试
+                    "bLengthChange":false,
+                    "bPaginate":false,
+	            	"bFilter": false,
+					"bSort":false,
+					//
+					
+					"oLanguage": {                          //汉化
+						"sInfo": ""
+						},					
+					
+                    "columns": [
+                        {
+							"class":          'details-control',
+                            "orderable":      false,
+                            "data":           null,
+                            "defaultContent": ''
+                        },
+                        { "data": "id" },
+                        { "data": "item" },
+                        { "data": "rooms" }
+                    ],
+                    "order": [[1, 'asc']] 
+                });
+
+				var jsonstr;
+				jQuery.ajax( {  
+					  type : 'GET',  
+					  url : 'data/rmtypesummary.txt',  
+					  data : jsonstr,
+					  dataType : 'text',  
+					  success : function(data) {  
+							addRmTypeSummary(data);
+					  },  
+					  error : function(data) {  
+						    alert("json RmTypeSummary error");
+					  }  
+				  }); 								
+
+				jQuery.ajax( {  
+					  type : 'GET',  
+					  url : 'data/marketsummary.txt',  
+					  data : jsonstr,
+					  dataType : 'text',  
+					  success : function(data) {  
+							addMarketSummary(data);
+					  },  
+					  error : function(data) {  
+						    alert("json RmTypeSummary error");
+					  }  
+				  }); 								
+
+          });
+
+
+        </script>      
+       
+        
+    </body>
+</html>

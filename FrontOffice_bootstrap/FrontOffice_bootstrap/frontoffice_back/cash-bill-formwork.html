@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>账单</title>
+
+        <link href="../css/style.default.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+        <![endif]-->
+        <style>
+			.table-invoice-bill {
+				-moz-box-shadow: none;
+				-webkit-box-shadow: none;
+				box-shadow: none;
+				border-bottom: 1px solid #ddd;
+				margin-top: 20px;
+			}
+			
+			.table-invoice-bill thead > tr > th {
+				font-weight: 500;
+				padding: 10px;
+			}
+			
+			.table-invoice-bill thead > tr > th:last-child,
+			.table-invoice-bill thead > tr > th:nth-child(4),
+			.table-invoice-bill thead > tr > th:nth-child(3) {
+				text-align: right;
+			}
+			
+			.table-invoice-bill tbody > tr > td {
+				padding: 2px;
+				border-color: #ddd;
+			}
+			
+			.table-invoice-bill tbody > tr > td:last-child,
+			.table-invoice-bill tbody > tr > td:nth-child(4) {
+				width: 15%;
+				text-align: right;
+			}
+
+			.table-invoice-bill tbody > tr > td:nth-child(1) {
+				width: 15%;
+			}
+			.table-invoice-bill tbody > tr > td:nth-child(3) {
+				width: 5%;
+				text-align: right;
+			}
+			
+			.table-invoice-bill tbody > tr > td h5,
+			.table-invoice-bill tbody > tr > td p {
+				margin: 0;
+			}
+			
+			body {
+				font-size: 10px;
+				color: #636E7B;
+			}
+			
+			.table-total > tbody > tr > td:last-child {
+				border-bottom: 1px solid #DDD;
+				width: 15%;
+				text-align: right;
+				font-size: 11px;
+				font-weight: 500;
+				color: #333;
+			}
+        </style>
+    </head>
+
+    <body>
+        
+		<div class="contentpanel" style="padding:0px;">
+                        
+            <div class="panel panel-default" style=" padding:0px;">
+                <div id="formwork" class="panel-body" style=" padding:10px">
+                   
+                    
+                </div><!-- panel-body -->
+            </div><!-- panel -->  
+                    
+       </div><!-- contentpanel -->        
+
+        <script src="../js/jquery-1.11.1.min.js"></script>
+        <script src="../js/jquery-migrate-1.2.1.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/modernizr.min.js"></script>
+        <script src="../js/pace.min.js"></script>
+        <script src="../js/retina.min.js"></script>
+        <script src="../js/jquery.cookies.js"></script>
+
+        <script src="../js/jquery.dataTables.min.js"></script>
+        <script src="../js/dataTables.bootstrap.js"></script>
+        <script src="../js/dataTables.responsive.js"></script>
+        <script src="../js/select2.min.js"></script>
+        
+        <script src="../js/custom.js"></script>
+        
+        
+        
+        <script src="../js/frontoffice/cash-bill-formwork.js"></script>        
+        <script>
+		$(document).ready(function () { 
+		
+			iReload();
+		
+//			retrieve_edit();
+//			retrieve_gledger();
+			
+		});	
+		
+		</script>
+
+    </body>
+</html>

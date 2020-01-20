@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Chain Responsive Bootstrap3 Admin</title>
+
+        <link href="../../css/style.default.css" rel="stylesheet">
+        <link href="../../css/select2.css" rel="stylesheet" />
+        <link href="../../css/style.datatables.css" rel="stylesheet">
+        <link href="../../css/dataTables.responsive.css" rel="stylesheet">
+
+        <link href="../../css/jquery.tagsinput.css" rel="stylesheet" />
+        <link href="../../css/toggles.css" rel="stylesheet" />
+        <link href="../../css/bootstrap-timepicker.min.css" rel="stylesheet" />
+        <link href="../../css/select2.css" rel="stylesheet" />
+        <link href="../../css/colorpicker.css" rel="stylesheet" />
+        <link href="../../css/dropzone.css" rel="stylesheet" />
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+        <![endif]-->
+        
+        <link href="../../css/artDialog.default.css" rel="stylesheet">
+        <link href="../../css/artDialog/skins/default.css" rel="stylesheet">
+        <link href="../../css/frontoffice/datatable.css" rel="stylesheet">
+          
+		<style type="text/css">  
+            .panel-body { padding: 10px; }
+            .panel-footer { padding: 10px; }
+            .contentpanel {  padding: 10px 10px;}
+            .form-group {margin-bottom:4px;}
+            .panel-heading {padding: 8px;}				
+			.panel-title {
+				font-size: 14px;
+			}
+            .btn-group { margin-bottom: 0px;}
+			.panel-group .panel-heading {
+ 			   padding: 8px;
+			}
+			.panel-group .panel-heading .panel-title {
+				font-size: 14px;
+			}			
+			.form-control {
+				padding: 6px;
+			}								
+			hr{margin-top: 10px;margin-bottom: 10px;}
+			.right-1px{
+				padding-right: 1px;
+			}
+			.left-1px{
+				padding-left: 1px;
+			}			
+			.leftright-1px{
+				padding-right: 1px;
+				padding-left: 1px;
+			}
+			.btn {
+				border-radius: 3px;
+				line-height: 21px;
+				transition: all 0.2s ease-out 0s;
+				padding: 4px 15px;
+				border-width: 0px;
+			}
+			
+        </style>  
+    </head>
+<body>
+	<div class="contentpanel contentpanel-mediamanager">
+        <div class="media-options">
+            <div class="pull-left">
+                <div class="btn-toolbar">
+                    <div class="btn-group">
+                         <button class="btn btn-default btn-sm enabled" type="button"> 上翻</button>
+                         <button class="btn btn-default btn-sm enabled" type="button"> 下翻</button>
+                    </div>                        
+                    <div class="btn-group">
+                        <button class="btn btn-default btn-sm enabled"><i class="fa fa-envelope mr5"></i> 复制</button>
+                        <button class="btn btn-default btn-sm enabled"><i class="fa fa-download mr5"></i> 小组</button>
+                        <button class="btn btn-default btn-sm enabled"><i class="fa fa-download mr5"></i> 小组排房</button>
+                    </div> 
+                    <div class="btn-group">                       
+                        <button class="btn btn-default btn-sm enabled"><i class="fa fa-download mr5"></i> 钥匙</button>
+                        <button id="btn-ledger" class="btn btn-default btn-sm enabled"><i class="fa fa-download mr5"></i> 客人帐</button>
+                    </div> 
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default btn-sm enabled"> 其它选项</button>
+                        <button type="button" class="btn btn-default btn-sm enabled dropdown-toggle" data-toggle="dropdown">
+                          <span class="caret"></span>
+                          <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu pull-right" role="menu">
+                          <li><a href="#">Action</a></li>
+                          <li><a href="#">Another action</a></li>
+                          <li><a href="#">Something else here</a></li>
+                          <li class="divider"></li>
+                          <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </div><!-- btn-group -->
+                    <div class="btn-group">
+                         <button class="btn btn-primary btn-sm enabled" type="button"> 确认保存</button>
+                         <button class="btn btn-default btn-sm enabled" type="button"> 取消</button>
+                    </div>                            
+                </div><!-- btn-toolbar -->
+            </div>
+            <div class="pull-right">
+                状态: 
+                <div class="btn-group media-option-group" data-toggle="buttons">
+                    <label class="btn btn-default btn-sm active">
+                      <input type="radio" name="options" id="opAll" checked> 预定
+                    </label>
+                    <label class="btn btn-default btn-sm">
+                      <input type="radio" name="options" id="opDoc"> 在住
+                    </label>
+                    <label class="btn btn-default btn-sm">
+                      <input type="radio" name="options" id="opImg"> 离店
+                    </label>
+                </div><!-- btn-group -->
+            </div>
+        </div><!-- media-options -->
+        <hr>
+
+		<div class="panel panel-default">
+        
+        <form id="frm_profile">
+            <div class="panel-heading">
+                 <h4 class="panel-title">客人档案</h4>
+            </div>
+            <div class="panel-body">
+            
+                <div class="col-md-3"> 
+        	         <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-3 left-1px right-1px "><strong>姓名<strong></label>
+                            <div class="col-sm-9">
+                                <input type="text" name="name" class="form-control" />
+                            </div>
+                        </div><!-- form-group --> 
+                     </div><!-- row -->
+        	         <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-3 left-1px right-1px">别名</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="name" class="form-control" />
+                            </div>
+                        </div><!-- form-group --> 
+                     </div><!-- row -->
+        	         <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-3 left-1px right-1px">性别</label>
+                            <div class="col-sm-4">
+                                <input type="text" name="name" class="form-control" />
+                            </div>
+                            <div class="col-sm-5 left-1px">
+                                <input type="text" name="name" class="form-control" placeholder="民族"/>
+                            </div>
+                        </div><!-- form-group --> 
+                     </div><!-- row -->
+
+				                    
+                </div>
+                <div class="col-md-4"> 
+        	         <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-3 left-1px right-1px">证件类别</label>
+                            <div class="col-sm-6">
+                                <input type="text" name="name" class="form-control" />
+                            </div>
+                        </div><!-- form-group --> 
+                     </div><!-- row -->
+        	         <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-3 left-1px right-1px">证件号</label>
+                            <div class="col-sm-8">
+                                <input type="text" name="name" class="form-control" />
+                            </div>
+                        </div><!-- form-group --> 
+                     </div><!-- row -->
+        	         <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-3 left-1px right-1px">地址</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="name" class="form-control" />
+                            </div>
+                        </div><!-- form-group --> 
+                     </div><!-- row -->
+                    
+                </div>
+                <div class="col-md-2"> 
+        	         <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-3 left-1px right-1px">语种</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="name" class="form-control" />
+                            </div>
+                        </div><!-- form-group --> 
+                     </div><!-- row -->
+        	         <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-3 left-1px right-1px">国家</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="name" class="form-control" />
+                            </div>
+                        </div><!-- form-group --> 
+                     </div><!-- row -->
+        	         <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-3 left-1px right-1px">VIP</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="name" class="form-control" />
+                            </div>
+                        </div><!-- form-group --> 
+                     </div><!-- row -->
+                    
+                </div>
+                <div class="col-md-3"> 
+        	         <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-3 left-1px right-1px">电话</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="name" class="form-control" />
+                            </div>
+                        </div><!-- form-group --> 
+                     </div><!-- row -->
+        	         <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-3 left-1px right-1px">生日</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="name" class="form-control" />
+                            </div>
+                        </div><!-- form-group --> 
+                     </div><!-- row -->
+        	         <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-3 left-1px right-1px">会员卡号</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="name" class="form-control" />
+                            </div>
+                        </div><!-- form-group --> 
+                     </div><!-- row -->
+                    
+                </div>
+          
+            </div><!-- panel-body -->
+          </form>
+		</div><!--panel-->
+
+            <div class="row">
+            <form id="frm_guest">
+                <div class="col-md-4"> 
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">入住信息</h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label"><strong>抵店<strong></label>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="yyyy/mm/dd" name="arr_d">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                        </div><!-- input-group -->
+                                    </div>
+                                </div><!-- form-group --> 
+                            </div><!-- row -->
+
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label"><strong>间夜<strong></label>
+                                    <div class="col-sm-3">
+                                        <input type="text" name="nights" class="form-control" />
+                                    </div>
+                                </div><!-- form-group --> 
+                            </div><!-- row -->
+                            
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label"><strong>离店<strong></label>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="yyyy/mm/dd" name="exp_dep_d">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                        </div><!-- input-group -->
+                                    </div>
+                                </div><!-- form-group --> 
+                            </div><!-- row -->
+                            
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label"><strong>房数<strong></label>
+                                    <div class="col-sm-3">
+                                        <input type="text" name="rooms" class="form-control" />
+                                    </div>
+                                </div><!-- form-group --> 
+                            </div><!-- row -->
+                            
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label"><strong>费率代码<strong></label>
+                                    <div class="col-sm-5">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="rcode" />
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default" onclick="rcode_search()">选</button>
+                                            </span>
+                                        </div><!--input-group -->                                    
+                                    </div>
+                                </div><!-- form-group --> 
+                            </div><!-- row -->
+
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label"><strong>费率<strong></label>
+                                    <div class="col-sm-7">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="rate" />
+	                                 		<span class="input-group-addon"><input type="checkbox" /> 自调整 </span> 
+                                       
+                                        </div><!-- input-group -->                                
+                                    </div>
+                                </div><!-- form-group -->
+                                 
+                            </div><!-- row -->
+
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label"><strong>房型<strong></label>
+                                    <div class="col-sm-5">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="rmtype" />
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default"  onclick="rmtype_available()">选</button>
+                                            </span>
+                                        </div><!--input-group -->                                    
+                                    </div>
+                                </div><!-- form-group --> 
+                            </div><!-- row -->
+                      
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label"><strong>房号<strong></label>
+                                    <div class="col-sm-5">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="room"/>
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default"  onclick="rooms_serach()">选</button>
+                                            </span>
+                                        </div><!--input-group -->                                    
+                                    </div>
+                                </div><!-- form-group --> 
+                            </div><!-- row -->
+                            
+                            <hr>
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">包费</label>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name ="package"/>
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default">选</button>
+                                            </span>
+                                        </div><!--input-group -->                                    
+                                    </div>
+                                </div><!-- form-group --> 
+                            </div><!-- row -->
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">抵离时间</label>
+                                    <div class="col-sm-4 right-1px">
+										<div class="input-group">
+                                            <div class="bootstrap-timepicker"><input id="timepicker" type="text" class="form-control" name ="arr_t"/></div>
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                                        </div><!-- input-group -->                                        
+                                    </div>
+                                    <div class="col-sm-4 left-1px">
+										<div class="input-group">
+                                            <div class="bootstrap-timepicker"><input id="timepicker" type="text" class="form-control" name="exp_dep_t"/></div>
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                                        </div><!-- input-group -->                                        
+                                    </div>
+                                </div><!-- form-group --> 
+                            </div><!-- row -->
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">人数</label>
+                                    <div class="col-sm-4 right-1px">
+                                        <input type="text" name="adults" placeholder="成人" class="form-control" />
+                                    </div>
+                                    <div class="col-sm-4 left-1px">
+                                        <input type="text" name="child" placeholder="儿童" class="form-control" />
+                                    </div>
+                                </div><!-- form-group --> 
+                            </div><!-- row -->
+                            <hr>
+                            <div class="row form-inline">
+	                            <h5 class="lg-title mb5">创建:<code>20150406 17:00</code>操作:<code>L01</code>入住:<code>L01</code>离店:<code>L01</code></h5>
+							</div>
+
+                        </div><!-- panel-body -->
+                    </div><!-- panel -->
+                    
+                </div><!-- col-md-6 --> 
+            
+            
+            
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">财务及统计信息</h4>
+                        </div><!-- panel-heading -->
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">预定类型</label>
+                                    <div class="col-sm-5">
+                                       <select name="rev_type" id="select_rev_type" data-placeholder="Choose One" class="form-control">
+                                       </select>
+                                    </div>
+                                </div>
+                            </div><!-- row -->
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">市场</label>
+                                    <div class="col-sm-5">
+                                        <select name="market" id="select_market" data-placeholder="Choose One" class="form-control">
+                                        </select>                                
+                                    </div>
+                                </div>
+                            </div><!-- row -->
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">来源</label>
+                                    <div class="col-sm-5">
+                                        <select name="source" id="select_source" data-placeholder="Choose One" class="form-control">
+                                        </select>                                
+                                    </div>
+                                </div>
+                            </div><!-- row -->
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label"><strong>付款方式</strong></label>
+                                    <div class="col-sm-6">
+                                        <select name="payment" id="select_payment" data-placeholder="Choose One" class="form-control">
+                                        </select>                                
+                                    </div>
+                                </div><!-- form-group --> 
+                            </div><!-- row -->
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">账(票)号</label>
+                                    <div class="col-sm-7">
+                                        <div class="input-group">
+                                            <input name="cc_no" type="text" class="form-control" />
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default">选</button>
+                                            </span>
+                                        </div><!--input-group -->                                    
+                                    </div>
+                                </div><!-- form-group --> 
+                            </div><!-- row -->
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label"><strong>消费限额<strong></label>
+                                    <div class="col-sm-5">
+                                        <div class="input-group">
+                                            <input name="limit" type="text" class="form-control" />
+                                        </div><!-- input-group -->                                
+                                    </div>
+                                </div><!-- form-group -->
+                                 
+                            </div><!-- row -->
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">公司</label>
+                                    <div class="col-sm-8">
+                                        <div class="input-group">
+                                            <input name="company" type="text" class="form-control" />
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default">选</button>
+                                            </span>
+                                        </div><!--input-group -->                                    
+                                    </div>
+                                </div><!-- form-group --> 
+                            </div><!-- row -->
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">销售员</label>
+                                    <div class="col-sm-5">
+                                        <div class="input-group">
+                                            <input name="sales" type="text" class="form-control" />
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default">选</button>
+                                            </span>
+                                        </div><!--input-group -->                                    
+                                    </div>
+                                </div><!-- form-group --> 
+                            </div><!-- row -->
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">结账提示</label>
+                                    <div class = "col-sm-9" >
+                                    	<textarea name="co_mess" class="form-control" rows="2" ></textarea>
+                                    </div>
+                                </div><!-- form-group --> 
+                            </div><!-- row -->
+                            <hr>
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">选房特征</label>
+                                    <div class="col-sm-7">
+                                        <div class="input-group">
+                                            <input name="comp_features" type="text" class="form-control" onkeyup="this.value=this.value.toUpperCase()"/>
+                                            <span class="input-group-btn">
+                                                <button onclick="select('comp_features')" type="button" class="btn btn-default">选</button>
+                                            </span>
+                                        </div><!--input-group -->                                    
+                                    </div>
+                                </div><!-- form-group --> 
+                            </div><!-- row -->
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">特殊要求</label>
+                                    <div class="col-sm-7">
+                                        <div class="input-group">
+                                            <input name="special" type="text" class="form-control" onkeyup="this.value=this.value.toUpperCase()" />
+                                            <span class="input-group-btn">
+                                                <button onclick="select('special')" type="button" class="btn btn-default">选</button>
+                                            </span>
+                                        </div><!--input-group -->                                    
+                                    </div>
+                                </div><!-- form-group --> 
+                            </div><!-- row -->
+                            
+                        </div><!-- panel-body -->
+                    </div><!-- panel -->
+                    
+                </div><!-- col-md-6 -->
+                
+                <div class="col-md-4"> 
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">订房信息</h4>
+                        </div>
+                        <div class="panel-body">
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <input type="text" name="str4" placeholder="订房人" class="form-control" />
+                                    </div>
+                                    <div class="form-group col-md-4 leftright-1px">
+                                        <input type="text" name="str7" placeholder="电话" class="form-control" />
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <input type="email" name="str6" placeholder="Email" class="form-control" />
+                                    </div>
+                                </div><!-- row -->
+                                
+                                <textarea name="remark" class="form-control form-group" rows="2" placeholder="备注"></textarea>
+                                
+                        </div><!-- panel-body -->
+                    </div><!-- panel -->
+                        <div class="panel-group" id="accordion">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                            陪同
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse in">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="form-group col-md-4">
+                                                <input type="text" name="acc_name1" placeholder="姓名" class="form-control" />
+                                            </div>
+                                            <div class="form-group col-md-2 leftright-1px">
+                                                <input type="email" name="acc_sex1" placeholder="性别" class="form-control" />
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <input type="url" name="acc_idcard1" placeholder="证件号" class="form-control" />
+                                            </div>
+                                        </div><!-- row -->
+                                        <div class="row">
+                                            <div class="form-group col-md-4">
+                                                <input type="text" name="acc_name2" placeholder="姓名" class="form-control" />
+                                            </div>
+                                            <div class="form-group col-md-2 leftright-1px">
+                                                <input type="email" name="acc_sex2" placeholder="性别" class="form-control" />
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <input type="url" name="acc_idcard2" placeholder="证件号" class="form-control" />
+                                            </div>
+                                        </div><!-- row -->
+                                    </div>
+                                </div>
+                            </div><!-- panel -->
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseTwo">
+                                            同住客人
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseTwo" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <div class="input-group">
+                                            <div class="ckbox ckbox-default">
+                                                <input type="checkbox" value="1" id="checkboxDefault" />
+                                                <label for="checkboxDefault">PX假房</label>
+                                            </div>
+                                         </div><!-- input-group -->
+                                    </div>
+                                </div>
+                            </div><!-- panel -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseThree">
+                                            小组成员
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseThree" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <div class="input-group">
+                                            <div class="ckbox ckbox-default">
+                                                <input type="checkbox" value="1" id="checkboxDefault" />
+                                                <label for="checkboxDefault">PX假房</label>
+                                            </div>
+                                         </div><!-- input-group -->
+                                    </div>
+                                </div>
+                            </div><!-- panel -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseFour">
+                                            团队
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseFour" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <div class="input-group">
+                                            <div class="ckbox ckbox-default">
+                                                <input type="checkbox" value="1" id="checkboxDefault" />
+                                                <label for="checkboxDefault">PX假房</label>
+                                            </div>
+                                         </div><!-- input-group -->
+                                    </div>
+                                </div>
+                            </div><!-- panel -->
+                            
+                        </div><!-- panel-group -->
+                    
+                </div><!-- col-md-4 --> 
+                </form>
+            </div> <!--row-->             
+        
+			<label id="Parameter" style="display:none;">{"action":"修改","gno":"39239"}</label>
+</div><!--contentpanel-->
+   
+<script src="../../js/jquery-1.11.1.min.js"></script>
+<script src="../../js/jquery-migrate-1.2.1.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+
+<script src="../../js/jquery.dataTables.min.js"></script>
+<script src="../../js/dataTables.bootstrap.js"></script>
+<script src="../../js/dataTables.responsive.js"></script>
+
+<script src="../../js/modernizr.min.js"></script>
+<script src="../../js/pace.min.js"></script>
+<script src="../../js/retina.min.js"></script>
+<script src="../../js/jquery.cookies.js"></script>
+
+
+<script src="../../js/jquery-1.11.1.min.js"></script>
+<script src="../../js/jquery-migrate-1.2.1.min.js"></script>
+<script src="../../js/jquery-ui-1.10.3.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/modernizr.min.js"></script>
+<script src="../../js/pace.min.js"></script>
+<script src="../../js/retina.min.js"></script>
+<script src="../../js/jquery.cookies.js"></script>
+
+<script src="../../js/jquery.autogrow-textarea.js"></script>
+<script src="../../js/jquery.mousewheel.js"></script>
+<script src="../../js/jquery.tagsinput.min.js"></script>
+<script src="../../js/toggles.min.js"></script>
+<script src="../../js/bootstrap-timepicker.min.js"></script>
+<script src="../../js/jquery.maskedinput.min.js"></script>
+<script src="../../js/select2.min.js"></script>
+<script src="../../js/colorpicker.js"></script>
+<script src="../../js/dropzone.min.js"></script>
+
+<script src="../../js/custom.js"></script>
+
+
+<script src="../../js/frontoffice/cookies.js"></script>
+<script src="../../js/frontoffice/rooms-view.js"></script>
+<script src="../../js/frontoffice/jquery.contextmenu.r2.js"></script>        
+
+
+<script src="../../js/frontoffice/artDialog.source.js?skin=default" type="text/javascript"></script>
+<script src="../../js/frontoffice/iframeTools.source.js" type="text/javascript"></script>        
+
+<script src="../../js/frontoffice/reservation.js"></script>
+
+        <script>
+            jQuery(document).ready(function() {
+                
+				open();
+				
+                // Tags Input
+                jQuery('#tags').tagsInput({width:'auto'});
+                 
+                // Textarea Autogrow
+                jQuery('#autoResizeTA').autogrow();
+                
+                // Spinner
+                var spinner = jQuery('#spinner').spinner();
+                spinner.spinner('value', 0);
+                
+                // Form Toggles
+                jQuery('.toggle').toggles({on: true});
+                
+                // Time Picker
+                jQuery('#timepicker').timepicker({defaultTIme: false});
+                jQuery('#timepicker2').timepicker({showMeridian: false});
+                jQuery('#timepicker3').timepicker({minuteStep: 15});
+                
+                // Date Picker
+                jQuery('#arr_d').datepicker();
+                jQuery('#exp_dep_d').datepicker();
+                jQuery('#datepicker-multiple').datepicker({
+                    numberOfMonths: 3,
+                    showButtonPanel: true
+                });
+                
+                // Input Masks
+                jQuery("#date").mask("99/99/9999");
+                jQuery("#phone").mask("(999) 999-9999");
+                jQuery("#ssn").mask("999-99-9999");
+                
+                // Select2
+//                jQuery("#select_market, #select_source").select2();
+//                jQuery('#select_rev_type, #select_payment').select2({
+//                    minimumResultsForSearch: -1
+//                });
+                
+                function format(item) {
+                    return '<i class="fa ' + ((item.element[0].getAttribute('rel') === undefined)?"":item.element[0].getAttribute('rel') ) + ' mr10"></i>' + item.text;
+                }
+                
+                // This will empty first option in select to enable placeholder
+                jQuery('select option:first-child').text('');
+                
+                jQuery("#select-templating").select2({
+                    formatResult: format,
+                    formatSelection: format,
+                    escapeMarkup: function(m) { return m; }
+                });
+                
+                // Color Picker
+                if(jQuery('#colorpicker').length > 0) {
+                    jQuery('#colorSelector').ColorPicker({
+			onShow: function (colpkr) {
+			    jQuery(colpkr).fadeIn(500);
+                            return false;
+			},
+			onHide: function (colpkr) {
+                            jQuery(colpkr).fadeOut(500);
+                            return false;
+			},
+			onChange: function (hsb, hex, rgb) {
+			    jQuery('#colorSelector span').css('backgroundColor', '#' + hex);
+			    jQuery('#colorpicker').val('#'+hex);
+			}
+                    });
+                }
+  
+                // Color Picker Flat Mode
+                jQuery('#colorpickerholder').ColorPicker({
+                    flat: true,
+                    onChange: function (hsb, hex, rgb) {
+			jQuery('#colorpicker3').val('#'+hex);
+                    }
+                });
+                
+                
+            });
+			
+		document.getElementById("btn-ledger").onclick = function () {
+//
+//				var cwin = window.parent.document.getElementById("tab_Document5");
+//				window.parent.document.getElementById("tab_Document5").style.height=document.body.scrollHeight;
+//
+//				var cwin = $('#Document5_content Iframe',parent.document);
+//				var h = cwin.Document.body.scrollHeight ;
+//				
+//				cwin.trigger('onload');
+//			$(window.parent.document).find("#tab_Document5").load(function(){
+	
+			//	$(window.parent.document).test();
+				var main = $(window.parent.document).find("#tab_Document5");
+				var thisheight = $(document).height()+20;
+				main.height(thisheight);
+//			});
+
+
+		}			
+			
+			
+        </script>
+
+
+
+</body>
+    
+</html>

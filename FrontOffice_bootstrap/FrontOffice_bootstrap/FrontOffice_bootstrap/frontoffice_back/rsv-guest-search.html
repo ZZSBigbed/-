@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Chain Responsive Bootstrap3 Admin</title>
+
+        <link href="../css/style.default.css" rel="stylesheet">
+        <link href="../css/select2.css" rel="stylesheet" />
+        <link href="../css/style.datatables.css" rel="stylesheet">
+        <link href="../css/dataTables.responsive.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+        <![endif]-->
+        
+        <link href="../css/frontoffice/datatable.css" rel="stylesheet">
+        
+        <link href="../css/Table.css" rel="stylesheet">
+        <link href="../css/Tablepage.css" rel="stylesheet">
+        
+        <style>
+	        .dataTable .selected{ background:rgb(217, 237, 247)  }	
+        </style>
+        
+    </head>
+
+    <body>
+
+		<div class="contentpanel contentpanel-mediamanager">
+        
+           <div class="media-options">
+                <div class="pull-left">
+                    <div class="btn-toolbar">
+                        <div class="btn-group">
+                            <input type="text" class="form-control btn-sm" id="select-room" placeholder="查询内容...">
+                        </div>
+                        <div class="btn-group">
+                            <button id ="btn-search" type="reset" class="btn btn-primary btn-sm"> 查找 </button>
+                            <button id ="btn-retrieve" type="reset" class="btn btn-info btn-sm"> 刷新 </button>                                
+                        </div>                                
+                        <div class="btn-group">
+                            <button class="btn btn-default btn-sm enabled"><i class="fa fa-envelope mr5"></i> 修改</button>
+                            <button class="btn btn-default btn-sm enabled"><i class="fa fa-download mr5"></i> 入住</button>
+                            <button class="btn btn-default btn-sm enabled"><i class="fa fa-download mr5"></i> 换房</button>
+                        </div> 
+                        <div class="btn-group">                       
+                            <button class="btn btn-default btn-sm enabled"><i class="fa fa-download mr5"></i> 账单</button>
+                        </div> 
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default btn-sm enabled"> 改状态</button>
+                            <button type="button" class="btn btn-default btn-sm enabled dropdown-toggle" data-toggle="dropdown">
+                              <span class="caret"></span>
+                              <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <ul class="dropdown-menu pull-right" role="menu">
+                              <li><a href="#">取消预定</a></li>
+                              <li><a href="#">恢复预定</a></li>
+                              <li><a href="#">取消入住</a></li>
+                              <li><a href="#">恢复入住</a></li>
+                            </ul>
+                        </div><!-- btn-group -->
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default btn-sm enabled"> 其它选项</button>
+                            <button type="button" class="btn btn-default btn-sm enabled dropdown-toggle" data-toggle="dropdown">
+                              <span class="caret"></span>
+                              <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <ul class="dropdown-menu pull-right" role="menu">
+                              <li><a href="#">Action</a></li>
+                              <li><a href="#">Another action</a></li>
+                              <li><a href="#">Something else here</a></li>
+                              <li class="divider"></li>
+                              <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </div><!-- btn-group -->
+                     </div><!-- btn-toolbar -->
+                </div>
+                <div class="pull-right">
+                    <div class="btn-group media-option-group" data-toggle="buttons">
+                        <label class="btn btn-default btn-sm active">
+                          <input class="radioItem" type="radio" name="rao_status" id="opAll"  checked="true" value="opAll"> 全部客人
+                        </label>
+                        <label class="btn btn-default btn-sm">
+                          <input class="radioItem" type="radio" name="rao_status" id="opRsv" value="opRsv" > 预定
+                        </label>
+                        <label class="btn btn-default btn-sm">
+                          <input class="radioItem" type="radio" name="rao_status" id="opArr" value="opArr"> 抵店
+                        </label>
+                        <label class="btn btn-default btn-sm">
+                          <input class="radioItem" type="radio" name="rao_status" id="opIn" value="opIn"> 在住
+                        </label>
+                        <label class="btn btn-default btn-sm">
+                          <input class="radioItem" type="radio" name="rao_status" id="opLedger" value="opLedger"> 客人帐
+                        </label>
+                    </div><!-- btn-group -->
+              </div>
+            </div><!-- media-options -->
+            <hr>
+      
+                <div class="table-responsive">
+                    <table id="tblList" class="table table-primary responsive mb30 table-huasheng" >
+                        <thead>
+                            <tr>
+                                <th ><input type="checkbox" id="chkAll" value="" /></th>
+                                <th>状态</th>
+                                <th><code>提示</code><span style=" color:#0F0">VIP</span><span style="color:#03F">结账</span></th>
+                                <th>姓名</th>
+                                <th>房号</th>
+                                <th>房型</th>
+                                <th>抵店</th>
+                                <th>离店</th>
+                                <th>#</th>
+                                <th>房态</th>
+                                <th>房价</th>
+                                <th>包价</th>
+                                <th>预授权</th>
+                                <th>余额</th>
+                                <th>特殊要求</th>
+                                <th>小组/团队</th>
+                                <th>GNO</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>                                
+     	      </div>
+   	</div>
+   
+        <script src="../js/jquery-1.11.1.min.js"></script>
+        <script src="../js/jquery-migrate-1.2.1.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        
+        <script src="../js/jquery.dataTables.min.js"></script>
+        <script src="../js/dataTables.bootstrap.js"></script>
+        <script src="../js/dataTables.responsive.js"></script>
+        <script src="../js/select2.min.js"></script>
+        <script src="../js/frontoffice/table-huasheng.js"></script>
+        
+        <script src="../js/frontoffice/rsv-guest-search.js"></script>
+   
+	   <script>
+			jQuery(document).ready(function(){
+
+				$(".radioItem").change( function() { 
+					var selectedvalue = $("input[name='rao_status']:checked").val(); 
+					filter_status( selectedvalue ); 
+				});
+
+
+			})	   		
+	
+       </script>
+   
+    </body>
+    
+    
+    
+    
+</html>

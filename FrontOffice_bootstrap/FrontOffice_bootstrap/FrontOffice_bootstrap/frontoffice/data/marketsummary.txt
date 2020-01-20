@@ -1,0 +1,1 @@
+[{"item":"空房","value":"10"},{"item":"散客","value":"20"},{"item":"团队","value":"12"},{"item":"长住房","value":"2"},{"item":"其它","value":"2"}]

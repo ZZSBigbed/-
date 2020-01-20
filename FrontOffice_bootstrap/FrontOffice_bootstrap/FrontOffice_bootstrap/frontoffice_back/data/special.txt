@@ -1,0 +1,2 @@
+﻿{"data":[{"c_sort":1,"text":"请勿打扰","code":"DND"},{"c_sort":2,"text":"鲜花","code":"FL"},{"c_sort":3,"text":"果篮","code":"FR"},{"c_sort":4,"text":"与其他人同楼层","code":"SFW"},{"c_sort":5,"text":"高楼层","code":"HF"},{"c_sort":6,"text":"不吸烟","code":"NS"},{"c_sort":9,"text":"接机服务","code":"PU"}]}
+

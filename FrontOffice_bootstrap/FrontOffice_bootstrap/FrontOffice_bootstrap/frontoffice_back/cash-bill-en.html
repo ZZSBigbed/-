@@ -1,0 +1,89 @@
+<table style="width:100%;">
+    <tbody>
+        <tr>
+            <td style="width:50%">
+                <img src="images/themeforest.png" class="img-responsive mb10" alt="" />
+                <p><strong>Name: </strong> <span class="fill" id="gname_fname"></span></p>
+                <p><strong>Room: </strong> <span class="fill" id="room"></span></p>
+                <address>
+                    <strong>Company/Party/Group: </strong><br>
+                    <span class="fill" id="company"></span><br>
+                    <span class="fill" id="party_s"></span><br>
+                    <span class="fill" id="group"></span><br>
+                </address>
+            </td>
+            <td style="width:50%">
+               <div class="text-right" >
+                    <h5 class="subtitle mb10">Invoice No.</h5>
+                    <h5 class="text-primary fill" id="gno"></h5>
+                    <p><strong>Arrival: </strong><span class="fill" id="arr_d"></span></p> 
+                    <p><strong>Departure: </strong><span class="fill" id="exp_dep_d"></span></p>
+
+                    <address>
+                        <strong>Operator:</strong><br>
+                        <span class="fill" id="userid"></span><span class="fill" id="username"></span><br>
+                        Print by:<span class="fill" id="printtime"><br>
+                    </address>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>                    
+
+<div class="table-responsive" style=" padding-top:1px; padding-bottom:1px;">
+
+ <table id="tblDetail" class="table mb30 table-invoice-bill">
+    <thead>
+      <tr>
+        <th>DateTime</th>
+        <th>Item</th>
+        <th>#</th>
+        <th>Debit</th>
+        <th>Credit</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+ <table id="tblTotal" class="table mb30 table-invoice-bill">
+    <tbody>
+    </tbody>
+</table>
+<div class="text-right" >
+    <p><strong>Balance:</strong><span class="fill" id="balance">0.00</span></p>
+</div>
+
+</div><!-- table-responsive -->
+<table style="width:100%;">
+    <tbody>
+        <tr>
+            <td style="width:50%;font-size:9px">
+                <address>
+                     I AGREE THAT MY LIABILITY FOR THIS BILL IS NOT WAIVED AND<br>
+                     AGREE TO BE HELD PERSONALLY LIABLE IN THE EVENT THAT<br>
+                     THE INDICATED PERSON,COMPANY,OR ASSOCIATION FAILS TO<br>
+                     PAY FOR ANY PART OR THE FULL AMOUNT OF THESE CHARGES.
+                </address>
+                <address>
+                     Add：Slaburg,Shuangtai Town,Gaizhou,Yingkou City,Liaoning Prov,China<br>
+                     Telephone：0417-6688888  Fax：0417-6688999 
+                </address>
+            </td>
+            <td style="width:50%">
+                <table class="table table-total">
+                      <tbody>
+                         <tr>
+                            <td>Debit Total:</td>
+                            <td class="fill" id="total_debit"></td>
+                        </tr>
+                    </tbody>
+                </table> 
+                
+                <address class="text-right">
+                     -----------------------<br>
+                     Signature<br>
+                </address>
+            </td>
+        </tr>
+    </tbody>
+</table> 
