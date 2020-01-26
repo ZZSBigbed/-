@@ -31,7 +31,9 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+AUTHENTICATION_BACKENDS = (
+    'users.views.CustomBackend',
+)
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
@@ -45,7 +47,8 @@ INSTALLED_APPS = (
     'operation',
     'xadmin',
     'crispy_forms',
-    'django.conf'
+    'django.conf',
+    'captcha'
 )
 AUTH_USER_MODEL = "users.UserProfile"
 
@@ -133,3 +136,16 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR,'static'),
+)
+
+EMAIL_HOST = "smtp.sina.cn"
+EMAIL_PORT = 25
+EMAIL_HOST_USER = "18636780390@sina.cn"
+EMAIL_HOST_PASSWORD = "d01aee6e954f371e"
+EMAIL_HOST_TLS = False
+EMAIL_FROM = "18636780390@sina.cn"
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

@@ -230,7 +230,7 @@ class BaseAdminObject(object):
 
 class BaseAdminPlugin(BaseAdminObject):
 
-    def __init__(self, admin_view):
+    def __init__(self, admin_view: object) -> object:
         self.admin_view = admin_view
         self.admin_site = admin_view.admin_site
 
