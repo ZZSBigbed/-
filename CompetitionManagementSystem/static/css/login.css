@@ -47,8 +47,8 @@ a:hover{
 
 
 .login-box{
-    width:853px;
-    margin:150px auto;
+    width:24%;
+    margin:50px auto;
 }
 .hd-login{
     position:relative;
@@ -145,7 +145,6 @@ a:hover{
 
 .form-box{
     position:relative;
-    width:290px;
     height: 472px;
     padding:0 40px;
     background:#fff;
