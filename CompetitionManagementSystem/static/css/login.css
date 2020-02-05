@@ -332,7 +332,7 @@ a:hover{
     background:#5dbf45;
 }
 .form-p{
-    position:absolute;
+    /*position:absolute;*/
     left:40px;
     bottom:25px;
 }

@@ -123,7 +123,7 @@ html { overflow-y: scroll; }
     margin-left: -30px;
 }
 
-.form-box {
+.form-box {,
     position: relative;
     height: auto;
     padding: 0 40px;
