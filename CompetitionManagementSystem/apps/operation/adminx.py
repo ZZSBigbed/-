@@ -4,7 +4,7 @@ __date__ = '2020/1/20 15:32'
 
 import xadmin
 
-from .models import CompetitionComments, UserFavorate, UserMessage, UserCompetition, UserTeam
+from .models import CompetitionComments, UserFavorite, UserMessage, UserCompetition, UserTeam
 
 
 class CompetitionCommentsAdmin(object):
@@ -13,10 +13,10 @@ class CompetitionCommentsAdmin(object):
     list_filter = ["user", "competition", "comments", "add_time"]
 
 
-class UserFavorateAdmin(object):
-    list_display = ["user", "competition", "add_time"]
-    search_fields = ["user", "competition"]
-    list_filter = ["user", "competition", "add_time"]
+class UserFavoriteAdmin(object):
+    list_display = ["user", "fav_id", "add_time"]
+    search_fields = ["user", "fav_id"]
+    list_filter = ["user", "fav_id", "add_time"]
 
 
 class UserMessageAdmin(object):
@@ -38,7 +38,7 @@ class UserTeamAdmin(object):
 
 
 xadmin.site.register(CompetitionComments, CompetitionCommentsAdmin)
-xadmin.site.register(UserFavorate, UserFavorateAdmin)
+xadmin.site.register(UserFavorite, UserFavoriteAdmin)
 xadmin.site.register(UserMessage, UserMessageAdmin)
 xadmin.site.register(UserCompetition, UserCompetitionAdmin)
 xadmin.site.register(UserTeam, UserTeamAdmin)

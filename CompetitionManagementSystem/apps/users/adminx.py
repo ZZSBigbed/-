@@ -18,6 +18,7 @@ class GlobalSettings(object):
     site_footer = "科创竞赛管理系统"
     menu_style = "accordion"
 
+
 class EmailVerifyRecordAdmin(object):
     list_display = ["code", "email", "send_type", "send_time"]
     search_fields = ["code", "email", "send_type"]

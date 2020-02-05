@@ -21,9 +21,9 @@ class CompetitionComments(models.Model):
         verbose_name_plural = verbose_name
 
 
-class UserFavorate(models.Model):
+class UserFavorite(models.Model):
     user = models.ForeignKey(UserProfile, verbose_name=u"用户", on_delete=models.CASCADE)
-    competition = models.ForeignKey(Competition, verbose_name=u"竞赛", on_delete=models.CASCADE)
+    fav_id = models.IntegerField(default=0, verbose_name=u"数据id")
     add_time = models.DateTimeField(default=datetime.now, verbose_name=u"添加时间")
 
     class Meta:
