@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}竞赛详情-科创竞赛管理系统{% endblock %}
+{% block custom_bread %}
+    <section>
+        <div class="wp">
+            <div class="crumbs">
+                <ul>
+                    <li><a href="{% url 'index' %}">首页</a>></li>
+                    <li><a href="{% url 'competitions:competition_list' %}">竞赛列表</a>></li>
+                    <li>竞赛详情</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block content %}
+    <section>
+        <div class="wp">
+            <div class="groupPurchase_detail detail">
+                <div class="toppro">
+                    <div class="left">
+                        <div class="des">
+                            <h1 title="{{ competition.name }}">{{ competition.name }}</h1>
+                            <span class="key">{{ competition.desc }}</span>
+                            <div class="prize">
+                                <span class="fl">等级：<i class="key">{{ competition.get_level_display }}</i></span>
+                                <span class="f">点击量：{{ competition.click_nums }}</span>
+                                <span class="fr">参加人数：{{ competition.students }}</span>
+                            </div>
+                            <ul class="parameter">
+                                <li><span class="pram word3">开始时间：</span><span>{{ competition.start_date }}</span></li>
+                                <li><span class="pram word3">结束时间：</span><span>{{ competition.end_date }}</span></li>
+                                <li><span class="pram word3">竞赛类别：</span><span
+                                        title="">{{ competition.category }}</span></li>
+                            </ul>
+                            <div class="btns">
+                                <div class="btn colectgroupbtn" id="jsLeftBtn">
+                                    {% if has_fav_competition %}已{% endif %}收藏
+                                </div>
+                                <div class="buy btn"><a style="color: white" href="">报名参加</a></div>
+                            </div>
+                        </div>
+                        <div class="group-share-box">
+                            <div class="bdsharebuttonbox"
+                                 data-text="django开始了"
+                                 data-desc="我在#慕课网#发现了"
+                                 data-comment=""
+                                 data-url="/group/groupdetail/15/">
+                                <span class="fl">分享到：</span>
+                                <a href="#" class="bds_more" data-cmd="more"></a>
+                                <a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a>
+                                <a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a>
+                                <a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a>
+                                <a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a>
+                                <a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="head">相关竞赛推荐</div>
+                        <div class="group_recommend">
+                            {% for relate_competition in relate_competitions %}
+                                <dl>
+                                    <dd>
+                                        <a target="_blank"
+                                           href="{% url 'competitions:competition_detail' relate_competition.id %}">
+                                            <h2>{{ relate_competition.name }}</h2></a>
+                                        <span class="fl">参加人数：<i
+                                                class="key">{{ relate_competition.students }}</i></span>
+                                    </dd>
+                                </dl>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right layout">
+            <div class="head">资料下载</div>
+                    <ul class="downlist">
+                        {% for competition_resource in competition_resources %}
+                        <li>
+                            <span><i class="aui-iconfont aui-icon-file"></i>{{ competition_resource.name }}</span>
+                            <a href="{{ MEDIA_URL }}{{ competition_resource.download }}" class="downcode" target="_blank"
+                               download="" data-id="274" title="">下载</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="wp">
+            <div class="list groupPurchase_detail_pro">
+                <div class="left layout">
+                    <div class="head">
+                        <ul class="tab_header">
+                            <li class="active">课程详情</li>
+                        </ul>
+                    </div>
+                    <div class="tab_cont tab_cont1">
+                        {{ competition.detail }}
+                    </div>
+                    <div class="tab_cont tab_cont2">
+                        <div class="comment">
+                            <div class="comenlist">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block custom_js %}
+    <script type="text/javascript">
+        //收藏分享
+        function add_fav(current_elem, fav_id) {
+            $.ajax({
+                cache: false,
+                type: "POST",
+                url: "{% url 'competitions:add_fav' %}",
+                data: {'fav_id': fav_id},
+                async: true,
+                beforeSend: function (xhr, settings) {
+                    xhr.setRequestHeader("X-CSRFToken", "{{ csrf_token }}");
+                },
+                success: function (data) {
+                    if (data.status === 'fail') {
+                        if (data.msg === '用户未登录') {
+                            window.location.href = "{% url 'login' %}";
+                        } else {
+                            alert(data.msg)
+                        }
+
+                    } else if (data.status === 'success') {
+                        current_elem.text(data.msg)
+                    }
+                },
+            });
+        }
+
+        $('#jsLeftBtn').on('click', function () {
+            add_fav($(this), {{ competition.id }});
+        });
+    </script>
+{% endblock %}

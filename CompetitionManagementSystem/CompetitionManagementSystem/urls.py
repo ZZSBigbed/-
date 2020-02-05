@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.views.generic import TemplateView
+from django.views.static import serve
 import xadmin
 
 from users.views import LoginView, RegisterView, ActiveUserView, ForgetPwdView, ResetView, ModifyPwdView
-from teams.views import TeamView
+from .settings import MEDIA_ROOT
 
 
 urlpatterns = [
@@ -31,7 +32,8 @@ urlpatterns = [
     url(r'^forget/$', ForgetPwdView.as_view(), name="forget_pwd"),
     url(r'^reset/(?P<active_code>.*)/$', ResetView.as_view(), name="reset_pwd"),
     url(r'^modify_pwd/$', ModifyPwdView.as_view(), name="modify_pwd"),
-
-
-    url(r'^team_list/$', TeamView.as_view(), name="team_list")
+    url(r'^team/', include(('teams.urls', 'teams'), namespace='teams')),
+    url(r'^media/(?P<path>.*)$', serve, {"document_root":MEDIA_ROOT}),
+    #竞赛相关urls
+    url(r'^competition/', include(('competitions.urls', 'competitions'), namespace='competitions'))
 ]
