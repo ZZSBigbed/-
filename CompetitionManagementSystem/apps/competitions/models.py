@@ -31,7 +31,7 @@ class Competition(models.Model):
 class CompetitionResource(models.Model):
     competition = models.ForeignKey(Competition, verbose_name=u"竞赛", on_delete=models.CASCADE)
     name = models.CharField(max_length=100, verbose_name=u"名称")
-    download = models.FileField(upload_to="competitions/resource/%Y/%m", verbose_name=u"文件", max_length=100)
+    download = models.FileField(upload_to="media/competitions/resource/%Y/%m", verbose_name=u"文件", max_length=100)
     add_time = models.DateTimeField(default=datetime.now, verbose_name=u"添加时间")
 
     class Meta:

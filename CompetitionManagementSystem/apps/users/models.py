@@ -12,7 +12,7 @@ class UserProfile(AbstractUser):
     gender = models.CharField(max_length=6, choices=(("male",u"男"),("female",u"女")), default="female", verbose_name=u"性别")
     address = models.CharField(max_length=100, default=u"", verbose_name=u"地址")
     mobile = models.CharField(max_length=11, default=u"", verbose_name=u"移动电话")
-    image = models.ImageField(upload_to="image/%Y/%m", default=u"image/default.png", max_length=100, verbose_name=u"头像")
+    image = models.ImageField(upload_to="media/image/%Y/%m", default=u"media/image/default.png", max_length=100, verbose_name=u"头像")
     stu_class = models.CharField(max_length=10, default=u"", null=True, blank=True, verbose_name=u"班级")
     stu_major = models.CharField(max_length=20, default=u"", null=True, blank=True, verbose_name=u"专业")
     teacher_title = models.CharField(max_length=10, default=u"", null=True, blank=True, verbose_name=u"职称")
@@ -41,7 +41,7 @@ class EmailVerifyRecord(models.Model):
 
 class Banner(models.Model):
     title = models.CharField(max_length=100, verbose_name=u"标题")
-    image = models.ImageField(upload_to="banner/%Y/%m", verbose_name=u"轮播图", max_length=100)
+    image = models.ImageField(upload_to="media/banner/%Y/%m", verbose_name=u"轮播图", max_length=100)
     url = models.URLField(max_length=200, verbose_name=u"访问地址")
     index = models.IntegerField(default=100, verbose_name=u"顺序")
     add_time = models.DateTimeField(default=datetime.now, verbose_name=u"添加时间")

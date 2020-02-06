@@ -25,7 +25,7 @@ class Migration(migrations.Migration):
                 ('end_date', models.DateField(verbose_name='结束日期')),
                 ('students', models.IntegerField(default=0, verbose_name='参加人数')),
                 ('fav_nums', models.IntegerField(default=0, verbose_name='收藏人数')),
-                ('image', models.ImageField(upload_to='competitions/%Y/%m', verbose_name='封面图')),
+                ('image', models.ImageField(upload_to='media/competitions/%Y/%m', verbose_name='封面图')),
                 ('click_nums', models.IntegerField(default=0, verbose_name='点击数')),
                 ('add_time', models.DateTimeField(default=datetime.datetime.now, verbose_name='添加时间')),
             ],
@@ -39,7 +39,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=100, verbose_name='名称')),
-                ('download', models.FileField(upload_to='competitions/resource/%Y/%m', verbose_name='文件')),
+                ('download', models.FileField(upload_to='media/competitions/resource/%Y/%m', verbose_name='文件')),
                 ('add_time', models.DateTimeField(default=datetime.datetime.now, verbose_name='添加时间')),
                 ('competition', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='competitions.Competition', verbose_name='竞赛')),
             ],

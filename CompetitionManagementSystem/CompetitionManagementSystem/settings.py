@@ -48,7 +48,8 @@ INSTALLED_APPS = (
     'xadmin',
     'crispy_forms',
     'django.conf',
-    'captcha'
+    'captcha',
+    'pure_pagination'
 )
 AUTH_USER_MODEL = "users.UserProfile"
 
@@ -77,6 +78,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media'
             ],
         },
     },

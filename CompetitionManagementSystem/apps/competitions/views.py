@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic.base import View
 from pure_pagination import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponse
+from django.db.models import Q
 
 from operation.models import UserFavorite
 
@@ -15,6 +16,11 @@ class CompetitionListView(View):
     def get(self, request):
         all_competitions = Competition.objects.all().order_by("-add_time")
         hot_competitions = Competition.objects.all().order_by("-click_nums")[:3]
+        #课程搜索
+        search_keywords = request.GET.get('keywords', "")
+        if search_keywords:
+            all_competitions = all_competitions.filter(Q(name__icontains=search_keywords)|Q(desc__icontains=search_keywords)|Q(detail__icontains=search_keywords))
+
         sort = request.GET.get('sort', "")
         if sort:
             if sort == "students":
