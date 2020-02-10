@@ -1,0 +1,68 @@
+.form-box{
+        position: relative;
+    /* height: 472px; */
+    padding: 0 40px;
+    background: #fff;
+    color: #666;
+        margin-top: 20px;
+
+}
+.form-box .tab h2{
+    float:left;
+     width:100%;
+    height:53px;
+    line-height:53px;
+    cursor: pointer;
+    font-weight:normal;
+    text-align:center;
+        margin-top: 5px;
+}
+.form-group label {
+    float: left;
+     width: 25%;
+    height: 20px;
+    line-height: 20px;
+    margin-top: 9px;
+    border-right: 1px solid #eaeaea;
+    text-align: center;
+}
+.form-group > input {
+    float: left;
+    width: 70%;
+    line-height: 24px;
+    padding: 7px 10px;
+    border: 0;
+}
+.form-group > select {
+    float: left;
+    width: 70%;
+    line-height: 24px;
+    padding: 7px 10px;
+    border: 0;
+}
+#id_captcha_1{
+        float: left;
+    width: 40%;
+    line-height: 24px;
+    padding: 7px 10px;
+    border: 0;
+}
+
+.index_font {
+    float: right;
+    height: 20px;
+    line-height: 20px;
+    /* margin-top: 48px; */
+    padding-left: 20px;
+    color: #fff;
+    background: url(../images/homepage.png) no-repeat 0 top;
+}
+.c-box{
+    height:100%;
+}
+section{
+    height: 100%;
+}
+body,html{
+    height: 100%;
+}
