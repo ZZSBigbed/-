@@ -2,8 +2,10 @@
 {% load static %}
 {% block title %}竞赛详情-科创竞赛管理系统{% endblock %}
 {% block custom_bread %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/competition.css' %}">
+     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
     <section>
-        <div class="wp">
+        <div class="col-md-8 wp">
             <div class="crumbs">
                 <ul>
                     <li><a href="{% url 'index' %}">首页</a>></li>
@@ -42,21 +44,7 @@
                                 <div class="buy btn"><a style="color: white" href="">报名参加</a></div>
                             </div>
                         </div>
-                        <div class="group-share-box">
-                            <div class="bdsharebuttonbox"
-                                 data-text="django开始了"
-                                 data-desc="我在#慕课网#发现了"
-                                 data-comment=""
-                                 data-url="/group/groupdetail/15/">
-                                <span class="fl">分享到：</span>
-                                <a href="#" class="bds_more" data-cmd="more"></a>
-                                <a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a>
-                                <a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a>
-                                <a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a>
-                                <a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a>
-                                <a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a>
-                            </div>
-                        </div>
+
                     </div>
                     <div class="right">
                         <div class="head">相关竞赛推荐</div>
@@ -77,20 +65,7 @@
                 </div>
             </div>
         </div>
-        <div class="right layout">
-            <div class="head">资料下载</div>
-                    <ul class="downlist">
-                        {% for competition_resource in competition_resources %}
-                        <li>
-                            <span><i class="aui-iconfont aui-icon-file"></i>{{ competition_resource.name }}</span>
-                            <a href="{{ MEDIA_URL }}{{ competition_resource.download }}" class="downcode" target="_blank"
-                               download="" data-id="274" title="">下载</a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-        </div>
+
     </section>
     <section>
         <div class="wp">
@@ -98,7 +73,7 @@
                 <div class="left layout">
                     <div class="head">
                         <ul class="tab_header">
-                            <li class="active">课程详情</li>
+                            <li class="active">竞赛详情</li>
                         </ul>
                     </div>
                     <div class="tab_cont tab_cont1">

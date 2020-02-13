@@ -1,0 +1,75 @@
+.wp {
+    margin: 0 auto;
+    position: relative;
+    clear: both;
+    width: 66%;
+    background-color: #87ceeb3b;
+}
+footer .footer{
+    float: left;
+    width: 100%;
+    height: auto;
+}
+.wp ul {
+    margin-top: 0;
+    margin-bottom: 0px;
+}
+.list .left {
+    /* width: 900px; */
+    width: auto;
+    float: left;
+    width: 100%;
+}
+
+list .tab_cont .group_list .combox .box {
+    width: 96%;
+    /* height: 320px; */
+    margin: 3px;
+    overflow: hidden;
+    width: 96%;
+    height: auto;
+    padding-bottom: 10px;
+}
+.list .group_list .box {
+      width: 100%;
+    margin: auto;
+    overflow: hidden;
+    /*width: 96%;*/
+    height: auto;
+    padding-bottom: 10px;
+}
+.tab_cont {
+    clear: both;
+     width: 100%;
+    padding: 2%;
+    height: auto;
+    overflow: hidden;
+    line-height: 200%;
+}
+.list .group_recommend dl:first-child
+{
+        width: 280px;
+    /* height: 320px; */
+    margin: 3px;
+    overflow: hidden;
+    border: #b5c3c366;
+    border-style: groove;
+    height: 150px;
+}
+.list .group_recommend dl:hover
+{
+        width: 280px;
+    /* height: 320px; */
+    margin: 3px;
+    overflow: hidden;
+    border: rgba(181, 195, 195, 0.64);
+    border-style: groove;
+    height: 150px;
+}
+.list .right {
+    width: 280px;
+    float: right;
+    margin-bottom: 20px;
+    overflow: hidden;
+    width: 100%;
+}
