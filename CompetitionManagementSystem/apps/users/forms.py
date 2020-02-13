@@ -3,6 +3,7 @@ __author__ = 'cody'
 __date__ = '2020/1/21 11:25'
 from django import forms
 from captcha.fields import CaptchaField
+from .models import UserProfile
 
 
 class LoginForm(forms.Form):
@@ -11,6 +12,9 @@ class LoginForm(forms.Form):
 
 
 class RegisterForm(forms.Form):
+    name = forms.CharField(required=True)
+    special_id = forms.CharField(required=True, max_length=9)
+    stu_college_major = forms.CharField(required=True)
     email = forms.EmailField(required=True)
     password = forms.CharField(required=True, min_length=6)
     captcha = CaptchaField(error_messages={"invalid":u"验证码错误"})
@@ -24,3 +28,15 @@ class ForgetForm(forms.Form):
 class ModifyPwdForm(forms.Form):
     password1 = forms.CharField(required=True, min_length=6)
     password2 = forms.CharField(required=True, min_length=6)
+
+
+class UploadImageForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ['image']
+
+
+class UserInfoForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ['username', 'gender', 'birthday', 'address', 'mobile']

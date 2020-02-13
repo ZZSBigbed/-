@@ -13,8 +13,8 @@ class UserProfile(AbstractUser):
     address = models.CharField(max_length=100, default=u"", verbose_name=u"地址")
     mobile = models.CharField(max_length=11, default=u"", verbose_name=u"移动电话")
     image = models.ImageField(upload_to="media/image/%Y/%m", default=u"media/image/default.png", max_length=100, verbose_name=u"头像")
-    stu_class = models.CharField(max_length=10, default=u"", null=True, blank=True, verbose_name=u"班级")
-    stu_major = models.CharField(max_length=20, default=u"", null=True, blank=True, verbose_name=u"专业")
+    special_id = models.CharField(max_length=9, default=u"", verbose_name=u"学号")
+    stu_college_major = models.CharField(max_length=20, default=u"rjxyrjgc",choices=(("rjxyrjgc",u"软件学院 软件工程"),("rjxywlaq",u"软件学院 网络安全"),("gjxxyrjxy",u"国际信息与软件学院"),("wdzxy",u"微电子学院")), null=True, blank=True, verbose_name=u"学院专业")
     teacher_title = models.CharField(max_length=10, default=u"", null=True, blank=True, verbose_name=u"职称")
 
     class Meta:
@@ -28,7 +28,7 @@ class UserProfile(AbstractUser):
 class EmailVerifyRecord(models.Model):
     code = models.CharField(max_length=20, verbose_name=u"验证码")
     email = models.EmailField(max_length=50, verbose_name=u"邮箱")
-    send_type = models.CharField(choices=(("register",u"注册"),("forget",u"找回密码")), max_length=10, verbose_name=u"验证码类型")
+    send_type = models.CharField(choices=(("register",u"注册"),("forget",u"找回密码"),("update_email",u"修改邮箱")), max_length=12, verbose_name=u"验证码类型")
     send_time = models.DateTimeField(default=datetime.now, verbose_name=u"发送时间")
 
     class Meta:

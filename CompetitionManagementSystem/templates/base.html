@@ -40,7 +40,7 @@
                                     </dd>
                                 </dl>
                                 <div class="btn">
-                                    <a class="personcenter fl" href="">进入个人中心</a>
+                                    <a class="personcenter fl" href="{% url 'users:user_info' %}">进入个人中心</a>
                                     <a class="fr" href="">退出</a>
                                 </div>
                             </div>
@@ -63,17 +63,12 @@
                     <a href="{% url 'index' %}"><img class="fl" src="{% static 'images/logo.jpg' %}"/></a>
                     <div class="searchbox fr">
                         <div class="selectContainer fl">
-                            <span class="selectOption" id="jsSelectOption" data-value="course">
+                            <span class="selectOption" id="jsSelectOption" data-value="competition">
                                 竞赛
                             </span>
-                            <ul class="selectMenu" id="jsSelectMenu">
-                                <li data-value="course">竞赛</li>
-                                <li data-value="org">课程机构</li>
-                                <li data-value="teacher">授课老师</li>
-                            </ul>
                         </div>
                         <input id="search_keywords" class="fl" type="text" value="" placeholder="请输入搜索内容"/>
-                        <img class="search_btn fr" id="jsSearchBtn" src="{% static 'images/search_btn.png' %}"/>
+                        <img class="search_btn fr" id="jsSearchBtn" src="{% static 'images/search_btn.png' %} "/>
                     </div>
                 </div>
             </div>

@@ -35,5 +35,7 @@ urlpatterns = [
     url(r'^team/', include(('teams.urls', 'teams'), namespace='teams')),
     url(r'^media/(?P<path>.*)$', serve, {"document_root":MEDIA_ROOT}),
     #竞赛相关urls
-    url(r'^competition/', include(('competitions.urls', 'competitions'), namespace='competitions'))
+    url(r'^competition/', include(('competitions.urls', 'competitions'), namespace='competitions')),
+    # 用户相关urls
+    url(r'^user/', include(('users.urls', 'users'), namespace='users'))
 ]

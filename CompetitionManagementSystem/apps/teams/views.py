@@ -2,6 +2,7 @@
 from django.shortcuts import render
 from django.views import  View
 from pure_pagination import Paginator, EmptyPage, PageNotAnInteger
+from django.db.models import Q
 
 from .models import Team
 # Create your views here.
@@ -12,6 +13,7 @@ class TeamView(View):
     def get(self, request):
         all_teams = Team.objects.all()
         team_nums = all_teams.count()
+
         #分页
         try:
             page = request.GET.get('page', 1)

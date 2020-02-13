@@ -56,7 +56,7 @@ function getCookie(name) {
          }
      }
      return cookieValue;
- };
+ }
 
 //顶部搜索栏搜索方法
 function search_click(){
