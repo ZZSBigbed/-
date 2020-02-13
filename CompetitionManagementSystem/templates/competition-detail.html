@@ -2,10 +2,12 @@
 {% load static %}
 {% block title %}竞赛详情-科创竞赛管理系统{% endblock %}
 {% block custom_bread %}
+
     <link rel="stylesheet" type="text/css" href="{% static 'css/competition.css' %}">
-     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+       <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+
     <section>
-        <div class="col-md-8 wp">
+        <div class="col-md-8 col-md-offset-2 wp">
             <div class="crumbs">
                 <ul>
                     <li><a href="{% url 'index' %}">首页</a>></li>
@@ -19,18 +21,21 @@
 
 {% block content %}
     <section>
-        <div class="wp">
+        <div class="col-md-8 col-md-offset-2 wp">
             <div class="groupPurchase_detail detail">
                 <div class="toppro">
-                    <div class="left">
+                    <div class="leftt">
                         <div class="des">
-                            <h1 title="{{ competition.name }}">{{ competition.name }}</h1>
-                            <span class="key">{{ competition.desc }}</span>
+                            <div class="com-head">
+                                <h1 title="{{ competition.name }}">{{ competition.name }}</h1>
+                                <span class="key">{{ competition.desc }}</span>
+                            </div>
                             <div class="prize">
                                 <span class="fl">等级：<i class="key">{{ competition.get_level_display }}</i></span>
                                 <span class="f">点击量：{{ competition.click_nums }}</span>
                                 <span class="fr">参加人数：{{ competition.students }}</span>
                             </div>
+                        <hr class="com_hr">
                             <ul class="parameter">
                                 <li><span class="pram word3">开始时间：</span><span>{{ competition.start_date }}</span></li>
                                 <li><span class="pram word3">结束时间：</span><span>{{ competition.end_date }}</span></li>
@@ -46,29 +51,14 @@
                         </div>
 
                     </div>
-                    <div class="right">
-                        <div class="head">相关竞赛推荐</div>
-                        <div class="group_recommend">
-                            {% for relate_competition in relate_competitions %}
-                                <dl>
-                                    <dd>
-                                        <a target="_blank"
-                                           href="{% url 'competitions:competition_detail' relate_competition.id %}">
-                                            <h2>{{ relate_competition.name }}</h2></a>
-                                        <span class="fl">参加人数：<i
-                                                class="key">{{ relate_competition.students }}</i></span>
-                                    </dd>
-                                </dl>
-                            {% endfor %}
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
 
     </section>
     <section>
-        <div class="wp">
+        <div class="col-md-8 col-md-offset-2 wp">
             <div class="list groupPurchase_detail_pro">
                 <div class="left layout">
                     <div class="head">
@@ -88,6 +78,31 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+         <div class="col-md-8 col-md-offset-2 wp">
+             <div class="list" style="margin-top:0;">
+                 <div class="right layout">
+                     <div class="head">
+                        <ul class="tab_header">
+                            <li class="active">相关竞赛推荐</li>
+                        </ul>
+                    </div>
+                         <div class="group_recommend">
+                            {% for relate_competition in relate_competitions %}
+                                <dl>
+                                    <dd>
+                                        <a target="_blank"
+                                           href="{% url 'competitions:competition_detail' relate_competition.id %}">
+                                            <h2>{{ relate_competition.name }}</h2></a>
+                                        <span class="fl">参加人数：<i
+                                                class="key">{{ relate_competition.students }}</i></span>
+                                    </dd>
+                                </dl>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
         </div>
     </section>
 {% endblock %}
