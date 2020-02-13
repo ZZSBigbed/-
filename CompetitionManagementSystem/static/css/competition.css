@@ -1,0 +1,183 @@
+.wp {
+    margin: 0 auto;
+    position: relative;
+    clear: both;
+    width: 66%;
+    background-color: #87ceeb3b;
+}
+footer .footer{
+    float: left;
+    width: 100%;
+    height: auto;
+}
+.wp ul {
+    margin-top: 0;
+    margin-bottom: 0px;
+}
+.list .left {
+    /* width: 900px; */
+    width: auto;
+    float: left;
+    width: 100%;
+}
+
+list .tab_cont .group_list .combox .box {
+    width: 96%;
+    /* height: 320px; */
+    margin: 3px;
+    overflow: hidden;
+    width: 96%;
+    height: auto;
+    padding-bottom: 10px;
+}
+.list .group_list .box {
+      width: 100%;
+    margin: auto;
+    overflow: hidden;
+    /*width: 96%;*/
+    height: auto;
+    padding-bottom: 10px;
+}
+.tab_cont {
+    clear: both;
+     width: 100%;
+    padding: 2%;
+    height: auto;
+    overflow: hidden;
+    line-height: 200%;
+}
+.list .group_recommend dl:first-child
+{
+        width: 280px;
+    /* height: 320px; */
+    margin: 3px;
+    overflow: hidden;
+    border: #b5c3c366;
+    border-style: groove;
+    height: 150px;
+}
+.list .group_recommend dl:hover
+{
+        width: 280px;
+    /* height: 320px; */
+    margin: 3px;
+    overflow: hidden;
+    border: rgba(181, 195, 195, 0.64);
+    border-style: groove;
+    height: 150px;
+}
+.list .right {
+    /*width: 280px;*/
+    float: right;
+    margin-bottom: 20px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.groupPurchase_detail .toppro .des {
+    /*width: 480px;*/
+       width: 100%;
+    height: 100%;
+    float: left;
+    line-height: 180%;
+    position: relative;
+    margin: inherit;
+    border-style: groove;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+.leftt {
+    width: 100%;
+    height: 100%;
+    float: left;
+    /*margin-left: 20px;*/
+
+}
+.prize .f{
+
+        margin-left: 10px;
+    line-height: 20px;
+    /* background-color: aqua; */
+    /*width: auwo;*/
+    height: auto;
+    float: left;
+    padding-bottom: 10px;
+}
+
+.groupPurchase_detail .toppro .parameter li {
+    width: 45%;
+    float: left;
+}
+
+.com-head{
+    float: left;
+    width: 60%;
+}
+
+.groupPurchase_detail .toppro .des h1{
+    margin-top: 10px;
+}
+
+
+.groupPurchase_detail .toppro .prize{
+        margin-top: 0px;
+    float: right;
+    width: 30%;
+    height: auto;
+    margin-bottom: 10px;
+    /* height: 20px; */
+
+}
+.prize .fl{
+  width: 100%;
+}
+.groupPurchase_detail .toppro .prize .fr {
+    line-height: 20px;
+}
+
+.com_hr{
+        float: left;
+    width: 65%;
+    margin-top: 15px;
+    /* height: 10px; */
+    border-style: groove;
+}
+
+.groupPurchase_detail .toppro .parameter {
+    padding-bottom: 0px;
+}
+.groupPurchase_detail .toppro .btns {
+        width: 50%;
+        margin: auto;
+        position: initial;
+}
+
+.groupPurchase_detail .toppro .buy{
+    padding: 0;
+    margin: auto;
+}
+
+.groupPurchase_detail .toppro .btn{
+        color: #887a7a;
+    padding-top: 0px;
+    line-height: 40px;
+    margin-top: 0px;
+}
+
+.groupPurchase_detail .toppro .btn:hover{
+        color: #3f3939;
+    padding-top: 0px;
+    line-height: 40px;
+    margin-top: 0px;
+}
+.list {
+    height: auto;
+    margin-top: 20px;
+
+    overflow: hidden;
+    clear: both;
+    position: relative;
+        min-height: 0px;
+    margin-bottom: 20px;
+}
