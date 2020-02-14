@@ -85,6 +85,7 @@ $(function () {
     });
 
     $('#jsResetPwdBtn').click(function () {
+        // alert("lalalalalala");
         $.ajax({
             cache: false,
             type: "POST",
@@ -102,7 +103,7 @@ $(function () {
                         title: '提交成功',
                         h2: '修改密码成功，请重新登录!',
                     });
-                    Dml.fun.winReload();
+                    window.location.href="/login"
                 } else if (data.msg) {
                     Dml.fun.showValidateError($("#pwd"), data.msg);
                     Dml.fun.showValidateError($("#repwd"), data.msg);
