@@ -153,14 +153,14 @@ $(function () {
     $('#jsEditUserBtn').on('click', function () {
         var _self = $(this),
             $jsEditUserForm = $('#jsEditUserForm')
-        verify = verifySubmit(
-            [
-                {id: '#username', tips: Dml.Msg.epNickName, require: true}
-            ]
-        );
-        if (!verify) {
-            return;
-        }
+        // verify = verifySubmit(
+        //     [
+        //         {id: '#nick_name', tips: Dml.Msg.epNickName, require: true}
+        //     ]
+        // );
+        // if (!verify) {
+        //     return;
+        // }
         $.ajax({
             cache: false,
             type: 'post',
@@ -173,14 +173,12 @@ $(function () {
                 _self.attr('disabled', true);
             },
             success: function (data) {
-                if (data.username) {
-                    _showValidateError($('#username'), data.username);
-                } else if (data.birthday) {
-                    _showValidateError($('#birthday'), data.birthday);
+                if (data.nick_name) {
+                    _showValidateError($('#nick_name'), data.nick_name);
+                } else if (data.birday) {
+                    _showValidateError($('#birth_day'), data.birday);
                 } else if (data.address) {
                     _showValidateError($('#address'), data.address);
-                } else if (data.mobile) {
-                    _showValidateError($('#mobile'), data.mobile);
                 } else if (data.status == "failure") {
                     Dml.fun.showTipsDialog({
                         title: '保存失败',

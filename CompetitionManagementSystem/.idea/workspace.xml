@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0ef6b18-f6d3-481f-b62a-9eee29e23425" name="Default Changelist" comment="okk">
-      <change afterPath="$PROJECT_DIR$/media/media/image/2020/02/QQ图片20190710090420.png" afterDir="false" />
+    <list default="true" id="e0ef6b18-f6d3-481f-b62a-9eee29e23425" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/deco-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/deco-user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/usercenter-base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/usercenter-base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/usercenter-info.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/usercenter-info.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +83,16 @@
       <workItem from="1581586078723" duration="144000" />
       <workItem from="1581586239861" duration="5023000" />
       <workItem from="1581594349181" duration="2430000" />
+      <workItem from="1581670607545" duration="2825000" />
     </task>
+    <task id="LOCAL-00001" summary="咦？">
+      <created>1581670687846</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1581670687846</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,6 +138,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="咦？" />
+    <option name="LAST_COMMIT_MESSAGE" value="咦？" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="74" key="#Notifications" timestamp="1581586175164">
@@ -138,42 +150,42 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="74" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1581586161357" />
-    <state x="284" y="9" key="CommitChangelistDialog2" timestamp="1581601871553">
+    <state x="284" y="9" key="CommitChangelistDialog2" timestamp="1581670684191">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="284" y="9" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1581601871553" />
-    <state width="1495" height="221" key="GridCell.Tab.0.bottom" timestamp="1581602112174">
+    <state x="284" y="9" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1581670684191" />
+    <state width="1495" height="293" key="GridCell.Tab.0.bottom" timestamp="1581672589075">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="221" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1581602112174" />
-    <state width="1495" height="221" key="GridCell.Tab.0.center" timestamp="1581602112174">
+    <state width="1495" height="293" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1581672589075" />
+    <state width="1495" height="293" key="GridCell.Tab.0.center" timestamp="1581672589075">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="221" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1581602112174" />
-    <state width="1495" height="221" key="GridCell.Tab.0.left" timestamp="1581602112174">
+    <state width="1495" height="293" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1581672589075" />
+    <state width="1495" height="293" key="GridCell.Tab.0.left" timestamp="1581672589075">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="221" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1581602112174" />
-    <state width="1495" height="221" key="GridCell.Tab.0.right" timestamp="1581602112174">
+    <state width="1495" height="293" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1581672589075" />
+    <state width="1495" height="293" key="GridCell.Tab.0.right" timestamp="1581672589075">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="221" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1581602112174" />
-    <state width="1495" height="221" key="GridCell.Tab.1.bottom" timestamp="1581602112174">
+    <state width="1495" height="293" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1581672589075" />
+    <state width="1495" height="293" key="GridCell.Tab.1.bottom" timestamp="1581672592269">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="221" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1581602112174" />
-    <state width="1495" height="221" key="GridCell.Tab.1.center" timestamp="1581602112174">
+    <state width="1495" height="293" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1581672592269" />
+    <state width="1495" height="293" key="GridCell.Tab.1.center" timestamp="1581672592269">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="221" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1581602112174" />
-    <state width="1495" height="221" key="GridCell.Tab.1.left" timestamp="1581602112174">
+    <state width="1495" height="293" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1581672592269" />
+    <state width="1495" height="293" key="GridCell.Tab.1.left" timestamp="1581672592269">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="221" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1581602112174" />
-    <state width="1495" height="221" key="GridCell.Tab.1.right" timestamp="1581602112174">
+    <state width="1495" height="293" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1581672592269" />
+    <state width="1495" height="293" key="GridCell.Tab.1.right" timestamp="1581672592269">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="221" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1581602112174" />
+    <state width="1495" height="293" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1581672592269" />
     <state x="159" y="65" key="MergeDialog" timestamp="1581596396063">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -190,20 +202,16 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="408" y="240" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1581670638498" />
-    <state x="511" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581596155269">
+    <state x="511" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581670712012">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="511" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1581596155269" />
+    <state x="511" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1581670712012" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/apps/users/views.py</url>
-          <line>150</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Python.DjangoServer">
+        <watch expression="user_info_form.cleaned_data['mobile']" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
