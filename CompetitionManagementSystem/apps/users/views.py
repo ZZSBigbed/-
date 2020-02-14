@@ -10,8 +10,11 @@ from django.http import HttpResponse
 
 from .forms import LoginForm, RegisterForm, ForgetForm, ModifyPwdForm, UploadImageForm, UserInfoForm
 from .models import UserProfile, EmailVerifyRecord
+from operation.models import UserTeam, UserFavorite, UserMessage
+from competitions.models import Competition
 from utils.email_send import send_register_email
 from django.contrib.auth.mixins import LoginRequiredMixin
+from pure_pagination import Paginator, EmptyPage, PageNotAnInteger
 
 
 class CustomBackend(ModelBackend):
@@ -65,6 +68,12 @@ class RegisterView(View):
             user_profile.special_id = special_id
             user_profile.stu_college_major = stu_college_major
             user_profile.save()
+            #写入欢迎注册消息
+            user_message = UserMessage()
+            user_message.user = user_profile.id
+            user_message.message = "欢迎注册科创竞赛管理系统!"
+            user_message.save()
+
             send_register_email(user_name, "register")
             return render(request, "login.html")
         else:
@@ -215,3 +224,41 @@ class UpdateEmailView(LoginRequiredMixin, View):
             return HttpResponse('{"status":"success"}', content_type='application/json')
         else:
             return HttpResponse('{"email":"验证码出错"}', content_type='application/json')
+
+
+class MyCompetitionView(LoginRequiredMixin, View):
+    def get(self, request):
+        user_teams = UserTeam.objects.filter(students=request.user)
+        return render(request, 'usercenter-mycompetition.html', {
+            "user_teams":user_teams
+        })
+
+
+class MyFavView(LoginRequiredMixin, View):
+    def get(self, request):
+        competition_list = []
+        user_favs = UserFavorite.objects.filter(user=request.user)
+        for user_fav in user_favs:
+            competition_id = user_fav.fav_id
+            competition = Competition.objects.get(id=competition_id)
+            competition_list.append(competition)
+        return render(request, 'usercenter-fav.html', {
+            "competition_list":competition_list
+        })
+
+
+class MymessageView(LoginRequiredMixin, View):
+    def get(self, request):
+        all_messages = UserMessage.objects.filter(user=request.user.id)
+        # 分页
+        try:
+            page = request.GET.get('page', 1)
+        except PageNotAnInteger:
+            page = 1
+
+        p = Paginator(all_messages, 5, request=request)
+
+        messages = p.page(page)
+        return render(request, 'usercenter-message.html', {
+            "messages":messages
+        })

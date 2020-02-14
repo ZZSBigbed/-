@@ -32,9 +32,9 @@ class UserCompetitionAdmin(object):
 
 
 class UserTeamAdmin(object):
-    list_display = ["team", "competition", "rank", "leader_stu", "students", "teacher", "add_time"]
-    search_fields = ["team", "competition", "rank", "leader_stu", "students", "teacher"]
-    list_filter = ["team", "competition", "rank", "leader_stu", "students", "teacher", "add_time"]
+    list_display = ["team", "competition", "rank", "teacher", "add_time"]
+    search_fields = ["team", "competition", "rank", "teacher"]
+    list_filter = ["team", "competition", "rank", "teacher", "add_time"]
 
 
 xadmin.site.register(CompetitionComments, CompetitionCommentsAdmin)

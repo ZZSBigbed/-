@@ -56,7 +56,6 @@ class UserTeam(models.Model):
     team = models.ForeignKey(Team, verbose_name=u"团队", on_delete=models.CASCADE)
     competition = models.ForeignKey(Competition, verbose_name=u"竞赛", on_delete=models.CASCADE)
     rank = models.CharField(default="uncertain", choices=(("uncertain", u"未确定"), ("first", u"一等奖"), ("second", u"二等奖"), ("third", u"三等奖")), max_length=10)
-    leader_stu = models.IntegerField(default=0, verbose_name=u"队长")
     students = models.ManyToManyField(UserProfile, verbose_name=u"队员")
     teacher = models.IntegerField(default=0, verbose_name=u"指导教师")
     add_time = models.DateTimeField(default=datetime.now, verbose_name=u"添加时间")

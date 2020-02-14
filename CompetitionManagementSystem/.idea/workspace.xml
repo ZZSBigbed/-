@@ -2,11 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0ef6b18-f6d3-481f-b62a-9eee29e23425" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/usercenter-mycompetition.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/operation/migrations/0004_auto_20200214_1754.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/operation/migrations/0005_remove_userteam_leader_stu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users/migrations/0012_auto_20200214_1754.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/image/2020/02/QQ图片20190924211759_PPUIAH3.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/operation/adminx.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/operation/adminx.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/operation/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/operation/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/usercenter-base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/usercenter-base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/usercenter-fav.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/usercenter-fav.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/usercenter-message.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/usercenter-message.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/usercenter-mycompetition.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/usercenter-mycompetition.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +102,7 @@
       <workItem from="1581586078723" duration="144000" />
       <workItem from="1581586239861" duration="5023000" />
       <workItem from="1581594349181" duration="2430000" />
-      <workItem from="1581670607545" duration="3388000" />
+      <workItem from="1581670607545" duration="10913000" />
     </task>
     <task id="LOCAL-00001" summary="咦？">
       <created>1581670687846</created>
@@ -170,38 +180,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="284" y="9" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1581673495493" />
-    <state width="1495" height="72" key="GridCell.Tab.0.bottom" timestamp="1581674027444">
+    <state width="1495" height="272" key="GridCell.Tab.0.bottom" timestamp="1581681549305">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="72" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1581674027444" />
-    <state width="1495" height="72" key="GridCell.Tab.0.center" timestamp="1581674027443">
+    <state width="1495" height="272" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1581681549305" />
+    <state width="1495" height="272" key="GridCell.Tab.0.center" timestamp="1581681549305">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="72" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1581674027443" />
-    <state width="1495" height="72" key="GridCell.Tab.0.left" timestamp="1581674027443">
+    <state width="1495" height="272" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1581681549305" />
+    <state width="1495" height="272" key="GridCell.Tab.0.left" timestamp="1581681549304">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="72" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1581674027443" />
-    <state width="1495" height="72" key="GridCell.Tab.0.right" timestamp="1581674027443">
+    <state width="1495" height="272" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1581681549304" />
+    <state width="1495" height="272" key="GridCell.Tab.0.right" timestamp="1581681549305">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="72" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1581674027443" />
-    <state width="1495" height="72" key="GridCell.Tab.1.bottom" timestamp="1581674027444">
+    <state width="1495" height="272" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1581681549305" />
+    <state width="1495" height="272" key="GridCell.Tab.1.bottom" timestamp="1581681549305">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="72" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1581674027444" />
-    <state width="1495" height="72" key="GridCell.Tab.1.center" timestamp="1581674027444">
+    <state width="1495" height="272" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1581681549305" />
+    <state width="1495" height="272" key="GridCell.Tab.1.center" timestamp="1581681549305">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="72" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1581674027444" />
-    <state width="1495" height="72" key="GridCell.Tab.1.left" timestamp="1581674027444">
+    <state width="1495" height="272" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1581681549305" />
+    <state width="1495" height="272" key="GridCell.Tab.1.left" timestamp="1581681549305">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="72" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1581674027444" />
-    <state width="1495" height="72" key="GridCell.Tab.1.right" timestamp="1581674027444">
+    <state width="1495" height="272" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1581681549305" />
+    <state width="1495" height="272" key="GridCell.Tab.1.right" timestamp="1581681549305">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="72" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1581674027444" />
+    <state width="1495" height="272" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1581681549305" />
     <state x="159" y="65" key="MergeDialog" timestamp="1581596396063">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -25,7 +25,9 @@
                 <div class="wp">
                     <div class="fl"><p>服务电话：<b>18636780390</b></p></div>
                     <!--登录后跳转-->
-
+                    <a href="{% url 'users:mymessage' %}">
+                        <div class="msg-num"><span id="MsgNum">{{ request.user.unread_nums }}</span></div>
+                    </a>
                     <div class="personal">
                         <dl class="user fr">
                             <dd>{{ user.username }}<img class="down fr"
@@ -78,10 +80,10 @@
         <div class="left">
             <ul>
                 <li class="active2"><a href="{% url 'users:user_info' %}">个人资料</a></li>
-                <li><a href="usercenter-mycompetition.html">我的竞赛</a></li>
-                <li><a href="usercenter-fav-course.html">我的收藏</a></li>
+                <li><a href="{% url 'users:mycompetition' %}">我的竞赛</a></li>
+                <li><a href="{% url 'users:myfav' %}">我的收藏</a></li>
                 <li>
-                    <a href="usercenter-message.html" style="position: relative;">
+                    <a href="{% url 'users:mymessage' %}" style="position: relative;">
                         我的消息
                     </a>
                 </li>
@@ -147,7 +149,7 @@
                 <div class="button">
                     <input id="jsResetPwdBtn" type="button" value="提交"/>
                 </div>
-            {% csrf_token %}
+                {% csrf_token %}
             </form>
         </div>
     </div>
