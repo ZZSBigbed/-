@@ -18,6 +18,7 @@ class Competition(models.Model):
     students = models.IntegerField(default=0, verbose_name=u"参加人数")
     fav_nums = models.IntegerField(default=0, verbose_name=u"收藏人数")
     click_nums = models.IntegerField(default=0, verbose_name=u"点击数")
+    is_banner = models.BooleanField(default=False, verbose_name=u"是否轮播")
     add_time = models.DateTimeField(default=datetime.now, verbose_name=u"添加时间")
 
     class Meta:

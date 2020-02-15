@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e654f886-5e75-4aa9-8020-20395e4f3f94" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/apps/competitions/migrations/0006_competition_is_banner.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/operation/migrations/0006_merge_20200215_1453.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users/migrations/0013_merge_20200215_1453.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/banner/2020/02/57a801860001c34b12000460.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/banner/2020/02/57aa86a0000145c512000460.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/banner/2020/02/banner.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/banner/2020/02/banner_LY5QGae.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/banner/2020/02/banner_fYrz14s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/500.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/CompetitionManagementSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CompetitionManagementSystem.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompetitionManagementSystem/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/CompetitionManagementSystem/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompetitionManagementSystem/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/CompetitionManagementSystem/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/competitions/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/competitions/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/users/migrations/0012_auto_20200214_1809.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users/migrations/0012_auto_20200214_1809.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/team_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/team_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/usercenter-base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/usercenter-base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/usercenter-fav.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/usercenter-fav.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/usercenter-info.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/usercenter-info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/usercenter-message.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/usercenter-message.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/usercenter-mycompetition.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/usercenter-mycompetition.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/usercenter-mycourse.html" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1XnhrSMrvuvW4QViokdiQRmktqc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\文档\GitHub\-\CompetitionManagementSystem\templates" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="CompetitionManagementSystem" type="Python.DjangoServer" factoryName="Django server">
+      <module name="CompetitionManagementSystem" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="CompetitionManagementSystem.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e654f886-5e75-4aa9-8020-20395e4f3f94" name="Default Changelist" comment="" />
+      <created>1581687964755</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581687964755</updated>
+      <workItem from="1581687967423" duration="584000" />
+      <workItem from="1581747020900" duration="6831000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="361" y="74" key="#Notifications" timestamp="1581688008906">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="74" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1581688008906" />
+    <state x="290" y="74" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581688195209">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="290" y="74" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1581688195209" />
+    <state width="1495" height="262" key="GridCell.Tab.0.bottom" timestamp="1581753852234">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1495" height="262" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1581753852234" />
+    <state width="1495" height="262" key="GridCell.Tab.0.center" timestamp="1581753852234">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1495" height="262" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1581753852234" />
+    <state width="1495" height="262" key="GridCell.Tab.0.left" timestamp="1581753852234">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1495" height="262" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1581753852234" />
+    <state width="1495" height="262" key="GridCell.Tab.0.right" timestamp="1581753852234">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1495" height="262" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1581753852234" />
+    <state width="1495" height="262" key="GridCell.Tab.1.bottom" timestamp="1581753852174">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1495" height="262" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1581753852174" />
+    <state width="1495" height="262" key="GridCell.Tab.1.center" timestamp="1581753852174">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1495" height="262" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1581753852174" />
+    <state width="1495" height="262" key="GridCell.Tab.1.left" timestamp="1581753852174">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1495" height="262" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1581753852174" />
+    <state width="1495" height="262" key="GridCell.Tab.1.right" timestamp="1581753852174">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1495" height="262" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1581753852174" />
+    <state x="294" y="57" key="SettingsEditor" timestamp="1581688227299">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="294" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1581688227299" />
+    <state x="408" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1581747023541">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="408" y="240" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1581747023541" />
+    <state x="422" y="167" width="800" height="490" key="find.popup" timestamp="1581752513536">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="422" y="167" width="800" height="490" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1581752513536" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1581688149903">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1581688149903" />
+  </component>
+</project>
