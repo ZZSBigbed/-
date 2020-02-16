@@ -6,11 +6,15 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <title>{% block title %}个人信息- 科创竞赛管理系统{% endblock %}</title>
+   <link rel="stylesheet" type="text/css" href="{% static 'css/usercenter.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'js/plugins/queryCity/css/cityLayout.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/lq.datetimepick.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/usercenter.css' %}">
     {% block custom_css %}{% endblock %}
 
     <script src="{% static 'js/jquery.min.js' %}" type="text/javascript"></script>
@@ -18,46 +22,85 @@
 
 </head>
 <body>
-<section class="headerwrap headerwrap2">
+
+<section class="headerwrap ">
     <header>
-        <div class="header2 header">
-            <div class="top">
-                <div class="wp">
-                    <div class="fl"><p>服务电话：<b>18636780390</b></p></div>
-                    <!--登录后跳转-->
-                    <a href="{% url 'users:mymessage' %}">
-                        <div class="msg-num"><span id="MsgNum">{{ request.user.unread_nums }}</span></div>
-                    </a>
-                    <div class="personal">
-                        <dl class="user fr">
-                            <dd>{{ user.username }}<img class="down fr"
-                                                        src="{% static 'images/top_down.png' %}"/>
-                            </dd>
-                            <dt><img width="20" height="20" src="{{ MEDIA_URL }}{{ request.user.image }}"/></dt>
-                        </dl>
-                        <div class="userdetail">
-                            <dl>
-                                <dt><img width="80" height="80" src="{{ MEDIA_URL }}{{ request.user.image }}"/></dt>
-                                <dd>
-                                    <h2>{{ request.user.username }}</h2>
-                                    <p>{{ request.user.email }}</p>
+        <div class=" header">
+            {% if request.user.is_authenticated %}
+                <div class="top">
+                    <div class="wp">
+                        <div class="fl"><p>服务电话：<b>18636780390</b></p></div>
+                        <!--登录后跳转-->
+
+                        <div class="personal">
+                            <dl class="user fr">
+                                <dd>{{ user.username }}<img class="down fr"
+                                                            src="{% static 'images/top_down.png' %}"/>
                                 </dd>
+                                <dt><img width="20" height="20" src="{{ MEDIA_URL }}{{ request.user.image }}"/></dt>
                             </dl>
-                            <div class="btn">
-                                <a class="personcenter fl" href="{% url 'users:user_info' %}">进入个人中心</a>
-                                <a class="fr" href="">退出</a>
+                            <div class="userdetail">
+                                <dl>
+                                    <dt><img width="80" height="80" src="{{ MEDIA_URL }}{{ request.user.image }}"/></dt>
+                                    <dd>
+                                        <h2>{{ request.user.username }}</h2>
+                                        <p>{{ request.user.email }}</p>
+                                    </dd>
+                                </dl>
+                                <div class="btn">
+                                    <a class="personcenter fl" href="{% url 'users:user_info' %}">进入个人中心</a>
+                                    <a class="fr" href="">退出</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            {% else %}
+                <div class="top">
+                    <div class="wp">
+                        <div class="fl"><p>服务电话：<b>18636780390</b></p></div>
+                        <!--登录后跳转-->
+                        <a href="{% url 'users:mymessage' %}">
+                            <div class="msg-num"> <span id="MsgNum">{{ request.user.unread_nums }}</span></div>
+                        </a>
+                        <a style="color:white" class="fr registerbtn" href="{% url 'register' %}">注册</a>
+                        <a style="color:white" class="fr loginbtn" href="{% url 'login' %}">登录</a>
+                    </div>
+                </div>
+            {% endif %}
 
             <div class="middle">
                 <div class="wp">
-                    <a href="{% url 'index' %}"><img class="fl" src="{% static 'images/logo2.png' %}"/></a>
-                    <h1>科创竞赛管理系统</h1>
+                    <a href="{% url 'index' %}"><img class="fl" src="{% static 'images/logo.jpg' %}"/></a>
+                    <div class="searchbox fr">
+                        <div class="selectContainer fl">
+                            <span class="selectOption" id="jsSelectOption" data-value="competition">
+                                竞赛
+                            </span>
+                        </div>
+                        <input id="search_keywords" class="fl" type="text" value="" placeholder="请输入搜索内容"/>
+                        <img class="search_btn fr" id="jsSearchBtn" src="{% static 'images/search_btn.png' %} "/>
+                    </div>
                 </div>
             </div>
+
+
+            <nav>
+                <div class="nav">
+                    <div class="wp">
+                        <ul>
+                            <li {% if request.path == '/' %}class="active" {% endif %}><a href="{% url 'index' %}">首页</a></li>
+                            <li {% if request.path|slice:'12' == '/competition' %}class="active" {% endif %}>
+                                <a href="{% url 'competitions:competition_list' %}">
+                                    竞赛列表<img class="hot" src="{% static 'images/nav_hot.png' %}">
+                                </a>
+                            </li>
+                            <li {% if request.path|slice:'10' == '/team/list' %}class="active"{% endif %}><a href="{% url 'teams:team_list' %}">团队列表</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
         </div>
     </header>
 </section>
@@ -68,7 +111,7 @@
     <section>
         <div class="wp">
             <ul class="crumbs">
-                <li><a href="{% url 'index' %}">首页</a>></li>
+                <li><a href="{% url 'index' %}">首页！！</a>></li>
                 <li><a href="{% url 'users:user_info' %}">个人中心</a>></li>
                 <li>个人信息</li>
             </ul>
@@ -76,8 +119,8 @@
     </section>
 {% endblock %}
 <section>
-    <div class="wp list personal_list">
-        <div class="left">
+    <div class="userwp list personal_list">
+        <div class="col-lg-2 userleft col-lg-4">
             <ul>
                 <li class="active2"><a href="{% url 'users:user_info' %}">个人资料</a></li>
                 <li><a href="{% url 'users:mycompetition' %}">我的竞赛</a></li>

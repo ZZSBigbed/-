@@ -1,0 +1,102 @@
+.personal_list .left {
+    /* width: auto; */
+    float: left;
+    background: #f8f8f8;
+    border: 1px solid #eaeaea;
+    overflow: hidden;
+}
+.userwp{
+    margin-left: 0px;
+    width: 100%;
+}
+.userleft {
+    /*width: 210px;*/
+    float: left;
+    background: #f8f8f8;
+    border: 1px solid #eaeaea;
+    overflow: hidden;
+}
+.wp {
+    margin: 0 auto;
+    position: relative;
+    clear: both;
+    width: 66%;
+    background-color: #87ceeb3b;
+}
+
+.personal_list .userleft a {
+     width: 90%;
+     margin: 0 5%;
+     height: 100%;
+     display: block;
+     color: #3a3a3a;
+}
+.personal_list .userleft li {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    font-size: 16px;
+    color: #3a3a3a;
+    border-bottom: 1px solid #eaeaea;
+    background: url(../images/arrow.png) no-repeat 95% center;
+}
+
+.personal_list .userleft {
+    /*width: 210px;*/
+    float: left;
+    background: #f8f8f8;
+    border: 1px solid #eaeaea;
+    overflow: hidden;
+}
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 0px;
+}
+.personal_list .userright{
+   padding: 0px;
+    overflow: hidden;
+}
+.personal_des .inforcon {
+    border: 1px solid #eaeaea;
+    height: auto;
+    overflow: hidden;
+     width:100%;
+    border-top: 0;
+}
+.personal_des .inforcon .left {
+    float: left;
+    width: 30%;
+    height: 100%;
+    text-align: center;
+    border: 0;
+    background: none;
+}
+.personal_list .inforcon .right {
+    width: 70%;
+    height: 100%;
+    border-left: 0px solid #eaeaea;
+    font-size: 14px;
+    margin: 0;
+}
+.personal_list .inforcon .right li label {
+     width: auto;
+    height: 50px;
+}
+.personal_list .head h1 {
+    display: inline;
+    color: #717171;
+    font-size: 20px;
+}
+
+.lalala{
+        /* margin: auto; */
+    /* width: auto; */
+    width: 40%;
+    /*background-color: antiquewhite;*/
+    height: 200px;
+    margin-left: 10%;
+}
+
+.personal_list .inforcon .right li div {
+    float: left;
+}
