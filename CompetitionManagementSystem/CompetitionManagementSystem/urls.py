@@ -16,16 +16,18 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.views.generic import TemplateView
 from django.views.static import serve
+from django.conf.urls import handler404, handler500
 import xadmin
 
-from users.views import LoginView, RegisterView, ActiveUserView, ForgetPwdView, ResetView, ModifyPwdView
-from .settings import MEDIA_ROOT
+from users.views import LoginView, RegisterView, ActiveUserView, ForgetPwdView, ResetView, ModifyPwdView, LogoutView, IndexView
+from .settings import MEDIA_ROOT, STATIC_ROOT
 
 
 urlpatterns = [
     url(r'^xadmin/', xadmin.site.urls),
-    url('^$', TemplateView.as_view(template_name='index.html'), name="index"),
+    url('^$', IndexView.as_view(), name="index"),
     url('^login/$', LoginView.as_view(), name="login"),
+    url('^logout/$', LogoutView.as_view(), name="logout"),
     url('^register/$', RegisterView.as_view(), name="register"),
     url(r'^captcha/', include('captcha.urls')),
     url(r'^active/(?P<active_code>.*)/$',ActiveUserView.as_view(), name="user_active"),
@@ -34,8 +36,13 @@ urlpatterns = [
     url(r'^modify_pwd/$', ModifyPwdView.as_view(), name="modify_pwd"),
     url(r'^team/', include(('teams.urls', 'teams'), namespace='teams')),
     url(r'^media/(?P<path>.*)$', serve, {"document_root":MEDIA_ROOT}),
+    url(r'^static/(?P<path>.*)$', serve, {"document_root":STATIC_ROOT}),
     #竞赛相关urls
     url(r'^competition/', include(('competitions.urls', 'competitions'), namespace='competitions')),
     # 用户相关urls
     url(r'^user/', include(('users.urls', 'users'), namespace='users'))
 ]
+
+#全局404页面配置
+handler404 = 'users.views.page_not_found'
+handler500 = 'users.views.page_error'

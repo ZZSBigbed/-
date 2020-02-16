@@ -1,15 +1,16 @@
 # _*_ encoding: utf-8 _*_
 import json
 from django.shortcuts import render
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.backends import ModelBackend
 from django.db.models import Q
 from django.views.generic.base import View
 from django.contrib.auth.hashers import make_password
-from django.http import HttpResponse
+from django.urls import reverse
+from django.http import HttpResponse, HttpResponseRedirect
 
 from .forms import LoginForm, RegisterForm, ForgetForm, ModifyPwdForm, UploadImageForm, UserInfoForm
-from .models import UserProfile, EmailVerifyRecord
+from .models import UserProfile, EmailVerifyRecord, Banner
 from operation.models import UserTeam, UserFavorite, UserMessage
 from competitions.models import Competition
 from utils.email_send import send_register_email
@@ -80,6 +81,15 @@ class RegisterView(View):
             return render(request, "register.html", {"register_form":register_form})
 
 
+class LogoutView(View):
+    """
+    用户登出
+    """
+    def get(self, request):
+        logout(request)
+        return HttpResponseRedirect(reverse("index"))
+
+
 class LoginView(View):
 
     def get(self, request):
@@ -94,7 +104,7 @@ class LoginView(View):
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    return render(request, "index.html")
+                    return HttpResponseRedirect(reverse("index"))
                 else:
                     return render(request, "login.html", {"msg": "用户未激活！"})
             else:
@@ -250,6 +260,10 @@ class MyFavView(LoginRequiredMixin, View):
 class MymessageView(LoginRequiredMixin, View):
     def get(self, request):
         all_messages = UserMessage.objects.filter(user=request.user.id)
+        all_unread_messages = UserMessage.objects.filter(has_read=False, user=request.user.id)
+        for unread_message in all_unread_messages:
+            unread_message.has_read = True
+            unread_message.save()
         # 分页
         try:
             page = request.GET.get('page', 1)
@@ -262,3 +276,23 @@ class MymessageView(LoginRequiredMixin, View):
         return render(request, 'usercenter-message.html', {
             "messages":messages
         })
+
+
+class IndexView(View):
+    def get(self, request):
+        all_banners = Banner.objects.all().order_by('index')
+        competitions = Competition.objects.filter(is_banner=False)[:6]
+        banner_competitions = Competition.objects.filter(is_banner=True)[:3]
+        return render(request, 'index.html', {
+            'all_banners':all_banners,
+            'competitions':competitions,
+            'banner_competitions':banner_competitions,
+        })
+
+
+def page_not_found(request, exception):
+    return render(request, '404.html')
+
+
+def page_error(request):
+    return render(request, '500.html')

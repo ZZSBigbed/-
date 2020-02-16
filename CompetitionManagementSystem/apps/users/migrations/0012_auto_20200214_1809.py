@@ -10,14 +10,4 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AddField(
-            model_name='userprofile',
-            name='score',
-            field=models.IntegerField(default=0, verbose_name='积分'),
-        ),
-        migrations.AlterField(
-            model_name='userprofile',
-            name='stu_college_major',
-            field=models.CharField(blank=True, choices=[('rjxyrjgc', '软件学院 软件工程'), ('rjxywlaq', '软件学院 网络安全'), ('gjxxyrjxy', '国际信息与软件学院'), ('wdzxy', '微电子学院')], default='rjxyrjgc', max_length=20, null=True, verbose_name='学院专业'),
-        ),
     ]
