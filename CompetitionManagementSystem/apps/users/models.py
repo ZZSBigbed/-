@@ -28,6 +28,58 @@ class UserProfile(AbstractUser):
         from operation.models import UserMessage
         return UserMessage.objects.filter(user=self.id, has_read=False).count()
 
+    def get_score(self):
+        from operation.models import UserTeam
+        user_teams = UserTeam.objects.filter(students=self)
+        add_score = 0
+        for user_team in user_teams:
+            if user_team.competition.level == "nation":
+                if user_team.rank == "first":
+                    add_score = 20
+                elif user_team.rank == "second":
+                    add_score = 17
+                elif user_team.rank == "third":
+                    add_score = 14
+                else:
+                    add_score = 0
+            if user_team.competition.level == "province":
+                if user_team.rank == "first":
+                    add_score = 15
+                elif user_team.rank == "second":
+                    add_score = 12
+                elif user_team.rank == "third":
+                    add_score = 9
+                else:
+                    add_score = 0
+            if user_team.competition.level == "city":
+                if user_team.rank == "first":
+                    add_score = 11
+                elif user_team.rank == "second":
+                    add_score = 8
+                elif user_team.rank == "third":
+                    add_score = 5
+                else:
+                    add_score = 0
+            if user_team.competition.level == "school":
+                if user_team.rank == "first":
+                    add_score = 7
+                elif user_team.rank == "second":
+                    add_score = 5
+                elif user_team.rank == "third":
+                    add_score = 3
+                else:
+                    add_score = 0
+            if user_team.competition.level == "college":
+                if user_team.rank == "first":
+                    add_score = 5
+                elif user_team.rank == "second":
+                    add_score = 4
+                elif user_team.rank == "third":
+                    add_score = 3
+                else:
+                    add_score = 0
+            self.score += add_score
+        return self.score
 
 class EmailVerifyRecord(models.Model):
     code = models.CharField(max_length=20, verbose_name=u"验证码")

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}科创竞赛管理系统{% endblock %}
-{% block custom_bread%}{% endblock %}
+{% block custom_bread %}{% endblock %}
 {% block custom_js %}
     <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
 {% endblock %}
@@ -12,12 +12,12 @@
                 <div class="imgslide">
                     <ul class="imgs">
                         {% for banner in all_banners %}
-                        <li>
-                            <a href="{{ banner.url }}">
-                                <img width="1200" height="478"
-                                     src="{{ MEDIA_URL }}{{ banner.image }}"/>
-                            </a>
-                        </li>
+                            <li>
+                                <a href="{{ banner.url }}">
+                                    <img width="1200" height="478"
+                                         src="{{ MEDIA_URL }}{{ banner.image }}"/>
+                                </a>
+                            </li>
                         {% endfor %}
                     </ul>
                 </div>
@@ -66,12 +66,12 @@
                             <div class="imgslide2">
                                 <ul class="imgs">
                                     {% for banner_competition in banner_competitions %}
-                                    <li>
-                                        <a href="{% url 'competitions:competition_detail' banner_competition.id%}">
-                                            <img width="470" height="300"
-                                                 src="/static/media/courses/2016/12/python文件处理.jpg"/>
-                                        </a>
-                                    </li>
+                                        <li>
+                                            <a href="{% url 'competitions:competition_detail' banner_competition.id %}">
+                                                <img width="470" height="300"
+                                                     src="/static/media/courses/2016/12/python文件处理.jpg"/>
+                                            </a>
+                                        </li>
                                     {% endfor %}
                                 </ul>
                             </div>
@@ -79,18 +79,37 @@
                             <div class="unslider-arrow2 next"></div>
                         </div>
                         {% for competition in competitions %}
-                        <div class="module1_{{ forloop.counter|add:2 }} box">
-                            <div class="des">
-                                <a href="{% url 'competitions:competition_detail' competition.id%}">
-                                    <h2 title="django入门">{{  competition.name }}</h2>
-                                </a>
-                                <span class="fl">级别：<i class="key">{{ competition.get_level_display }}</i></span>
-                                <span class="fr">参加人数：{{ competition.students }}&nbsp;&nbsp;</span>
+                            <div class="module1_{{ forloop.counter|add:2 }} box">
+                                <div class="des">
+                                    <a href="{% url 'competitions:competition_detail' competition.id %}">
+                                        <h2 title="django入门">{{ competition.name }}</h2>
+                                    </a>
+                                    <span class="fl">级别：<i class="key">{{ competition.get_level_display }}</i></span>
+                                    <span class="fr">参加人数：{{ competition.students }}&nbsp;&nbsp;</span>
+                                </div>
+                                <div class="bottom">
+                                    <span class="star fr">{{ competition.fav_nums }}</span>
+                                </div>
                             </div>
-                            <div class="bottom">
-                                <span class="star fr">{{ competition.fav_nums }}</span>
-                            </div>
-                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="module">
+            <div class="wp">
+                <h1>排名信息</h1>
+                <div class="module1 eachmod">
+                    <div class="module1_1 left">
+                        <img width="228" height="614" src="/static/images/module1_1.jpg"/>
+                        <p class="fisrt_word">我的积分:<br/>{{ request.user.get_score }}</p>
+                        <a class="more" href="{% url 'competitions:competition_list' %}">查看更多竞赛 ></a>
+                    </div>
+                    <div class="right group_list">
+                        {% for student in top100_students %}
+                            <h1>#{{ forloop.counter }}姓名:{{ student.last_name }}{{ student.first_name }}    积分：{{ student.get_score }}</h1>
                         {% endfor %}
                     </div>
                 </div>

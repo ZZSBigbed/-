@@ -283,10 +283,13 @@ class IndexView(View):
         all_banners = Banner.objects.all().order_by('index')
         competitions = Competition.objects.filter(is_banner=False)[:6]
         banner_competitions = Competition.objects.filter(is_banner=True)[:3]
+        if request.user.is_authenticated:
+            top100_students = UserProfile.objects.filter(stu_college_major=request.user.stu_college_major)[:100]
         return render(request, 'index.html', {
             'all_banners':all_banners,
             'competitions':competitions,
             'banner_competitions':banner_competitions,
+            "top100_students":top100_students
         })
 
 

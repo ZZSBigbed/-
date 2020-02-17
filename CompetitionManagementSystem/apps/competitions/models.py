@@ -3,6 +3,7 @@ from datetime import datetime
 
 from django.db import models
 
+
 # Create your models here.
 
 
@@ -11,7 +12,9 @@ class Competition(models.Model):
     desc = models.CharField(max_length=300, verbose_name=u"竞赛描述")
     category = models.CharField(max_length=20, verbose_name=u"课程类别", default=u"科创竞赛")
     detail = models.TextField(verbose_name=u"竞赛详情")
-    level = models.CharField(choices=(("nation",u"国家级"),("province",u"省级"),("city",u"市级"),("school",u"校级"),("college",u"院级")), max_length=10, verbose_name=u'等級')
+    level = models.CharField(
+        choices=(("nation", u"国家级"), ("province", u"省级"), ("city", u"市级"), ("school", u"校级"), ("college", u"院级")),
+        max_length=10, verbose_name=u'等級')
     tag = models.CharField(default="", verbose_name=u"课程标签", max_length=20)
     start_date = models.DateField(verbose_name=u"开始日期")
     end_date = models.DateField(verbose_name=u"结束日期")

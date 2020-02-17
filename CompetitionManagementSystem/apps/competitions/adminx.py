@@ -6,11 +6,13 @@ import xadmin
 
 from .models import Competition, CompetitionResource
 
+
 class CompetitionAdmin(object):
 
     list_display = ["name", "desc", "detail", "level", "start_date", "end_date", "students", "fav_nums", "click_nums", "add_time"]
     search_fields = ["name", "desc", "detail", "level", "start_date", "end_date"]
     list_filter = ["name", "desc", "detail", "level", "start_date", "end_date","students", "fav_nums", "click_nums", "add_time"]
+
 
 class CompetitionResourceAdmin(object):
 

@@ -25,7 +25,7 @@ sys.path.insert(0, os.path.join(BASE_DIR, 'extra_apps'))
 SECRET_KEY = 's*y6ocy1-5&k34uomgfrfr2arhp9gy&wg3%5x2&90=bb!k=%*_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -49,7 +49,7 @@ INSTALLED_APPS = (
     'crispy_forms',
     'django.conf',
     'captcha',
-    'pure_pagination'
+    'pure_pagination',
 )
 AUTH_USER_MODEL = "users.UserProfile"
 
@@ -138,10 +138,10 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-# STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR,'static'),
-# )
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR,'static'),
+)
 
 EMAIL_HOST = "smtp.sina.cn"
 EMAIL_PORT = 25
