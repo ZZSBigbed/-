@@ -1,20 +1,20 @@
 {% extends 'usercenter-base.html' %}
-{% block title %}我的竞赛-科创竞赛管理系统{% endblock %}
+{% block title %}我的收藏-科创竞赛管理系统{% endblock %}
 
 {% block custom_bread %}
     <section>
-        <div class="wp">
+        <div class="userwp">
             <ul class="crumbs">
                 <li><a href="{% url 'index' %}">首页</a>></li>
                 <li><a href="{% url 'users:user_info' %}">个人中心</a>></li>
-                <li>我的竞赛</li>
+                <li>我的收藏</li>
             </ul>
         </div>
     </section>
 {% endblock %}
 
 {% block right_content %}
-    <div class="right">
+    <div class="userright">
         <div class="personal_des Releasecont">
             <div class="head">
                 <h1>我的收藏</h1>

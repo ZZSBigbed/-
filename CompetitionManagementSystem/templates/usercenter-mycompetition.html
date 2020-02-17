@@ -3,7 +3,7 @@
 
 {% block custom_bread %}
     <section>
-        <div class="wp">
+        <div class="userwp">
             <ul class="crumbs">
                 <li><a href="{% url 'index' %}">首页</a>></li>
                 <li><a href="{% url 'users:user_info' %}">个人中心</a>></li>
@@ -14,7 +14,7 @@
 {% endblock %}
 
 {% block right_content %}
-    <div class="right">
+    <div class="col-lg-10 userright">
         <div class="personal_des Releasecont">
             <div class="head">
                 <h1>我的竞赛</h1>

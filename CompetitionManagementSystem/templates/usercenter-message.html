@@ -3,7 +3,7 @@
 
 {% block custom_bread %}
     <section>
-        <div class="wp">
+        <div class="userwp">
             <ul class="crumbs">
                 <li><a href="{% url 'index' %}">首页</a>></li>
                 <li><a href="{% url 'users:user_info' %}">个人中心</a>></li>
@@ -14,7 +14,7 @@
 {% endblock %}
 
 {% block right_content %}
-    <div class="right">
+    <div class="userright">
         <div class="personal_des Releasecont">
             <div class="head">
                 <h1>我的消息</h1>
@@ -22,13 +22,13 @@
 
         </div>
         <div class="personal_des permessage">
-            <div class="head">
-                <ul class="tab_header messagehead">
-                    <li class="active"><a href="/user/message/">个人消息</a></li>
-                </ul>
-
-
-            </div>
+{#            <div class="head">#}
+{#                <ul class="tab_header messagehead">#}
+{#                    <li class="active"><a href="/user/message/">个人消息</a></li>#}
+{#                </ul>#}
+{##}
+{##}
+{#            </div>#}
             {% for message in messages.object_list %}
                 <div class="messagelist">
 
