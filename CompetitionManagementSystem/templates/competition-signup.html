@@ -4,7 +4,7 @@
 {% block custom_bread %}
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/competition.css' %}">
-       <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
 
     <section>
         <div class="col-md-8 col-md-offset-2 wp">
@@ -12,7 +12,7 @@
                 <ul>
                     <li><a href="{% url 'index' %}">首页</a>></li>
                     <li><a href="{% url 'competitions:competition_list' %}">竞赛列表</a>></li>
-                    <li>竞赛详情</li>
+                    <li>竞赛报名</li>
                 </ul>
             </div>
         </div>
@@ -20,6 +20,45 @@
 {% endblock %}
 
 {% block content %}
+    <section>
+        <div class=" c-box bg-box">
+            <div class="col-lg-4 col-md-4 col-lg-offset-4 col-md-offset-4 login-box clearfix">
+                <div class="hd-login clearfix">
+                    <h1>报名参加 {{ competition.name }}</h1>
+                </div>
+
+                <div class="fl form-box">
+                    <form action="{% url 'competitions:competition_signup' competition.id %}" method="post" autocomplete="off">
+                        <input type='hidden' name='csrfmiddlewaretoken' value='mymQDzHWl2REXIfPMg2mJaLqDfaS1sD5'/>
+                        <div class="form-group marb20  {% if signup_form.errors.name %}errorput {% endif %} ">
+                            <label>队&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</label>
+                            <input name="name" id="name" type="text" placeholder=""
+                                   value="{{ signup_form.name.value }}"/>
+                        </div>
+                        <div class="form-group marb8 {% if signup_form.errors.students %}errorput {% endif %}">
+                            <label>队&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;员</label>
+                            <input name="students" id="students" type="text" placeholder=""
+                                   value="{{ signup_form.students.value }}"/>
+                        </div>
+                        <div class="form-group marb8 {% if signup_form.errors.teacher %}errorput {% endif %}">
+                            <label>指导教师</label>
+                            <input name="teacher" id="teacher" type="text" placeholder=""
+                                   value="{{ signup_form.teacher.value }}"/>
+                        </div>
+                        <div class="error btns login-form-tips" id="jsLoginTips">
+                            {% for key,error in login_form.errors.items %}{{ error }}{% endfor %}{{ msg }}</div>
+                        <div class="auto-box marb38">
+
+                            <a class="fr" href="{% url 'forget_pwd' %}">忘记密码？</a>
+                        </div>
+                        <input class="btn btn-green" id="jsLoginBtn" type="submit" value="立即报名 > "/>
+                        {% csrf_token %}
+                    </form>
+                    <p class="form-p">没有科创竞赛管理系统帐号？<a href="{% url 'register' %}">[立即注册]</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
     <section>
         <div class="col-md-8 col-md-offset-2 wp">
             <div class="groupPurchase_detail detail">
@@ -35,7 +74,7 @@
                                 <span class="f">点击量：{{ competition.click_nums }}</span>
                                 <span class="fr">参加人数：{{ competition.students }}</span>
                             </div>
-                        <hr class="com_hr">
+                            <hr class="com_hr">
                             <ul class="parameter">
                                 <li><span class="pram word3">开始时间：</span><span>{{ competition.start_date }}</span></li>
                                 <li><span class="pram word3">结束时间：</span><span>{{ competition.end_date }}</span></li>
@@ -46,7 +85,7 @@
                                 <div class="btn colectgroupbtn" id="jsLeftBtn">
                                     {% if has_fav_competition %}已{% endif %}收藏
                                 </div>
-                                <div class="buy btn"><a style="color: white" href="{% url 'competitions:competition_signup' competition.id %}">报名参加</a></div>
+                                <div class="buy btn"><a style="color: white" href="">报名参加</a></div>
                             </div>
                         </div>
 
@@ -55,7 +94,6 @@
                 </div>
             </div>
         </div>
-
     </section>
     <section>
         <div class="col-md-8 col-md-offset-2 wp">
@@ -80,31 +118,30 @@
             </div>
         </div>
     </section>
-         <div class="col-md-8 col-md-offset-2 wp">
-             <div class="list" style="margin-top:0;">
-                 <div class="right layout">
-                     <div class="head">
-                        <ul class="tab_header">
-                            <li class="active">相关竞赛推荐</li>
-                        </ul>
-                    </div>
-                         <div class="group_recommend">
-                            {% for relate_competition in relate_competitions %}
-                                <dl>
-                                    <dd>
-                                        <a target="_blank"
-                                           href="{% url 'competitions:competition_detail' relate_competition.id %}">
-                                            <h2>{{ relate_competition.name }}</h2></a>
-                                        <span class="fl">参加人数：<i
-                                                class="key">{{ relate_competition.students }}</i></span>
-                                    </dd>
-                                </dl>
-                            {% endfor %}
-                        </div>
-                    </div>
+    <div class="col-md-8 col-md-offset-2 wp">
+        <div class="list" style="margin-top:0;">
+            <div class="right layout">
+                <div class="head">
+                    <ul class="tab_header">
+                        <li class="active">相关竞赛推荐</li>
+                    </ul>
                 </div>
+                <div class="group_recommend">
+                    {% for relate_competition in relate_competitions %}
+                        <dl>
+                            <dd>
+                                <a target="_blank"
+                                   href="{% url 'competitions:competition_detail' relate_competition.id %}">
+                                    <h2>{{ relate_competition.name }}</h2></a>
+                                <span class="fl">参加人数：<i
+                                        class="key">{{ relate_competition.students }}</i></span>
+                            </dd>
+                        </dl>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
 {% endblock %}
 
 {% block custom_js %}

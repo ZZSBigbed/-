@@ -97,6 +97,7 @@
             </div>
         </div>
     </section>
+    {% if request.user.is_authenticated %}
     <section>
         <div class="module">
             <div class="wp">
@@ -116,6 +117,7 @@
             </div>
         </div>
     </section>
+    {% endif %}
 {% endblock %}
 
 

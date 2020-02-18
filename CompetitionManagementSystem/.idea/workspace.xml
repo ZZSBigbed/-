@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e654f886-5e75-4aa9-8020-20395e4f3f94" name="Default Changelist" comment="首页的退出、以及一些调整，全局404and500页面配置" />
+    <list default="true" id="e654f886-5e75-4aa9-8020-20395e4f3f94" name="Default Changelist" comment="首页的退出、以及一些调整，全局404and500页面配置">
+      <change afterPath="$PROJECT_DIR$/apps/competitions/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/image/2020/02/2019大工软件学院新生群群聊二维码.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/image/2020/02/2019大工软件学院新生群群聊二维码_psCDIXm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/image/2020/02/QQ图片20190710090420_Qb6XAmj.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/image/2020/02/QQ图片20190924211759_4rdONXi.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/image/2020/02/QQ图片20190924211759_RCB5N5f.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/competition-signup.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/signup-success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/competitions/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/competitions/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/competitions/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/competitions/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/competition-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/competition-detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/team_list.html" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,12 +32,20 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
     <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/ZZSBigbed/-.git" />
+      </set>
+    </option>
   </component>
   <component name="ProjectId" id="1XnhrSMrvuvW4QViokdiQRmktqc" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -33,6 +59,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -46,7 +73,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -103,6 +130,7 @@
       <workItem from="1581921442867" duration="8507000" />
       <workItem from="1581938653137" duration="2928000" />
       <workItem from="1581986000712" duration="1154000" />
+      <workItem from="1582013827659" duration="10516000" />
     </task>
     <task id="LOCAL-00001" summary="首页的退出、以及一些调整，全局404and500页面配置">
       <created>1581753979825</created>
@@ -120,7 +148,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="首页的退出、以及一些调整，全局404and500页面配置" />
-    <option name="LAST_COMMIT_MESSAGE" value="首页的退出、以及一些调整，全局404and500页面配置" />
+    <MESSAGE value="。。。" />
+    <option name="LAST_COMMIT_MESSAGE" value="。。。" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="74" key="#Inspections" timestamp="1581939675393">
@@ -135,54 +164,54 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="290" y="74" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1581688195209" />
-    <state x="293" y="9" key="CommitChangelistDialog2" timestamp="1581753976284">
+    <state x="293" y="9" key="CommitChangelistDialog2" timestamp="1581989155365">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="293" y="9" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1581753976284" />
+    <state x="293" y="9" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1581989155365" />
     <state x="147" y="65" width="1242" height="686" key="DiffContextDialog" timestamp="1581939305927">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="147" y="65" width="1242" height="686" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1581939305927" />
-    <state width="1495" height="262" key="GridCell.Tab.0.bottom" timestamp="1581941894559">
+    <state width="1495" height="170" key="GridCell.Tab.0.bottom" timestamp="1582024878246">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="262" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1581941894559" />
-    <state width="1495" height="262" key="GridCell.Tab.0.center" timestamp="1581941894558">
+    <state width="1495" height="170" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1582024878246" />
+    <state width="1495" height="170" key="GridCell.Tab.0.center" timestamp="1582024878246">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="262" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1581941894558" />
-    <state width="1495" height="262" key="GridCell.Tab.0.left" timestamp="1581941894558">
+    <state width="1495" height="170" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1582024878246" />
+    <state width="1495" height="170" key="GridCell.Tab.0.left" timestamp="1582024878246">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="262" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1581941894558" />
-    <state width="1495" height="262" key="GridCell.Tab.0.right" timestamp="1581941894558">
+    <state width="1495" height="170" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1582024878246" />
+    <state width="1495" height="170" key="GridCell.Tab.0.right" timestamp="1582024878246">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="262" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1581941894558" />
-    <state width="1495" height="262" key="GridCell.Tab.1.bottom" timestamp="1581941894493">
+    <state width="1495" height="170" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1582024878246" />
+    <state width="1495" height="170" key="GridCell.Tab.1.bottom" timestamp="1582024878187">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="262" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1581941894493" />
-    <state width="1495" height="262" key="GridCell.Tab.1.center" timestamp="1581941894493">
+    <state width="1495" height="170" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1582024878187" />
+    <state width="1495" height="170" key="GridCell.Tab.1.center" timestamp="1582024878186">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="262" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1581941894493" />
-    <state width="1495" height="262" key="GridCell.Tab.1.left" timestamp="1581941894493">
+    <state width="1495" height="170" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1582024878186" />
+    <state width="1495" height="170" key="GridCell.Tab.1.left" timestamp="1582024878186">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="262" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1581941894493" />
-    <state width="1495" height="262" key="GridCell.Tab.1.right" timestamp="1581941894493">
+    <state width="1495" height="170" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1582024878186" />
+    <state width="1495" height="170" key="GridCell.Tab.1.right" timestamp="1582024878187">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="262" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1581941894493" />
-    <state x="147" y="65" key="MergeDialog" timestamp="1581838117081">
+    <state width="1495" height="170" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1582024878187" />
+    <state x="147" y="65" key="MergeDialog" timestamp="1581988849429">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="147" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1581838117081" />
-    <state x="465" y="129" key="MultipleFileMergeDialog" timestamp="1581838120440">
+    <state x="147" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1581988849429" />
+    <state x="465" y="129" key="MultipleFileMergeDialog" timestamp="1581988849434">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="129" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1581838120440" />
+    <state x="465" y="129" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1581988849434" />
     <state x="497" y="125" key="RollbackChangesDialog" timestamp="1581939313303">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -191,14 +220,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="294" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1581688227299" />
-    <state x="408" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1581938656091">
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1581989171404">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="408" y="240" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1581938656091" />
-    <state x="511" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581837617328">
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1581989171404" />
+    <state x="408" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1582013841699">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="511" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1581837617328" />
+    <state x="408" y="240" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1582013841699" />
+    <state x="511" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582013853972">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="511" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1582013853972" />
     <state x="422" y="167" width="800" height="490" key="find.popup" timestamp="1581935849440">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -207,9 +240,20 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="355" y="277" key="git4idea.ui.GitUnstashDialog/0.0.1536.824@0.0.1536.824" timestamp="1581987292034" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1581942292790">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1582022232513">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1581942292790" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1582022232513" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="django-line">
+          <url>file://$PROJECT_DIR$/templates/login.html</url>
+          <line>35</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
