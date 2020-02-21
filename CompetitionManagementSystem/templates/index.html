@@ -4,51 +4,76 @@
 {% block custom_bread %}{% endblock %}
 {% block custom_js %}
     <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+    <style>
+    body{
+margin:0px;
+padding:0px;
+}
+#main{
+margin-top:20px;
+}
+.bar{
+fill:#c0c7f5;
+stroke-width:1px;
+}
+.bar:hover{
+cursor: pointer;
+}
+.bar-text{
+fill:red;
+text-anchor:middle
+}
+.axis path,.axis line{
+fill: none;
+stroke: black;
+shape-rendering: crispEdges;
+}
+    </style>
 {% endblock %}
 {% block content %}
-    <div class="banner">
-        <div class="wp">
-            <div class="fl">
-                <div class="imgslide">
-                    <ul class="imgs">
-                        {% for banner in all_banners %}
-                            <li>
-                                <a href="{{ banner.url }}">
-                                    <img width="1200" height="478"
-                                         src="{{ MEDIA_URL }}{{ banner.image }}"/>
-                                </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                <div class="unslider-arrow prev"></div>
-                <div class="unslider-arrow next"></div>
-            </div>
-        </div>
-    </div>
+{#    <div class="banner">#}
+{#        <div class="wp">#}
+{#            <div class="fl">#}
+{#                <div class="imgslide">#}
+{#                    <ul class="imgs">#}
+{#                        {% for banner in all_banners %}#}
+{#                            <li>#}
+{#                                <a href="{{ banner.url }}">#}
+{#                                    <img width="1200" height="478"#}
+{#                                         src="{{ MEDIA_URL }}{{ banner.image }}"/>#}
+{#                                </a>#}
+{#                            </li>#}
+{#                        {% endfor %}#}
+{#                    </ul>#}
+{#                </div>#}
+{#                <div class="unslider-arrow prev"></div>#}
+{#                <div class="unslider-arrow next"></div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
     <!--feature start-->
-    <section>
-        <div class="wp">
-            <ul class="feature">
-                <li class="feature1">
-                    <img class="pic" src="/static/images/feature1.png"/>
-                    <p class="center">专业权威</p>
-                </li>
-                <li class="feature2">
-                    <img class="pic" src="/static/images/feature2.png"/>
-                    <p class="center">课程最新</p>
-                </li>
-                <li class="feature3">
-                    <img class="pic" src="/static/images/feature3.png"/>
-                    <p class="center">名师授课</p>
-                </li>
-                <li class="feature4">
-                    <img class="pic" src="/static/images/feature4.png"/>
-                    <p class="center">数据真实</p>
-                </li>
-            </ul>
-        </div>
-    </section>
+{#    <section>#}
+{#        <div class="wp">#}
+{#            <ul class="feature">#}
+{#                <li class="feature1">#}
+{#                    <img class="pic" src="/static/images/feature1.png"/>#}
+{#                    <p class="center">专业权威</p>#}
+{#                </li>#}
+{#                <li class="feature2">#}
+{#                    <img class="pic" src="/static/images/feature2.png"/>#}
+{#                    <p class="center">课程最新</p>#}
+{#                </li>#}
+{#                <li class="feature3">#}
+{#                    <img class="pic" src="/static/images/feature3.png"/>#}
+{#                    <p class="center">名师授课</p>#}
+{#                </li>#}
+{#                <li class="feature4">#}
+{#                    <img class="pic" src="/static/images/feature4.png"/>#}
+{#                    <p class="center">数据真实</p>#}
+{#                </li>#}
+{#            </ul>#}
+{#        </div>#}
+{#    </section>#}
     <!--feature end-->
     <!--module1 start-->
     <section>
@@ -57,27 +82,11 @@
                 <h1>竞赛信息</h1>
                 <div class="module1 eachmod">
                     <div class="module1_1 left">
-                        <img width="228" height="614" src="/static/images/module1_1.jpg"/>
-                        <p class="fisrt_word">名师授课<br/>专业权威</p>
+
                         <a class="more" href="{% url 'competitions:competition_list' %}">查看更多竞赛 ></a>
                     </div>
-                    <div class="right group_list">
-                        <div class="module1_2 box">
-                            <div class="imgslide2">
-                                <ul class="imgs">
-                                    {% for banner_competition in banner_competitions %}
-                                        <li>
-                                            <a href="{% url 'competitions:competition_detail' banner_competition.id %}">
-                                                <img width="470" height="300"
-                                                     src="/static/media/courses/2016/12/python文件处理.jpg"/>
-                                            </a>
-                                        </li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                            <div class="unslider-arrow2 prev"></div>
-                            <div class="unslider-arrow2 next"></div>
-                        </div>
+                    <div class="right group_list" id = "maindiv">
+
                         {% for competition in competitions %}
                             <div class="module1_{{ forloop.counter|add:2 }} box">
                                 <div class="des">
@@ -103,14 +112,140 @@
                 <h1>排名信息</h1>
                 <div class="module1 eachmod">
                     <div class="module1_1 left">
-                        <img width="228" height="614" src="/static/images/module1_1.jpg"/>
+                        <div id="barChart"></div>
+
                         <p class="fisrt_word">我的积分:<br/>{{ request.user.get_score }}</p>
                         <a class="more" href="{% url 'competitions:competition_list' %}">查看更多竞赛 ></a>
                     </div>
                     <div class="right group_list">
-                        {% for student in top100_students %}
-                            <h1>#{{ forloop.counter }}姓名:{{ student.last_name }}{{ student.first_name }}    积分：{{ student.get_score }}</h1>
+
+                                        <circle cx="100" cy="50" r="40" stroke="black"
+                    stroke-width="2" fill="red" />
+
+                    <div id="main">
+
+                    </div>
+
+
+
+                  <script>
+                      window.onload = function(){
+                          var dataArray = new Array();
+                          var dataName = new Array();
+
+                            {#alert("???");#}
+                          {% for student in top100_students %}
+
+                            {#var s=new Student({{ student.get_score }},{{ student.last_name }}{{ student.first_name }} );#}
+                             dataArray.push({{ student.get_score }});
+                             {#alert(dataArray)#}
+                             var m=1
+                            dataName.push("{{ student.last_name }}{{ student.first_name }}");
                         {% endfor %}
+
+{#var dataArray = [23, 13, 21, 14, 37, 15, 18, 34, 30];#}
+                          var div = document.getElementById("maindiv");
+
+                          alert(w)
+    var w = div.offsetWidth;
+                            alert(w)
+var height = 400,width = w;
+var padding = {left:30, right:30, top:20, bottom:20};
+var rectPadding = 4;
+var svg = d3.select("#main").append("svg").attr("height",height).attr("width",width);
+////////设置ｘ轴比例尺(构造一个序数比例尺)/////////////
+var x = d3.scale.ordinal()
+{#var xScale = x.domain(d3.range(dataArray.length))#}
+    var xScale = x.domain(dataName)
+        {#var xScale = d3.scale.ordinal()#}
+  {#.domain([0,3])#}
+.rangeRoundBands([0,width-padding.left-padding.right]);
+
+
+var z = d3.scale.ordinal()
+var zScale = z.domain(d3.range(dataArray.length))
+        {#var xScale = d3.scale.ordinal()#}
+  {#.domain([0,3])#}
+.rangeRoundBands([0,width-padding.left-padding.right]);
+////////创建新的轴生成器///////////
+var xAxis = d3.svg.axis()
+.scale(xScale)
+.orient('bottom');
+svg.append("g")
+.attr("transform","translate(" + padding.left + "," + (height-padding.top) + ")")
+.attr("class","axis")
+.call(xAxis);
+////////y轴的比例尺(构建一个线性比例尺)///////////
+var yScale = d3.scale.linear()
+.domain([0,d3.max(dataArray)])
+.range([height - padding.top - padding.bottom, 0]);
+////////创建新的轴生成器/////////////////////
+var yAxis = d3.svg.axis()
+.scale(yScale)
+.orient('left');
+svg.append('g')
+.attr("transform","translate(" + padding.left + "," + padding.top + ")")
+.attr("class","axis")
+.call(yAxis)
+////////添加矩形//////////////////////////////////////////////////////
+var rect = svg.selectAll("rect")
+rect.data(dataArray).enter().append("rect")
+// .attr("height",function(d,i){return d*10})
+// .attr("width",xScale.rangeBand() - rectPadding)
+.attr("transform","translate(" + padding.left + "," + padding.top + ")")
+.attr("x",function(d,i){return zScale(i)+rectPadding/2})
+.attr("y",function(d,i){return yScale(d)})
+.attr("height",function(d){return height-padding.bottom-padding.top-yScale(d)})
+.attr("width",xScale.rangeBand()-rectPadding)
+//////////添加文字/////////////
+svg.selectAll(".text").data(dataArray)
+.enter().append("text")
+.attr("class","bar-text")
+.attr("x",function(d,i){return zScale(i)+rectPadding/2})
+{#.attr("y",function(d){return yScale(d)})#}
+    .attr("y",function(d){return yScale(d)})
+.attr("transform","translate(" + padding.left + "," + padding.top + ")")
+.attr("dx",function(){return (xScale.rangeBand() - rectPadding)/2})
+.attr("dy",function(){return -5})
+.text(function(d){return d})
+svg.selectAll("rect").attr('fill','#c0c7f5')
+.attr('style','cursor:pointer')
+.on('mouseover',function(d,i){
+d3.select(this)
+.attr('fill','#ced2ec')
+})
+.on('mouseout',function(){
+d3.select(this)
+.transition()
+.duration(500)
+.attr('fill','#c0c7f5')
+})
+
+
+}
+                  </script>
+
+
+
+
+    <button onclick="mysort()">排序</button>
+    <button onclick="myadd()">增加数据</button>
+    <script>
+        function mysort() {
+            dataset.sort(d3.ascending);
+            draw();
+        }
+
+        function myadd() {
+            dataset.push( Math.floor(Math.random()*100));
+            draw();
+        }
+    </script>
+
+
+                     {% for student in top100_students %}
+                      <h1>#{{ forloop.counter }}姓名:{{ student.last_name }}{{ student.first_name }}    积分：{{ student.get_score }} 排名：{{user_index}}</h1>
+                      {% endfor %}
                     </div>
                 </div>
             </div>

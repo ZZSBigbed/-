@@ -31,6 +31,7 @@ class UserProfile(AbstractUser):
     def get_score(self):
         from operation.models import UserTeam
         user_teams = UserTeam.objects.filter(students=self)
+        self.score = 0
         add_score = 0
         for user_team in user_teams:
             if user_team.competition.level == "nation":
@@ -79,6 +80,7 @@ class UserProfile(AbstractUser):
                 else:
                     add_score = 0
             self.score += add_score
+            self.save()
         return self.score
 
 class EmailVerifyRecord(models.Model):

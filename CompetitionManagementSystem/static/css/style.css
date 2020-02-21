@@ -1,3 +1,33 @@
+.chart rect {
+        stroke: white;
+        fill: steelblue;
+    }
+
+    .chart rect:hover {
+        fill: brown;
+    }
+
+    /*控制坐标轴样式*/
+    .axis path,
+    .axis line {
+        fill: none;
+        stroke: black;
+        shape-rendering: crispEdges;
+    }
+
+    .axis text {
+        font-family: sans-serif;
+        font-size: 11px;
+    }
+
+    .axis g text {
+        font-family: sans-serif;
+        font-size: 11px;
+        color: black;
+    }
+
+
+
 body {
     overflow: auto;
 }

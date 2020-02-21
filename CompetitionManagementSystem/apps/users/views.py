@@ -283,15 +283,24 @@ class IndexView(View):
         all_banners = Banner.objects.all().order_by('index')
         competitions = Competition.objects.filter(is_banner=False)[:6]
         banner_competitions = Competition.objects.filter(is_banner=True)[:3]
+        top100_students = []
+        user_index = 0
         if request.user.is_authenticated:
-            top100_students = UserProfile.objects.filter(stu_college_major=request.user.stu_college_major)[:100]
+            all_students = UserProfile.objects.filter(stu_college_major=request.user.stu_college_major)
+            all_students = all_students.order_by("-score")
+            user_index = 0
+            for student in all_students:
+                user_index += 1
+                if student.special_id == request.user.special_id:
+                    break
+            top100_students = all_students.all()[:100]
         return render(request, 'index.html', {
-            'all_banners':all_banners,
-            'competitions':competitions,
-            'banner_competitions':banner_competitions,
-            "top100_students":top100_students
+            'all_banners': all_banners,
+            'competitions': competitions,
+            'banner_competitions': banner_competitions,
+            "top100_students": top100_students,
+            "user_index":user_index
         })
-
 
 def page_not_found(request, exception):
     return render(request, '404.html')
