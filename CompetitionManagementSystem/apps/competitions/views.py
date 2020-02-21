@@ -8,6 +8,8 @@ from operation.models import UserFavorite
 
 from .models import Competition, CompetitionResource
 from operation.models import UserFavorite
+from .forms import SignupForm
+
 
 # Create your views here.
 
@@ -105,3 +107,46 @@ class AddFavView(View):
                 return HttpResponse('{"status":"success", "msg":"已收藏"}', content_type='application/json')
             else:
                 return HttpResponse('{"status":"fail", "msg":"收藏出错"}', content_type='application/json')
+
+
+class CompetitionSignupView(View):
+    def get(self, request, competition_id):
+        competition = Competition.objects.get(id=int(competition_id))
+        return render(request, "competition-signup.html", {
+            "competition": competition
+        })
+
+    def post(self, request, competition_id):
+        from teams.models import Team
+        from operation.models import UserTeam
+        from users.models import UserProfile
+        signup_form = SignupForm(request.POST)
+        competition = Competition.objects.get(id=int(competition_id))
+        if signup_form.is_valid():
+            team = Team()
+            team.name = request.POST.get("name", "")
+            if Team.objects.get(name=team.name):
+                return HttpResponse('{"status":"fail", "msg":"已有队名！"}', content_type='application/json')
+            team.save()
+            user_team = UserTeam()
+            user_team.team = team
+            user_team.competition = Competition.objects.get(id=int(competition_id))
+            students_str = request.POST.get("students", "")
+            student_strs = students_str.split(',')
+            user_team.save()
+            for student_str in student_strs:
+                student = UserProfile.objects.get(last_name=student_str[0:1],first_name=student_str[1:])
+                if student:
+                    user_team.students.add(student)
+            teacher_name = request.POST.get("teacher", "")
+            user_team.teacher = UserProfile.objects.get(last_name=teacher_name[0:1],first_name=teacher_name[1:]).special_id
+            if user_team.teacher:
+                user_team.save()
+            else:
+                return HttpResponse('{"status":"fail", "msg":"未找到该老师！"}', content_type='application/json')
+            return render(request, 'signup-success.html', {})
+        else:
+            return render(request, 'competition-signup.html', {
+                "competition": competition,
+                "signup_form": signup_form
+            })

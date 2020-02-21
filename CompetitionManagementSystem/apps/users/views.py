@@ -22,7 +22,7 @@ class CustomBackend(ModelBackend):
 
     def authenticate(self, request, username=None, password=None, **kwargs):
         try:
-            user = UserProfile.objects.get(Q(username=username)|Q(email=username))
+            user = UserProfile.objects.get(Q(username=username) | Q(email=username))
             if user.check_password(password):
                 return user
         except Exception as e:
@@ -40,20 +40,20 @@ class ActiveUserView(View):
                 user.save()
         else:
             return render(request, "active_fail.html")
-        return  render(request, "login.html")
+        return render(request, "login.html")
 
 
 class RegisterView(View):
     def get(self, request):
         register_form = RegisterForm()
-        return render(request, "register.html", {"register_form":register_form})
+        return render(request, "register.html", {"register_form": register_form})
 
     def post(self, request):
         register_form = RegisterForm(request.POST)
         if register_form.is_valid():
             user_name = request.POST.get("email", "")
             if UserProfile.objects.filter(email=user_name):
-                return render(request, "register.html", {"register_form":register_form,"msg": "该邮箱已被注册！"})
+                return render(request, "register.html", {"register_form": register_form, "msg": "该邮箱已被注册！"})
 
             pass_word = request.POST.get("password", "")
             name = request.POST.get("name", "")
@@ -69,7 +69,7 @@ class RegisterView(View):
             user_profile.special_id = special_id
             user_profile.stu_college_major = stu_college_major
             user_profile.save()
-            #写入欢迎注册消息
+            # 写入欢迎注册消息
             user_message = UserMessage()
             user_message.user = user_profile.id
             user_message.message = "欢迎注册科创竞赛管理系统!"
@@ -78,13 +78,14 @@ class RegisterView(View):
             send_register_email(user_name, "register")
             return render(request, "login.html")
         else:
-            return render(request, "register.html", {"register_form":register_form})
+            return render(request, "register.html", {"register_form": register_form})
 
 
 class LogoutView(View):
     """
     用户登出
     """
+
     def get(self, request):
         logout(request)
         return HttpResponseRedirect(reverse("index"))
@@ -110,14 +111,14 @@ class LoginView(View):
             else:
                 return render(request, "login.html", {"msg": "用户名或密码错误！"})
         else:
-                return render(request, "login.html", {"login_form": login_form})
+            return render(request, "login.html", {"login_form": login_form})
 
 
 class ForgetPwdView(View):
 
     def get(self, request):
         forget_form = ForgetForm()
-        return render(request, "forgetpwd.html", {"forget_form":forget_form})
+        return render(request, "forgetpwd.html", {"forget_form": forget_form})
 
     def post(self, request):
         forget_form = ForgetForm(request.POST)
@@ -126,8 +127,7 @@ class ForgetPwdView(View):
             send_register_email(email, "forget")
             return render(request, "send_success.html")
         else:
-            return render(request, "forgetpwd.html", {"forget_form":forget_form})
-
+            return render(request, "forgetpwd.html", {"forget_form": forget_form})
 
 
 class ResetView(View):
@@ -136,10 +136,10 @@ class ResetView(View):
         if all_records:
             for record in all_records:
                 email = record.email
-                return render(request, "password_reset.html", {"email":email})
+                return render(request, "password_reset.html", {"email": email})
         else:
             return render(request, "active_fail.html")
-        return  render(request, "login.html")
+        return render(request, "login.html")
 
 
 class ModifyPwdView(View):
@@ -151,7 +151,7 @@ class ModifyPwdView(View):
             pwd2 = request.POST.get("password2", "")
             email = request.POST.get("email", "")
             if pwd1 != pwd2:
-                return render(request, "password_reset.html", {"email":email, "msg":"密码不一致！"})
+                return render(request, "password_reset.html", {"email": email, "msg": "密码不一致！"})
             user = UserProfile.objects.get(email=email)
             user.password = make_password(pwd2)
             user.save()
@@ -174,11 +174,11 @@ class UserinfoView(LoginRequiredMixin, View):
             return HttpResponse(json.dumps(user_info_form.errors), content_type='application/json')
 
 
-
 class UploadImageView(LoginRequiredMixin, View):
     """
     用户修改头像
     """
+
     def post(self, request):
         image_form = UploadImageForm(request.POST, request.FILES)
         if image_form.is_valid():
@@ -211,6 +211,7 @@ class SendEmailCodeView(LoginRequiredMixin, View):
     """
     发送邮箱验证码
     """
+
     def get(self, request):
         email = request.GET.get('email', '')
 
@@ -240,7 +241,7 @@ class MyCompetitionView(LoginRequiredMixin, View):
     def get(self, request):
         user_teams = UserTeam.objects.filter(students=request.user)
         return render(request, 'usercenter-mycompetition.html', {
-            "user_teams":user_teams
+            "user_teams": user_teams
         })
 
 
@@ -253,7 +254,7 @@ class MyFavView(LoginRequiredMixin, View):
             competition = Competition.objects.get(id=competition_id)
             competition_list.append(competition)
         return render(request, 'usercenter-fav.html', {
-            "competition_list":competition_list
+            "competition_list": competition_list
         })
 
 
@@ -274,7 +275,7 @@ class MymessageView(LoginRequiredMixin, View):
 
         messages = p.page(page)
         return render(request, 'usercenter-message.html', {
-            "messages":messages
+            "messages": messages
         })
 
 
@@ -284,7 +285,9 @@ class IndexView(View):
         competitions = Competition.objects.filter(is_banner=False)[:6]
         banner_competitions = Competition.objects.filter(is_banner=True)[:3]
         top100_students = []
+
         user_index = 0
+
         if request.user.is_authenticated:
             all_students = UserProfile.objects.filter(stu_college_major=request.user.stu_college_major)
             all_students = all_students.order_by("-score")
@@ -300,6 +303,7 @@ class IndexView(View):
             'banner_competitions': banner_competitions,
             "top100_students": top100_students,
             "user_index":user_index
+
         })
 
 def page_not_found(request, exception):
