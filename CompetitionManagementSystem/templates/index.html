@@ -131,25 +131,62 @@ shape-rendering: crispEdges;
 
                   <script>
                       window.onload = function(){
-                          var dataArray = new Array();
+                          var datanowArray = new Array();
+                          var datanowName = new Array();
+                          var idnowArray = new Array();
+                           var dataArray = new Array();
                           var dataName = new Array();
+                          var leng=30;
 
                             {#alert("???");#}
                           {% for student in top100_students %}
 
                             {#var s=new Student({{ student.get_score }},{{ student.last_name }}{{ student.first_name }} );#}
-                             dataArray.push({{ student.get_score }});
+                             datanowArray.push({{ student.get_score }});
+                             idnowArray.push({{ student.special_id }})
                              {#alert(dataArray)#}
                              var m=1
-                            dataName.push("{{ student.last_name }}{{ student.first_name }}");
+                            datanowName.push("{{ student.last_name }}{{ student.first_name }}");
                         {% endfor %}
+                      var flag=0;
+                        alert(idnowArray)
+                      for (i = 0; i < Math.min(leng,datanowArray.length); i++) {
+                          dataArray.push(datanowArray[i]);
+                          dataName.push(datanowName[i]);
+                          alert("requestid={{ request.user.special_id }}")
+                          if ("{{ request.user.special_id }}" == idnowArray[i]) {
+
+                              flag = 1;
+                              {#break;#}
+                          }
+
+                      }
+                      if(flag==0){
+                            if ("{{ request.special_id }}" == idnowArray[leng+1]) {
+                                {#alert("here");#}
+                                 dataArray.push(datanowArray[leng+1]);
+                                dataName.push(datanowArray[leng+1]);
+                                 flag=1
+                          }
+                            else{
+                                dataArray.push(0);
+                                dataName.push("...");
+                                alert("here")
+                                dataArray.push({{ request.user.get_score }})
+                                dataName.push("{{ request.user.last_name }}{{ request.user.first_name }}")
+                            }
+                      }
+
+
 
 {#var dataArray = [23, 13, 21, 14, 37, 15, 18, 34, 30];#}
                           var div = document.getElementById("maindiv");
 
-                          alert(w)
     var w = div.offsetWidth;
                             alert(w)
+                      alert(dataArray)
+                      alert(dataName)
+
 var height = 400,width = w;
 var padding = {left:30, right:30, top:20, bottom:20};
 var rectPadding = 4;
