@@ -20,7 +20,7 @@ stroke-width:1px;
 cursor: pointer;
 }
 .bar-text{
-fill:red;
+fill: rgba(53, 57, 57, 0.63);
 text-anchor:middle
 }
 .axis path,.axis line{
@@ -78,9 +78,9 @@ shape-rendering: crispEdges;
     <!--module1 start-->
     <section>
         <div class="module">
-            <div class="wp">
+            <div class="wp" style="padding-bottom: 10px">
                 <div class="compe" >竞赛信息</div>
-                 <a class="more" href="{% url 'competitions:competition_list' %}">查看更多竞赛 ></a>
+                 <a class="more" href="{% url 'competitions:competition_list' %}">查看更多竞赛</a>
                 <div class="module1 eachmod">
 
                     <div class="right group_list" id = "maindiv">
@@ -109,12 +109,12 @@ shape-rendering: crispEdges;
         <div class="module">
             <div class="wp">
                 <div class="compe">排名信息</div>
+             <div class="fisrt_word">我的积分:{{ request.user.get_score }}</div>
                 <div class="module1 eachmod">
                     <div class="module1_1 left">
                         <div id="barChart"></div>
 
                         <p class="fisrt_word">我的积分:<br/>{{ request.user.get_score }}</p>
-                        <a class="more" href="{% url 'competitions:competition_list' %}">查看更多竞赛 ></a>
                     </div>
                     <div class="right group_list">
 
@@ -260,28 +260,29 @@ d3.select(this)
 
 }
                   </script>
+                    <table class="scoretable">
+                        <tr>
+                            <td>顺序</td>
+                            <td>姓名</td>
+                            <td>积分</td>
+                            <td>排名</td>
+                        </tr>
+                           {% for student in top100_students %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ student.last_name }}{{ student.first_name }}
+                            </td>
+                            <td>{{ student.get_score }}
+                            </td>
+                            <td>{{user_index}}
+                            </td>
+                        </tr>
+                         {% endfor %}
+                    </table>
 
 
 
 
-    <button onclick="mysort()">排序</button>
-    <button onclick="myadd()">增加数据</button>
-    <script>
-        function mysort() {
-            dataset.sort(d3.ascending);
-            draw();
-        }
-
-        function myadd() {
-            dataset.push( Math.floor(Math.random()*100));
-            draw();
-        }
-    </script>
-
-
-                     {% for student in top100_students %}
-                      <h1>#{{ forloop.counter }}姓名:{{ student.last_name }}{{ student.first_name }}    积分：{{ student.get_score }} 排名：{{user_index}}</h1>
-                      {% endfor %}
                     </div>
                 </div>
             </div>
