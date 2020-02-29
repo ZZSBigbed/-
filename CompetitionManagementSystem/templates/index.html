@@ -79,12 +79,10 @@ shape-rendering: crispEdges;
     <section>
         <div class="module">
             <div class="wp">
-                <h1>竞赛信息</h1>
+                <div class="compe" >竞赛信息</div>
+                 <a class="more" href="{% url 'competitions:competition_list' %}">查看更多竞赛 ></a>
                 <div class="module1 eachmod">
-                    <div class="module1_1 left">
 
-                        <a class="more" href="{% url 'competitions:competition_list' %}">查看更多竞赛 ></a>
-                    </div>
                     <div class="right group_list" id = "maindiv">
 
                         {% for competition in competitions %}
@@ -107,10 +105,10 @@ shape-rendering: crispEdges;
         </div>
     </section>
     {% if request.user.is_authenticated %}
-    <section>
+    <section style="margin-top: 10px;margin-bottom: 10px">
         <div class="module">
             <div class="wp">
-                <h1>排名信息</h1>
+                <div class="compe">排名信息</div>
                 <div class="module1 eachmod">
                     <div class="module1_1 left">
                         <div id="barChart"></div>
@@ -149,11 +147,11 @@ shape-rendering: crispEdges;
                             datanowName.push("{{ student.last_name }}{{ student.first_name }}");
                         {% endfor %}
                       var flag=0;
-                        alert(idnowArray)
+                        {#alert(idnowArray)#}
                       for (i = 0; i < Math.min(leng,datanowArray.length); i++) {
                           dataArray.push(datanowArray[i]);
                           dataName.push(datanowName[i]);
-                          alert("requestid={{ request.user.special_id }}")
+                          {#alert("requestid={{ request.user.special_id }}")#}
                           if ("{{ request.user.special_id }}" == idnowArray[i]) {
 
                               flag = 1;
@@ -171,7 +169,7 @@ shape-rendering: crispEdges;
                             else{
                                 dataArray.push(0);
                                 dataName.push("...");
-                                alert("here")
+                                {#alert("here")#}
                                 dataArray.push({{ request.user.get_score }})
                                 dataName.push("{{ request.user.last_name }}{{ request.user.first_name }}")
                             }
@@ -183,9 +181,9 @@ shape-rendering: crispEdges;
                           var div = document.getElementById("maindiv");
 
     var w = div.offsetWidth;
-                            alert(w)
-                      alert(dataArray)
-                      alert(dataName)
+                            {#alert(w)#}
+                      {#alert(dataArray)#}
+                      {#alert(dataName)#}
 
 var height = 400,width = w;
 var padding = {left:30, right:30, top:20, bottom:20};

@@ -1,6 +1,45 @@
-
 .module .right {
     width: 100%;
-    height: 100%;
+    height: auto;
     float: right;
+}
+
+.module .eachmod {
+    /*margin: 30px 0;*/
+    /* margin: 30px 0; */
+    padding: 0 20px;
+    margin: auto;
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+.compe{
+    margin: 10px;
+    /*margin: auto;*/
+    /* width: 100px; */
+    font-size: large;
+    line-height: 50px;
+    margin-left: 10px;
+    padding-left: 10px;
+    margin-right: 10px;
+    float: left;
+    color: #00000080;
+}
+
+.module .more {
+    float: right;
+    margin: 10px;
+    border: 1px solid #fff;
+    display: block;
+    width: 96px;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    text-align: center;
+    /* position: absolute; */
+    left: 50%;
+    margin-left: -48px;
+    top: 180px;
+    position: static;
 }

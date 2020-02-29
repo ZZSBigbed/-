@@ -14,7 +14,7 @@
 
      <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
       <link rel="stylesheet" type="text/css" href="/static/css/competition.css">
- <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+ <link rel="stylesheet" type="text/css" href="/static/css/index.css ">
     {% block custom_css %}{% endblock %}
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script src="/static/js/jquery.min.js" type="text/javascript"></script>
@@ -139,14 +139,7 @@
 {% endblock %}
 <footer>
 		<div class="footer">
-			<div class="wp">
-				<ul class="cont">
-					<li class="logo"><a href=""><img src="{% static 'images/footlogo.png' %}"/></a></li>
-					<li class="code"><img src="{% static 'images/code.jpg' %}"/><p class="center">扫描关注微信</p></li>
-					<li class="third"><img class="fl" src="{% static 'images/tell.png' %}"/><p class="tell">33333333</p><p class="time">周一至周日 9:00-18:00</p></li>
-				</ul>
 
-			</div>
 			<p class="line"></p>
 			<div class="wp clear">
                 <span class="fl">? 2020 www.ssdutjsgl.com 科创竞赛管理系统 保留所有权利</span>
@@ -183,7 +176,7 @@
                 success: function(data) {
                     if(data.status == 'success'){
                         $('#jsStayForm')[0].reset();
-                        alert("提交成功")
+                        {#alert("提交成功")#}
                     }else if(data.status == 'fail'){
                         $('#jsCompanyTips').html(data.msg)
                     }
