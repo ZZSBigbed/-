@@ -19,6 +19,7 @@ class Competition(models.Model):
     start_date = models.DateField(verbose_name=u"开始日期")
     end_date = models.DateField(verbose_name=u"结束日期")
     students = models.IntegerField(default=0, verbose_name=u"参加人数")
+    admitted_students = models.IntegerField(default=4, verbose_name=u"队伍最多人数")
     fav_nums = models.IntegerField(default=0, verbose_name=u"收藏人数")
     click_nums = models.IntegerField(default=0, verbose_name=u"点击数")
     is_banner = models.BooleanField(default=False, verbose_name=u"是否轮播")

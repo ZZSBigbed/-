@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}团队列表-科创竞赛管理系统{% endblock %}
+{% block custom_bread %}
+    <section>
+        <div class="wp">
+            <ul class="crumbs">
+                <li><a href="index.html">首页</a>></li>
+                <li>团队列表</li>
+            </ul>
+        </div>
+    </section>
+{% endblock %}
+
+{% block  content %}
+    <section>
+        <div class="wp butler_list_box list">
+            <div class='left'>
+                <div class="all">共<span class="key">{{ team_nums }}</span>支队伍</div>
+                <div class="butler_list company list">
+                    <div class="layout">
+                        {% for team in all_teams.object_list %}
+                            <dl class="des difdes">
+                            <dd>
+                                <div class="clearfix">
+                                    <a href="org-detail-homepage.html">
+                                        <h1>{{ team.name }}</h1>
+                                    </a>
+                                </div>
+                                <ul class="cont">
+                                    <li class="first"><p class="pic9">竞赛：<span>{{ team.get_competition }}</span></p></li>
+                                    <li class="c8" style="padding-left:18px;">指导教师：{{ team.get_teacher }}</li>
+                                    <li class="pic10" style="padding-left:18px;">队员：
+                                        {% for student in team.get_students %}{{ student.last_name }}{{ student.first_name }}  {% endfor %}
+                                    </li>
+                                </ul>
+                            </dd>
+                            <div class="buy start_groupbuy jsShowPerfect2" data-id="22"><br/>联系<br/>服务</div>
+                        </dl>
+                        {% endfor %}
+                    </div>
+                    <div class="pageturn">
+                        <ul class="pagelist">
+                            {% if all_teams.has_previous %}
+                                <li class="long"><a href="?{{ all_teams.previous_page_number.querystring }}">上一页</a></li>
+                            {% endif %}
+                            {% for page in all_teams.pages %}
+                                {% if page %}
+                                    {% ifequal page all_teams.number %}
+                                         <li class="active"><a href="?{{ page.querystring }}">{{ page }}</a></li>
+                                    {% else %}
+                                        <li><a href="?{{ page.querystring }}" class="page">{{ page }}</a></li>
+                                    {% endifequal %}
+                                {% else %}
+                                    <li class="none"><a href="">...</a> </li>
+                                {% endif %}
+                            {% endfor %}
+                            {% if all_teams.has_next %}
+                                <li class="long"><a href="?{{ all_teams.next_page_number.querystring }}">下一页</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

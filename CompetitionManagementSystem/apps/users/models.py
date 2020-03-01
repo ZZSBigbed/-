@@ -17,6 +17,7 @@ class UserProfile(AbstractUser):
     stu_college_major = models.CharField(max_length=20, default=u"rjxyrjgc",choices=(("rjxyrjgc",u"软件学院 软件工程"),("rjxywlaq",u"软件学院 网络安全"),("gjxxyrjxy",u"国际信息与软件学院"),("wdzxy",u"微电子学院")), null=True, blank=True, verbose_name=u"学院专业")
     teacher_title = models.CharField(max_length=10, default=u"", null=True, blank=True, verbose_name=u"职称")
     score = models.IntegerField(default=0, verbose_name=u"积分")
+    is_teacher = models.BooleanField(default=False, verbose_name=u"是否为老师")
     class Meta:
         verbose_name = u"用户信息"
         verbose_name_plural = verbose_name

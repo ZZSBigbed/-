@@ -19,3 +19,24 @@ class Team(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_competition(self):
+        from operation.models import UserTeam
+        user_team = UserTeam.objects.get(team__name=self.name)
+        competiton_name = user_team.competition.name
+        return competiton_name
+
+    def get_teacher(self):
+        from operation.models import UserTeam
+        from users.models import UserProfile
+        user_team = UserTeam.objects.get(team__name=self.name)
+        teacher = UserProfile.objects.get(special_id=user_team.teacher)
+        teacher_name = teacher.last_name+teacher.first_name
+        return teacher_name
+
+    def get_students(self):
+        from operation.models import UserTeam
+        from users.models import UserProfile
+        user_team = UserTeam.objects.get(team__name=self.name)
+        students = user_team.students.all()
+        return students

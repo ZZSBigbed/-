@@ -105,6 +105,8 @@ class LoginView(View):
             if user is not None:
                 if user.is_active:
                     login(request, user)
+                    if user.is_teacher:
+                        return HttpResponseRedirect(reverse("teacher_index"))
                     return HttpResponseRedirect(reverse("index"))
                 else:
                     return render(request, "login.html", {"msg": "用户未激活！"})
@@ -285,26 +287,42 @@ class IndexView(View):
         competitions = Competition.objects.filter(is_banner=False)[:6]
         banner_competitions = Competition.objects.filter(is_banner=True)[:3]
         top100_students = []
-
         user_index = 0
-
+        grade = ""
+        college_major = ""
         if request.user.is_authenticated:
-            all_students = UserProfile.objects.filter(stu_college_major=request.user.stu_college_major)
-            all_students = all_students.order_by("-score")
-            user_index = 0
-            for student in all_students:
-                user_index += 1
-                if student.special_id == request.user.special_id:
-                    break
+            if request.user.is_teacher:
+                all_students = UserProfile.objects.filter(is_teacher=False)
+
+                # 取出筛选学院专业
+                grade = request.GET.get('grade', "")
+                if grade:
+                    all_students = all_students.filter(Q(special_id__contains=grade))
+                # 学院专业筛选
+                college_major = request.GET.get('cm', "")
+                if college_major:
+                    all_students = all_students.filter(stu_college_major=college_major)
+
+                all_students = all_students.order_by("-score")
+            else:
+                all_students = UserProfile.objects.filter(stu_college_major=request.user.stu_college_major)
+                all_students = all_students.order_by("-score")
+                user_index = 0
+                for student in all_students:
+                    user_index += 1
+                    if student.special_id == request.user.special_id:
+                        break
             top100_students = all_students.all()[:100]
         return render(request, 'index.html', {
             'all_banners': all_banners,
             'competitions': competitions,
             'banner_competitions': banner_competitions,
             "top100_students": top100_students,
-            "user_index":user_index
-
+            "user_index":user_index,
+            "college_major":college_major,
+            "grade":grade
         })
+
 
 def page_not_found(request, exception):
     return render(request, '404.html')

@@ -125,8 +125,11 @@ class CompetitionSignupView(View):
         if signup_form.is_valid():
             team = Team()
             team.name = request.POST.get("name", "")
-            if Team.objects.get(name=team.name):
-                return HttpResponse('{"status":"fail", "msg":"已有队名！"}', content_type='application/json')
+            try:
+                if Team.objects.get(name=team.name):
+                    return HttpResponse('{"status":"fail", "msg":"已有队名！"}', content_type='application/json')
+            except:
+                pass
             team.save()
             user_team = UserTeam()
             user_team.team = team
@@ -135,11 +138,11 @@ class CompetitionSignupView(View):
             student_strs = students_str.split(',')
             user_team.save()
             for student_str in student_strs:
-                student = UserProfile.objects.get(last_name=student_str[0:1],first_name=student_str[1:])
+                student = UserProfile.objects.get(special_id=student_str)
                 if student:
                     user_team.students.add(student)
-            teacher_name = request.POST.get("teacher", "")
-            user_team.teacher = UserProfile.objects.get(last_name=teacher_name[0:1],first_name=teacher_name[1:]).special_id
+            teacher_id = request.POST.get("teacher", "")
+            user_team.teacher = UserProfile.objects.get(special_id=teacher_id).special_id
             if user_team.teacher:
                 user_team.save()
             else:

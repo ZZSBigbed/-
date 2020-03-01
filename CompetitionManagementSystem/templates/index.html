@@ -5,85 +5,90 @@
 {% block custom_js %}
     <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
     <style>
-    body{
-margin:0px;
-padding:0px;
-}
-#main{
-margin-top:20px;
-}
-.bar{
-fill:#c0c7f5;
-stroke-width:1px;
-}
-.bar:hover{
-cursor: pointer;
-}
-.bar-text{
-fill: rgba(53, 57, 57, 0.63);
-text-anchor:middle
-}
-.axis path,.axis line{
-fill: none;
-stroke: black;
-shape-rendering: crispEdges;
-}
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #main {
+            margin-top: 20px;
+        }
+
+        .bar {
+            fill: #c0c7f5;
+            stroke-width: 1px;
+        }
+
+        .bar:hover {
+            cursor: pointer;
+        }
+
+        .bar-text {
+            fill: rgba(53, 57, 57, 0.63);
+            text-anchor: middle
+        }
+
+        .axis path, .axis line {
+            fill: none;
+            stroke: black;
+            shape-rendering: crispEdges;
+        }
     </style>
 {% endblock %}
 {% block content %}
-{#    <div class="banner">#}
-{#        <div class="wp">#}
-{#            <div class="fl">#}
-{#                <div class="imgslide">#}
-{#                    <ul class="imgs">#}
-{#                        {% for banner in all_banners %}#}
-{#                            <li>#}
-{#                                <a href="{{ banner.url }}">#}
-{#                                    <img width="1200" height="478"#}
-{#                                         src="{{ MEDIA_URL }}{{ banner.image }}"/>#}
-{#                                </a>#}
-{#                            </li>#}
-{#                        {% endfor %}#}
-{#                    </ul>#}
-{#                </div>#}
-{#                <div class="unslider-arrow prev"></div>#}
-{#                <div class="unslider-arrow next"></div>#}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
+    {#    <div class="banner">#}
+    {#        <div class="wp">#}
+    {#            <div class="fl">#}
+    {#                <div class="imgslide">#}
+    {#                    <ul class="imgs">#}
+    {#                        {% for banner in all_banners %}#}
+    {#                            <li>#}
+    {#                                <a href="{{ banner.url }}">#}
+    {#                                    <img width="1200" height="478"#}
+    {#                                         src="{{ MEDIA_URL }}{{ banner.image }}"/>#}
+    {#                                </a>#}
+    {#                            </li>#}
+    {#                        {% endfor %}#}
+    {#                    </ul>#}
+    {#                </div>#}
+    {#                <div class="unslider-arrow prev"></div>#}
+    {#                <div class="unslider-arrow next"></div>#}
+    {#            </div>#}
+    {#        </div>#}
+    {#    </div>#}
     <!--feature start-->
-{#    <section>#}
-{#        <div class="wp">#}
-{#            <ul class="feature">#}
-{#                <li class="feature1">#}
-{#                    <img class="pic" src="/static/images/feature1.png"/>#}
-{#                    <p class="center">专业权威</p>#}
-{#                </li>#}
-{#                <li class="feature2">#}
-{#                    <img class="pic" src="/static/images/feature2.png"/>#}
-{#                    <p class="center">课程最新</p>#}
-{#                </li>#}
-{#                <li class="feature3">#}
-{#                    <img class="pic" src="/static/images/feature3.png"/>#}
-{#                    <p class="center">名师授课</p>#}
-{#                </li>#}
-{#                <li class="feature4">#}
-{#                    <img class="pic" src="/static/images/feature4.png"/>#}
-{#                    <p class="center">数据真实</p>#}
-{#                </li>#}
-{#            </ul>#}
-{#        </div>#}
-{#    </section>#}
+    {#    <section>#}
+    {#        <div class="wp">#}
+    {#            <ul class="feature">#}
+    {#                <li class="feature1">#}
+    {#                    <img class="pic" src="/static/images/feature1.png"/>#}
+    {#                    <p class="center">专业权威</p>#}
+    {#                </li>#}
+    {#                <li class="feature2">#}
+    {#                    <img class="pic" src="/static/images/feature2.png"/>#}
+    {#                    <p class="center">课程最新</p>#}
+    {#                </li>#}
+    {#                <li class="feature3">#}
+    {#                    <img class="pic" src="/static/images/feature3.png"/>#}
+    {#                    <p class="center">名师授课</p>#}
+    {#                </li>#}
+    {#                <li class="feature4">#}
+    {#                    <img class="pic" src="/static/images/feature4.png"/>#}
+    {#                    <p class="center">数据真实</p>#}
+    {#                </li>#}
+    {#            </ul>#}
+    {#        </div>#}
+    {#    </section>#}
     <!--feature end-->
     <!--module1 start-->
     <section>
         <div class="module">
             <div class="wp" style="padding-bottom: 10px">
-                <div class="compe" >竞赛信息</div>
-                 <a class="more" href="{% url 'competitions:competition_list' %}">查看更多竞赛</a>
+                <div class="compe">竞赛信息</div>
+                <a class="more" href="{% url 'competitions:competition_list' %}">查看更多竞赛</a>
                 <div class="module1 eachmod">
 
-                    <div class="right group_list" id = "maindiv">
+                    <div class="right group_list" id="maindiv">
 
                         {% for competition in competitions %}
                             <div class="module1_{{ forloop.counter|add:2 }} box">
@@ -105,189 +110,248 @@ shape-rendering: crispEdges;
         </div>
     </section>
     {% if request.user.is_authenticated %}
-    <section style="margin-top: 10px;margin-bottom: 10px">
-        <div class="module">
-            <div class="wp">
-                <div class="compe">排名信息</div>
-             <div class="fisrt_word">我的积分:{{ request.user.get_score }}</div>
-                <div class="module1 eachmod">
-                    <div class="module1_1 left">
-                        <div id="barChart"></div>
+        {% if request.user.is_teacher %}
+            <div class="listoptions">
+                <ul>
+                    <li>
+                        <h2>学院专业</h2>
+                        <div class="cont">
+                            <a href="?grade={{ grade }}"><span
+                                    class="{% ifequal college_major '' %}active2{% endifequal %}">全部</span></a>
 
-                        <p class="fisrt_word">我的积分:<br/>{{ request.user.get_score }}</p>
-                    </div>
-                    <div class="right group_list">
+                            <a href="?cm=rjxyrjgc&grade={{ grade }}"><span
+                                    class="{% ifequal college_major 'rjxyrjgc' %}active2{% endifequal %}">软件学院 软件工程</span></a>
 
-                                        <circle cx="100" cy="50" r="40" stroke="black"
-                    stroke-width="2" fill="red" />
+                            <a href="?cm=rjxywlaq&grade={{ grade }}"><span
+                                    class="{% ifequal college_major 'rjxywlaq' %}active2{% endifequal %}">软件学院 网络安全</span></a>
 
-                    <div id="main">
+                            <a href="?cm=gjxxyrjxy&grade={{ grade }}"><span
+                                    class="{% ifequal college_major 'gjxxyrjxy' %}active2{% endifequal %}">国际信息与软件学院</span></a>
 
-                    </div>
-
-
-
-                  <script>
-                      window.onload = function(){
-                          var datanowArray = new Array();
-                          var datanowName = new Array();
-                          var idnowArray = new Array();
-                           var dataArray = new Array();
-                          var dataName = new Array();
-                          var leng=30;
-
-                            {#alert("???");#}
-                          {% for student in top100_students %}
-
-                            {#var s=new Student({{ student.get_score }},{{ student.last_name }}{{ student.first_name }} );#}
-                             datanowArray.push({{ student.get_score }});
-                             idnowArray.push({{ student.special_id }})
-                             {#alert(dataArray)#}
-                             var m=1
-                            datanowName.push("{{ student.last_name }}{{ student.first_name }}");
-                        {% endfor %}
-                      var flag=0;
-                        {#alert(idnowArray)#}
-                      for (i = 0; i < Math.min(leng,datanowArray.length); i++) {
-                          dataArray.push(datanowArray[i]);
-                          dataName.push(datanowName[i]);
-                          {#alert("requestid={{ request.user.special_id }}")#}
-                          if ("{{ request.user.special_id }}" == idnowArray[i]) {
-
-                              flag = 1;
-                              {#break;#}
-                          }
-
-                      }
-                      if(flag==0){
-                            if ("{{ request.special_id }}" == idnowArray[leng+1]) {
-                                {#alert("here");#}
-                                 dataArray.push(datanowArray[leng+1]);
-                                dataName.push(datanowArray[leng+1]);
-                                 flag=1
-                          }
-                            else{
-                                dataArray.push(0);
-                                dataName.push("...");
-                                {#alert("here")#}
-                                dataArray.push({{ request.user.get_score }})
-                                dataName.push("{{ request.user.last_name }}{{ request.user.first_name }}")
-                            }
-                      }
+                            <a href="?cm=wdzxy&grade={{ grade }}"><span
+                                    class="{% ifequal college_major 'wdzxy' %}active2{% endifequal %}">微电子学院</span></a>
 
 
+                        </div>
+                    </li>
+                    <li>
+                        <h2>年级</h2>
+                        <div class="more">更多</div>
+                        <div class="cont">
+                            <a href="?cm={{ college_major }}"><span
+                                    class="{% ifequal grade '' %}active2{% endifequal %}">全部</span></a>
 
-{#var dataArray = [23, 13, 21, 14, 37, 15, 18, 34, 30];#}
-                          var div = document.getElementById("maindiv");
+                            <a href="?grade=2019&cm={{ college_major }}"><span
+                                    class="{% ifequal grade grade %}active2{% endifequal %}">2019</span></a>
 
-    var w = div.offsetWidth;
-                            {#alert(w)#}
-                      {#alert(dataArray)#}
-                      {#alert(dataName)#}
+                            <a href="?grade=2018&cm={{ college_major }}"><span
+                                    class="{% ifequal grade grade %}active2{% endifequal %}">2018</span></a>
 
-var height = 400,width = w;
-var padding = {left:30, right:30, top:20, bottom:20};
-var rectPadding = 4;
-var svg = d3.select("#main").append("svg").attr("height",height).attr("width",width);
+                            <a href="?grade=2017&cm={{ college_major }}"><span
+                                    class="{% ifequal grade grade %}active2{% endifequal %}">2017</span></a>
+
+                            <a href="?grade=2016&cm={{ college_major }}"><span
+                                    class="{% ifequal grade grade %}active2{% endifequal %}">2016</span></a>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        {% endif %}
+        <section style="margin-top: 10px;margin-bottom: 10px">
+            <div class="module">
+                <div class="wp">
+                    <div class="compe">排名信息</div>
+                    <div class="fisrt_word">我的积分:{{ request.user.get_score }}</div>
+                    <div class="module1 eachmod">
+                        <div class="module1_1 left">
+                            <div id="barChart"></div>
+
+                            <p class="fisrt_word">我的积分:<br/>{{ request.user.get_score }}</p>
+                        </div>
+                        <div class="right group_list">
+
+                            <circle cx="100" cy="50" r="40" stroke="black"
+                                    stroke-width="2" fill="red"/>
+
+                            <div id="main">
+
+                            </div>
+
+
+                            <script>
+                                window.onload = function () {
+                                    var datanowArray = new Array();
+                                    var datanowName = new Array();
+                                    var idnowArray = new Array();
+                                    var dataArray = new Array();
+                                    var dataName = new Array();
+                                    var leng = 30;
+
+                                    {#alert("???");#}
+                                    {% for student in top100_students %}
+
+                                        {#var s=new Student({{ student.get_score }},{{ student.last_name }}{{ student.first_name }} );#}
+                                        datanowArray.push({{ student.get_score }});
+                                        idnowArray.push({{ student.special_id }})
+                                        {#alert(dataArray)#}
+                                        var m = 1
+                                        datanowName.push("{{ student.last_name }}{{ student.first_name }}");
+                                    {% endfor %}
+                                    var flag = 0;
+                                    {#alert(idnowArray)#}
+                                    for (i = 0; i < Math.min(leng, datanowArray.length); i++) {
+                                        dataArray.push(datanowArray[i]);
+                                        dataName.push(datanowName[i]);
+                                        {#alert("requestid={{ request.user.special_id }}")#}
+                                        if ("{{ request.user.special_id }}" == idnowArray[i]) {
+
+                                            flag = 1;
+                                            {#break;#}
+                                        }
+
+                                    }
+                                    if (flag == 0) {
+                                        if ("{{ request.special_id }}" == idnowArray[leng + 1]) {
+                                            {#alert("here");#}
+                                            dataArray.push(datanowArray[leng + 1]);
+                                            dataName.push(datanowArray[leng + 1]);
+                                            flag = 1
+                                        } else {
+                                            dataArray.push(0);
+                                            dataName.push("...");
+                                            {#alert("here")#}
+                                            dataArray.push({{ request.user.get_score }})
+                                            dataName.push("{{ request.user.last_name }}{{ request.user.first_name }}")
+                                        }
+                                    }
+
+
+                                    {#var dataArray = [23, 13, 21, 14, 37, 15, 18, 34, 30];#}
+                                    var div = document.getElementById("maindiv");
+
+                                    var w = div.offsetWidth;
+                                    {#alert(w)#}
+                                    {#alert(dataArray)#}
+                                    {#alert(dataName)#}
+
+                                    var height = 400, width = w;
+                                    var padding = {left: 30, right: 30, top: 20, bottom: 20};
+                                    var rectPadding = 4;
+                                    var svg = d3.select("#main").append("svg").attr("height", height).attr("width", width);
 ////////设置ｘ轴比例尺(构造一个序数比例尺)/////////////
-var x = d3.scale.ordinal()
-{#var xScale = x.domain(d3.range(dataArray.length))#}
-    var xScale = x.domain(dataName)
-        {#var xScale = d3.scale.ordinal()#}
-  {#.domain([0,3])#}
-.rangeRoundBands([0,width-padding.left-padding.right]);
+                                    var x = d3.scale.ordinal()
+                                    {#var xScale = x.domain(d3.range(dataArray.length))#}
+                                    var xScale = x.domain(dataName)
+                                    {#var xScale = d3.scale.ordinal()#}
+                                    {#.domain([0,3])#}
+                                        .rangeRoundBands([0, width - padding.left - padding.right]);
 
 
-var z = d3.scale.ordinal()
-var zScale = z.domain(d3.range(dataArray.length))
-        {#var xScale = d3.scale.ordinal()#}
-  {#.domain([0,3])#}
-.rangeRoundBands([0,width-padding.left-padding.right]);
+                                    var z = d3.scale.ordinal()
+                                    var zScale = z.domain(d3.range(dataArray.length))
+                                    {#var xScale = d3.scale.ordinal()#}
+                                    {#.domain([0,3])#}
+                                        .rangeRoundBands([0, width - padding.left - padding.right]);
 ////////创建新的轴生成器///////////
-var xAxis = d3.svg.axis()
-.scale(xScale)
-.orient('bottom');
-svg.append("g")
-.attr("transform","translate(" + padding.left + "," + (height-padding.top) + ")")
-.attr("class","axis")
-.call(xAxis);
+                                    var xAxis = d3.svg.axis()
+                                        .scale(xScale)
+                                        .orient('bottom');
+                                    svg.append("g")
+                                        .attr("transform", "translate(" + padding.left + "," + (height - padding.top) + ")")
+                                        .attr("class", "axis")
+                                        .call(xAxis);
 ////////y轴的比例尺(构建一个线性比例尺)///////////
-var yScale = d3.scale.linear()
-.domain([0,d3.max(dataArray)])
-.range([height - padding.top - padding.bottom, 0]);
+                                    var yScale = d3.scale.linear()
+                                        .domain([0, d3.max(dataArray)])
+                                        .range([height - padding.top - padding.bottom, 0]);
 ////////创建新的轴生成器/////////////////////
-var yAxis = d3.svg.axis()
-.scale(yScale)
-.orient('left');
-svg.append('g')
-.attr("transform","translate(" + padding.left + "," + padding.top + ")")
-.attr("class","axis")
-.call(yAxis)
+                                    var yAxis = d3.svg.axis()
+                                        .scale(yScale)
+                                        .orient('left');
+                                    svg.append('g')
+                                        .attr("transform", "translate(" + padding.left + "," + padding.top + ")")
+                                        .attr("class", "axis")
+                                        .call(yAxis)
 ////////添加矩形//////////////////////////////////////////////////////
-var rect = svg.selectAll("rect")
-rect.data(dataArray).enter().append("rect")
-// .attr("height",function(d,i){return d*10})
-// .attr("width",xScale.rangeBand() - rectPadding)
-.attr("transform","translate(" + padding.left + "," + padding.top + ")")
-.attr("x",function(d,i){return zScale(i)+rectPadding/2})
-.attr("y",function(d,i){return yScale(d)})
-.attr("height",function(d){return height-padding.bottom-padding.top-yScale(d)})
-.attr("width",xScale.rangeBand()-rectPadding)
+                                    var rect = svg.selectAll("rect")
+                                    rect.data(dataArray).enter().append("rect")
+                                        // .attr("height",function(d,i){return d*10})
+                                        // .attr("width",xScale.rangeBand() - rectPadding)
+                                        .attr("transform", "translate(" + padding.left + "," + padding.top + ")")
+                                        .attr("x", function (d, i) {
+                                            return zScale(i) + rectPadding / 2
+                                        })
+                                        .attr("y", function (d, i) {
+                                            return yScale(d)
+                                        })
+                                        .attr("height", function (d) {
+                                            return height - padding.bottom - padding.top - yScale(d)
+                                        })
+                                        .attr("width", xScale.rangeBand() - rectPadding)
 //////////添加文字/////////////
-svg.selectAll(".text").data(dataArray)
-.enter().append("text")
-.attr("class","bar-text")
-.attr("x",function(d,i){return zScale(i)+rectPadding/2})
-{#.attr("y",function(d){return yScale(d)})#}
-    .attr("y",function(d){return yScale(d)})
-.attr("transform","translate(" + padding.left + "," + padding.top + ")")
-.attr("dx",function(){return (xScale.rangeBand() - rectPadding)/2})
-.attr("dy",function(){return -5})
-.text(function(d){return d})
-svg.selectAll("rect").attr('fill','#c0c7f5')
-.attr('style','cursor:pointer')
-.on('mouseover',function(d,i){
-d3.select(this)
-.attr('fill','#ced2ec')
-})
-.on('mouseout',function(){
-d3.select(this)
-.transition()
-.duration(500)
-.attr('fill','#c0c7f5')
-})
+                                    svg.selectAll(".text").data(dataArray)
+                                        .enter().append("text")
+                                        .attr("class", "bar-text")
+                                        .attr("x", function (d, i) {
+                                            return zScale(i) + rectPadding / 2
+                                        })
+                                        {#.attr("y",function(d){return yScale(d)})#}
+                                        .attr("y", function (d) {
+                                            return yScale(d)
+                                        })
+                                        .attr("transform", "translate(" + padding.left + "," + padding.top + ")")
+                                        .attr("dx", function () {
+                                            return (xScale.rangeBand() - rectPadding) / 2
+                                        })
+                                        .attr("dy", function () {
+                                            return -5
+                                        })
+                                        .text(function (d) {
+                                            return d
+                                        })
+                                    svg.selectAll("rect").attr('fill', '#c0c7f5')
+                                        .attr('style', 'cursor:pointer')
+                                        .on('mouseover', function (d, i) {
+                                            d3.select(this)
+                                                .attr('fill', '#ced2ec')
+                                        })
+                                        .on('mouseout', function () {
+                                            d3.select(this)
+                                                .transition()
+                                                .duration(500)
+                                                .attr('fill', '#c0c7f5')
+                                        })
 
 
-}
-                  </script>
-                    <table class="scoretable">
-                        <tr>
-                            <td>顺序</td>
-                            <td>姓名</td>
-                            <td>积分</td>
-                            <td>排名</td>
-                        </tr>
-                           {% for student in top100_students %}
-                        <tr>
-                            <td>{{ forloop.counter }}</td>
-                            <td>{{ student.last_name }}{{ student.first_name }}
-                            </td>
-                            <td>{{ student.get_score }}
-                            </td>
-                            <td>{{user_index}}
-                            </td>
-                        </tr>
-                         {% endfor %}
-                    </table>
+                                }
+                            </script>
+                            <table class="scoretable">
+                                <tr>
+                                    <td>顺序</td>
+                                    <td>姓名</td>
+                                    <td>积分</td>
+                                    <td>排名</td>
+                                </tr>
+                                {% for student in top100_students %}
+                                    <tr>
+                                        <td>{{ forloop.counter }}</td>
+                                        <td>{{ student.last_name }}{{ student.first_name }}
+                                        </td>
+                                        <td>{{ student.get_score }}
+                                        </td>
+                                        <td>{{ user_index }}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </table>
 
 
-
-
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
     {% endif %}
 {% endblock %}
 

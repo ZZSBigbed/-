@@ -19,6 +19,7 @@ from django.views.static import serve
 from django.conf.urls import handler404, handler500
 import xadmin
 
+
 from users.views import LoginView, RegisterView, ActiveUserView, ForgetPwdView, ResetView, ModifyPwdView, LogoutView, \
     IndexView
 from .settings import MEDIA_ROOT
@@ -28,6 +29,7 @@ from .settings import MEDIA_ROOT
 urlpatterns = [
     url(r'^xadmin/', xadmin.site.urls),
     url('^$', IndexView.as_view(), name="index"),
+    url('^teacher/$', IndexView.as_view(), name="teacher_index"),
     url('^login/$', LoginView.as_view(), name="login"),
     url('^logout/$', LogoutView.as_view(), name="logout"),
     url('^register/$', RegisterView.as_view(), name="register"),
