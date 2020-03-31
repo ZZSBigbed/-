@@ -54,6 +54,23 @@ class UserCompetition(models.Model):
         verbose_name_plural = verbose_name
 
 
+class UserApply(models.Model):
+    user = models.ForeignKey(UserProfile, verbose_name=u"用户", on_delete=models.CASCADE)
+    competition_name = models.CharField(max_length=50, verbose_name=u"竞赛名")
+    level = models.CharField(
+        choices=(("nation", u"国家级"), ("province", u"省级"), ("city", u"市级"), ("school", u"校级"), ("college", u"院级")),
+        max_length=10, verbose_name=u'等級')
+    rank = models.CharField(default="uncertain",
+                            choices=(("uncertain", u"未确定"), ("first", u"一等奖"), ("second", u"二等奖"), ("third", u"三等奖")),
+                            max_length=10)
+    apply_image = models.ImageField(upload_to="media/image/%Y/%m", default=u"media/image/default.png", max_length=100, verbose_name=u"申请材料")
+    is_certified = models.BooleanField(default=False, verbose_name=u"是否被认证")
+    add_time = models.DateTimeField(default=datetime.now, verbose_name=u"添加时间")
+    class Meta:
+        verbose_name = u"用户申请"
+        verbose_name_plural = verbose_name
+
+
 class UserTeam(models.Model):
     team = models.ForeignKey(Team, verbose_name=u"团队", on_delete=models.CASCADE)
     competition = models.ForeignKey(Competition, verbose_name=u"竞赛", on_delete=models.CASCADE)
