@@ -63,9 +63,12 @@ class UserApply(models.Model):
     rank = models.CharField(default="uncertain",
                             choices=(("uncertain", u"未确定"), ("first", u"一等奖"), ("second", u"二等奖"), ("third", u"三等奖")),
                             max_length=10)
-    apply_image = models.ImageField(upload_to="media/image/%Y/%m", default=u"media/image/default.png", max_length=100, verbose_name=u"头像")
+    apply_image = models.ImageField(upload_to="media/image/%Y/%m", default=u"media/image/default.png", max_length=100, verbose_name=u"申请材料")
     is_certified = models.BooleanField(default=False, verbose_name=u"是否被认证")
     add_time = models.DateTimeField(default=datetime.now, verbose_name=u"添加时间")
+    class Meta:
+        verbose_name = u"用户申请"
+        verbose_name_plural = verbose_name
 
 
 class UserTeam(models.Model):

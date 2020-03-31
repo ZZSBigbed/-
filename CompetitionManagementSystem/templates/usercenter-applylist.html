@@ -1,0 +1,37 @@
+{% extends 'usercenter-base.html' %}
+{% block title %}个人信息-科创竞赛管理系统{% endblock %}
+{% block custom_bread %}
+    <section>
+        <div class="userwp">
+            <ul class="crumbs">
+                <li><a href="{% url 'index' %}">首页</a>></li>
+                <li><a href="{% url 'users:user_info' %}">个人中心</a>></li>
+                <li>个人信息</li>
+            </ul>
+        </div>
+    </section>
+{% endblock %}
+
+{% block right_content %}
+    <div class="col-lg-10 userright">
+        <div class="personal_des ">
+            <div class="head" style="border:1px solid #eaeaea;">
+                <h1>申请认证</h1>
+            </div>
+            <div class="apply_list">
+                {% for user_apply in all_user_apply %}
+                    <div class="combox box">
+                        <div class="des">
+                            <a href="{% url 'users:apply_detail' user_apply.id %}">
+                                <h2>{{ user_apply.competition_name }}</h2>
+                            </a>
+                            <span class="fl">级别：<i
+                                    class="key">{{ user_apply.level }}</i></span>
+                            <span class="fr">奖项：{{ user_apply.rank }}&nbsp;&nbsp;认证情况：{% if user_apply.is_certified == True %}√{% endif %}{% if user_apply.is_certified == False %}×{% endif %}</span>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

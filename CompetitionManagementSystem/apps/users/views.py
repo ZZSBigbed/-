@@ -9,9 +9,10 @@ from django.contrib.auth.hashers import make_password
 from django.urls import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 
-from .forms import LoginForm, RegisterForm, ForgetForm, ModifyPwdForm, UploadImageForm, UserInfoForm, UploadApplyImageForm
+from .forms import LoginForm, RegisterForm, ForgetForm, ModifyPwdForm, UploadImageForm, UserInfoForm, \
+    UploadApplyImageForm
 from .models import UserProfile, EmailVerifyRecord, Banner
-from operation.models import UserTeam, UserFavorite, UserMessage
+from operation.models import UserTeam, UserFavorite, UserMessage, UserApply
 from competitions.models import Competition
 from utils.email_send import send_register_email
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -176,18 +177,23 @@ class UserinfoView(LoginRequiredMixin, View):
             return HttpResponse(json.dumps(user_info_form.errors), content_type='application/json')
 
 
-class UserApplyView(LoginRequiredMixin, View):
+class UserApplylistView(LoginRequiredMixin, View):
 
     def get(self, request):
-        return render(request, 'usercenter-apply.html', {})
+        all_user_apply = UserApply.objects.filter(user=request.user)
+        return render(request, 'usercenter-applylist.html', {
+            "all_user_apply": all_user_apply,
+        })
 
-    def post(self, request):
-        user_info_form = UserInfoForm(request.POST, instance=request.user)
-        if user_info_form.is_valid():
-            user_info_form.save()
-            return HttpResponse('{"status":"success"}', content_type='application/json')
-        else:
-            return HttpResponse(json.dumps(user_info_form.errors), content_type='application/json')
+
+class ApplyDetailView(View):
+
+    def get(self, request, apply_id):
+        user_apply = UserApply.objects.get(id=int(apply_id))
+
+        return render(request, "apply-detail.html", {
+            "user_apply": user_apply,
+        })
 
 
 class UploadImageView(LoginRequiredMixin, View):
@@ -216,7 +222,6 @@ class ApplyImageView(LoginRequiredMixin, View):
             return HttpResponse('{"status":"success"}', content_type='application/json')
         else:
             return HttpResponse('{"status":"fail"}', content_type='application/json')
-
 
 
 class UpdatePwdView(View):
@@ -345,9 +350,9 @@ class IndexView(View):
             'competitions': competitions,
             'banner_competitions': banner_competitions,
             "top100_students": top100_students,
-            "user_index":user_index,
-            "college_major":college_major,
-            "grade":grade
+            "user_index": user_index,
+            "college_major": college_major,
+            "grade": grade
         })
 
 

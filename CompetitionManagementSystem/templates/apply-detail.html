@@ -1,0 +1,77 @@
+{% extends 'usercenter-base.html' %}
+{% block title %}个人信息-科创竞赛管理系统{% endblock %}
+{% block custom_bread %}
+    <section>
+        <div class="userwp">
+            <ul class="crumbs">
+                <li><a href="{% url 'index' %}">首页</a>></li>
+                <li><a href="{% url 'users:user_info' %}">个人中心</a>></li>
+                <li>个人信息</li>
+            </ul>
+        </div>
+    </section>
+{% endblock %}
+
+{% block right_content %}
+    <div class="col-lg-10 userright">
+        <div class="personal_des ">
+            <div class="head" style="border:1px solid #eaeaea;">
+                <h1>{{ user_apply.competition_name }} 认证申请</h1>
+            </div>
+            <div class="inforcon">
+                <div class=" left">
+                    <iframe id='frameFile' name='frameFile' style='display: none;'></iframe>
+                    <form class="clearfix" id="jsAvatarForm" enctype="multipart/form-data" autocomplete="off"
+                          method="post" action="{% url 'users:image_upload' %}" target='frameFile'>
+                        <label class="changearea" for="avatarUp">
+                            <span id="avatardiv" class="pic">
+                                <img width="100" height="100" class="js-img-show" id="avatarShow"
+                                     src="{{ MEDIA_URL }}{{ user_apply.apply_image }}"/>
+                            </span>
+                            <span class="fl upload-inp-box" style="margin-left:70px;">
+                                <span class="button btn-green btn-w100" id="jsAvatarBtn">修改申报材料</span>
+                                <input type="file" name="image" id="avatarUp" class="js-img-up"/>
+                            </span>
+                        </label>
+                        {% csrf_token %}
+                    </form>
+                </div>
+                <form class="perinform" id="jsEditUserForm" autocomplete="off">
+                    <ul class="right">
+                        <li>竞&nbsp;&nbsp;赛&nbsp;&nbsp;名：
+                            <input type="text" name="username" id="nick_name" value="{{ user_apply.competition_name }}"
+                                   maxlength="10">
+                            <i class="error-tips"></i>
+                        </li>
+                        <li>等&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;级：
+                            <select class="selectpicker" data-live-search="true" name="level">
+                                <option value="-1">请选择</option>
+                                <option value="nation">国家级</option>
+                                <option value="province">省级</option>
+                                <option value="city">市级</option>
+                                <option value="school">校级</option>
+                                <option value="college">院级</option>
+                            </select>
+                        </li>
+                        <li>奖&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;项：
+                            <select class="selectpicker" data-live-search="true" name="rank" >
+                                <option value="-1">请选择</option>
+                                <option value="uncertain">未确定</option>
+                                <option value="first">一等奖</option>
+                                <option value="second">二等奖</option>
+                                <option value="third">三等奖</option>
+                            </select>
+                        </li>
+                        <li>认&nbsp;&nbsp;定&nbsp;&nbsp;情&nbsp;&nbsp;况：
+                            <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="is_certified" value="male"
+                                                                        {% if user_apply.is_certified == True %}checked="checked'"{% endif %}>已认定</label>
+                            <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="is_certified" value="female"
+                                                                              {% if user_apply.is_certified == False %}checked="checked"{% endif %}>未认定</label>
+                        </li>
+                    </ul>
+                    {% csrf_token %}
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

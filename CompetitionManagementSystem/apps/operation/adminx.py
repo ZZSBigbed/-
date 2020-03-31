@@ -4,7 +4,7 @@ __date__ = '2020/1/20 15:32'
 
 import xadmin
 
-from .models import CompetitionComments, UserFavorite, UserMessage, UserCompetition, UserTeam
+from .models import CompetitionComments, UserFavorite, UserMessage, UserCompetition, UserTeam, UserApply
 
 
 class CompetitionCommentsAdmin(object):
@@ -37,8 +37,14 @@ class UserTeamAdmin(object):
     list_filter = ["team", "competition", "rank", "teacher", "add_time"]
 
 
+class UserApplyAdmin(object):
+    list_display = ["user", "competition_name", "level", "rank","is_certified", "add_time"]
+    search_fields = ["user", "competition_name", "level", "rank","is_certified"]
+    list_filter = ["user", "competition_name", "level", "rank","is_certified", "add_time"]
+
 xadmin.site.register(CompetitionComments, CompetitionCommentsAdmin)
 xadmin.site.register(UserFavorite, UserFavoriteAdmin)
 xadmin.site.register(UserMessage, UserMessageAdmin)
 xadmin.site.register(UserCompetition, UserCompetitionAdmin)
 xadmin.site.register(UserTeam, UserTeamAdmin)
+xadmin.site.register(UserApply, UserApplyAdmin)
