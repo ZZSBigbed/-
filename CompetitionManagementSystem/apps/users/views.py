@@ -9,7 +9,7 @@ from django.contrib.auth.hashers import make_password
 from django.urls import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 
-from .forms import LoginForm, RegisterForm, ForgetForm, ModifyPwdForm, UploadImageForm, UserInfoForm
+from .forms import LoginForm, RegisterForm, ForgetForm, ModifyPwdForm, UploadImageForm, UserInfoForm, UploadApplyImageForm
 from .models import UserProfile, EmailVerifyRecord, Banner
 from operation.models import UserTeam, UserFavorite, UserMessage
 from competitions.models import Competition
@@ -176,6 +176,20 @@ class UserinfoView(LoginRequiredMixin, View):
             return HttpResponse(json.dumps(user_info_form.errors), content_type='application/json')
 
 
+class UserApplyView(LoginRequiredMixin, View):
+
+    def get(self, request):
+        return render(request, 'usercenter-apply.html', {})
+
+    def post(self, request):
+        user_info_form = UserInfoForm(request.POST, instance=request.user)
+        if user_info_form.is_valid():
+            user_info_form.save()
+            return HttpResponse('{"status":"success"}', content_type='application/json')
+        else:
+            return HttpResponse(json.dumps(user_info_form.errors), content_type='application/json')
+
+
 class UploadImageView(LoginRequiredMixin, View):
     """
     用户修改头像
@@ -190,6 +204,19 @@ class UploadImageView(LoginRequiredMixin, View):
             return HttpResponse('{"status":"success"}', content_type='application/json')
         else:
             return HttpResponse('{"status":"fail"}', content_type='application/json')
+
+
+class ApplyImageView(LoginRequiredMixin, View):
+    def post(self, request):
+        image_form = UploadApplyImageForm(request.POST, request.FILES)
+        if image_form.is_valid():
+            image = image_form.cleaned_data['image']
+            request.user.image = image
+            request.user.save()
+            return HttpResponse('{"status":"success"}', content_type='application/json')
+        else:
+            return HttpResponse('{"status":"fail"}', content_type='application/json')
+
 
 
 class UpdatePwdView(View):

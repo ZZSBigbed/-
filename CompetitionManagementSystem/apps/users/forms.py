@@ -4,6 +4,7 @@ __date__ = '2020/1/21 11:25'
 from django import forms
 from captcha.fields import CaptchaField
 from .models import UserProfile
+from operation.models import UserApply
 
 
 class LoginForm(forms.Form):
@@ -34,6 +35,11 @@ class UploadImageForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ['image']
+
+class UploadApplyImageForm(forms.ModelForm):
+    class Meta:
+        model = UserApply
+        fields = ['apply_image']
 
 
 class UserInfoForm(forms.ModelForm):

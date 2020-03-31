@@ -10,7 +10,7 @@ from django.db import models
 class Competition(models.Model):
     name = models.CharField(max_length=50, verbose_name=u"竞赛名")
     desc = models.CharField(max_length=300, verbose_name=u"竞赛描述")
-    category = models.CharField(max_length=20, verbose_name=u"课程类别", default=u"科创竞赛")
+    category = models.CharField(max_length=20, verbose_name=u"竞赛类别", default=u"科创竞赛")
     detail = models.TextField(verbose_name=u"竞赛详情")
     level = models.CharField(
         choices=(("nation", u"国家级"), ("province", u"省级"), ("city", u"市级"), ("school", u"校级"), ("college", u"院级")),
