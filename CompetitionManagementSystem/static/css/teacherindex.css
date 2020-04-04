@@ -1,0 +1,31 @@
+.butler_list.company dd h1 {
+     height: auto;
+     line-height: 15px;
+    margin-top: 10px;
+    float: left;
+    display: inline;
+}
+.butler_list.company .des:hover {
+    width:80% ;
+}
+.butler_list.company .layout {
+    width: 40%;
+    margin-left: 5%;
+}
+.butler_list_box .all {
+        float: right;
+    margin-right: 20px;
+}
+.butler_list_box .company {
+    width: 100%;
+}
+.butler_list.company .difdes  {
+    width: 100%;
+}
+.butler_list.company dd {
+    width: 100% !important;
+    float: left;
+}
+.list {
+    margin-top: 10px;
+}

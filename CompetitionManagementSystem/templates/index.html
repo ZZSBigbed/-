@@ -33,6 +33,12 @@
             stroke: black;
             shape-rendering: crispEdges;
         }
+    .listoptions{
+            width: 66%;
+         margin: 0 auto;
+        margin-top: 10PX;
+        MARGIN-BOTTOM: 0PX;
+    }
     </style>
 {% endblock %}
 {% block content %}
@@ -112,9 +118,13 @@
     {% if request.user.is_authenticated %}
         {% if request.user.is_teacher %}
             <div class="listoptions">
-                <ul>
+                <ul style=" margin-bottom: 0px;">
                     <li>
-                        <h2>学院专业</h2>
+                        <h2 style="    font-size: 20px;
+    /* line-height: 20px; */
+    vertical-align: middle;
+    margin: auto;
+    line-height: 50px;">学院专业</h2>
                         <div class="cont">
                             <a href="?grade={{ grade }}"><span
                                     class="{% ifequal college_major '' %}active2{% endifequal %}">全部</span></a>
@@ -135,7 +145,11 @@
                         </div>
                     </li>
                     <li>
-                        <h2>年级</h2>
+                        <h2 style="    font-size: 20px;
+    /* line-height: 20px; */
+    vertical-align: middle;
+    margin: auto;
+    line-height: 50px;">年级</h2>
                         <div class="more">更多</div>
                         <div class="cont">
                             <a href="?cm={{ college_major }}"><span
@@ -162,12 +176,12 @@
             <div class="module">
                 <div class="wp">
                     <div class="compe">排名信息</div>
-                    <div class="fisrt_word">我的积分:{{ request.user.get_score }}</div>
+{#                    <div class="fisrt_word">我的积分:{{ request.user.get_score }}</div>#}
                     <div class="module1 eachmod">
                         <div class="module1_1 left">
                             <div id="barChart"></div>
 
-                            <p class="fisrt_word">我的积分:<br/>{{ request.user.get_score }}</p>
+{#                            <p class="fisrt_word">我的积分:<br/>{{ request.user.get_score }}</p>#}
                         </div>
                         <div class="right group_list">
 
@@ -211,20 +225,20 @@
                                         }
 
                                     }
-                                    if (flag == 0) {
-                                        if ("{{ request.special_id }}" == idnowArray[leng + 1]) {
+                                    {#if (flag == 0) {#}
+                                    {#    if ("{{ request.special_id }}" == idnowArray[leng + 1]) {#}
                                             {#alert("here");#}
-                                            dataArray.push(datanowArray[leng + 1]);
-                                            dataName.push(datanowArray[leng + 1]);
-                                            flag = 1
-                                        } else {
-                                            dataArray.push(0);
-                                            dataName.push("...");
+                                    {#        dataArray.push(datanowArray[leng + 1]);#}
+                                    {#        dataName.push(datanowArray[leng + 1]);#}
+                                    {#        flag = 1#}
+                                    {#    } else {#}
+                                    {#        dataArray.push(0);#}
+                                    {#        dataName.push("...");#}
                                             {#alert("here")#}
-                                            dataArray.push({{ request.user.get_score }})
-                                            dataName.push("{{ request.user.last_name }}{{ request.user.first_name }}")
-                                        }
-                                    }
+                                    {#        dataArray.push({{ request.user.get_score }})#}
+                                    {#        dataName.push("{{ request.user.last_name }}{{ request.user.first_name }}")#}
+                                    {#    }#}
+                                    {# }#}
 
 
                                     {#var dataArray = [23, 13, 21, 14, 37, 15, 18, 34, 30];#}
