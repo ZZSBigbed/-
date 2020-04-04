@@ -1,0 +1,27 @@
+input{
+    width: 50%;
+}
+label{
+    width:20%;
+}
+.form-box{
+    width:80%;
+    margin-left: 5%;
+    margin-top: 20px;
+}
+.groupPurchase_detail .toppro .btn{
+        color: white;
+    width: 40%;
+    margin-left: 10%;
+    margin-top: 30px;
+}
+.groupPurchase_detail .toppro .btn:hover{
+        background-color: #ffab89;
+    width: 40%;
+    margin-left: 10%;
+    margin-top: 30px;
+}
+
+.form-box{
+    background: #fff0;
+}
