@@ -36,15 +36,15 @@
                         {% csrf_token %}
                     </form>
                 </div>
-                <form class="perinform" id="jsEditUserForm" autocomplete="off">
+                <form class="perinform" method="post" id="jsEditUserForm" autocomplete="off">
                     <ul class="right">
                         <li>竞&nbsp;&nbsp;赛&nbsp;&nbsp;名：
-                            <input type="text" name="username" id="nick_name" value="{{ user_apply.competition_name }}"
+                            <input type="text" name="competition_name" id="competition_name" value="{{ user_apply.competition_name }}"
                                    maxlength="10">
                             <i class="error-tips"></i>
                         </li>
                         <li>等&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;级：
-                            <select class="selectpicker" data-live-search="true" name="level">
+                            <select class="selectpicker" data-live-search="true" name="level" id="level">
                                 <option value="-1">请选择</option>
                                 <option value="nation">国家级</option>
                                 <option value="province">省级</option>
@@ -54,7 +54,7 @@
                             </select>
                         </li>
                         <li>奖&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;项：
-                            <select class="selectpicker" data-live-search="true" name="rank" >
+                            <select class="selectpicker" data-live-search="true" name="rank" id="level">
                                 <option value="-1">请选择</option>
                                 <option value="uncertain">未确定</option>
                                 <option value="first">一等奖</option>
@@ -63,11 +63,9 @@
                             </select>
                         </li>
                         <li>认&nbsp;&nbsp;定&nbsp;&nbsp;情&nbsp;&nbsp;况：
-                            <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="is_certified" value="male"
-                                                                        {% if user_apply.is_certified == True %}checked="checked'"{% endif %}>已认定</label>
-                            <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="is_certified" value="female"
-                                                                              {% if user_apply.is_certified == False %}checked="checked"{% endif %}>未认定</label>
-                        </li>
+                            <label><input type="radio" name="is_certified" value="male" {% if user_apply.is_certified == True %}checked="checked'"{% endif %}>已认定</label>
+                            <label><input type="radio" name="is_certified" value="female" {% if user_apply.is_certified == False %}checked="checked"{% endif %}>未认定</label>
+                        <input type="submit"  value="保存">
                     </ul>
                     {% csrf_token %}
                 </form>

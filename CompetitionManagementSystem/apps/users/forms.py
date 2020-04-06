@@ -46,3 +46,9 @@ class UserInfoForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ['username', 'gender', 'birthday', 'address', 'mobile']
+
+
+class UserApplyForm(forms.ModelForm):
+    class Meta:
+        model = UserApply
+        fields = ['competition_name', 'level', 'rank']

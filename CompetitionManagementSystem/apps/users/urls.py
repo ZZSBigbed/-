@@ -4,7 +4,7 @@ __date__ = '2020/2/7 14:42'
 
 from django.conf.urls import url
 from .views import UserinfoView, UploadImageView, UpdatePwdView, SendEmailCodeView, UpdateEmailView, MyCompetitionView, \
-    MyFavView, MymessageView, UserApplylistView, ApplyDetailView
+    MyFavView, MymessageView, UserApplylistView, ApplyDetailView,NewApplyView
 
 urlpatterns = [
     url(r'^info/$', UserinfoView.as_view(), name="user_info"),
@@ -19,6 +19,7 @@ urlpatterns = [
     url(r'^mymessage/$', MymessageView.as_view(), name="mymessage"),
 
     url(r'^myapply/$', UserApplylistView.as_view(), name="myapply"),
+    url(r'^detail/$', NewApplyView.as_view(), name="newapply"),
     url(r'^add_competition/$', MymessageView.as_view(), name="add_competition"),
     url(r'^detail/(?P<apply_id>\d+)/$', ApplyDetailView.as_view(), name="apply_detail"),
 

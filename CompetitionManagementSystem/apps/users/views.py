@@ -9,8 +9,7 @@ from django.contrib.auth.hashers import make_password
 from django.urls import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 
-from .forms import LoginForm, RegisterForm, ForgetForm, ModifyPwdForm, UploadImageForm, UserInfoForm, \
-    UploadApplyImageForm
+from .forms import LoginForm, RegisterForm, ForgetForm, ModifyPwdForm, UploadImageForm, UserInfoForm, UploadApplyImageForm, UserApplyForm
 from .models import UserProfile, EmailVerifyRecord, Banner
 from operation.models import UserTeam, UserFavorite, UserMessage, UserApply
 from competitions.models import Competition
@@ -180,10 +179,19 @@ class UserinfoView(LoginRequiredMixin, View):
 class UserApplylistView(LoginRequiredMixin, View):
 
     def get(self, request):
+        UserApply.objects.filter(competition_name="请添加").delete()
         all_user_apply = UserApply.objects.filter(user=request.user)
         return render(request, 'usercenter-applylist.html', {
             "all_user_apply": all_user_apply,
         })
+
+class NewApplyView(LoginRequiredMixin, View):
+
+    def get(self, request):
+        user_apply = UserApply(user = request.user)
+        user_apply.competition_name="请添加"
+        user_apply.save()
+        return HttpResponseRedirect("{0}".format(user_apply.id))
 
 
 class ApplyDetailView(View):
@@ -194,6 +202,18 @@ class ApplyDetailView(View):
         return render(request, "apply-detail.html", {
             "user_apply": user_apply,
         })
+
+    def post(self, request, apply_id):
+        user_apply_form = UserApplyForm(request.POST)
+        if user_apply_form.is_valid():
+            user_apply = UserApply.objects.get(id=int(apply_id))
+            user_apply.competition_name = user_apply_form.cleaned_data['competition_name']
+            user_apply.level = user_apply_form.cleaned_data['level']
+            user_apply.rank = user_apply_form.cleaned_data['rank']
+            user_apply.save()
+            return HttpResponse('{"status":"success"}', content_type='application/json')
+        else:
+            return HttpResponse(json.dumps(user_apply_form.errors), content_type='application/json')
 
 
 class UploadImageView(LoginRequiredMixin, View):
