@@ -1,7 +1,10 @@
 {% extends 'usercenter-base.html' %}
 {% block title %}个人信息-科创竞赛管理系统{% endblock %}
 {% block custom_bread %}
+{#     <link rel="stylesheet" type="text/css" href="{% static 'css/stuapplylist.css' %}">#}
+{#           <link rel="stylesheet" type="text/css" href="{% static 'css/stuapplylist.css' %}">#}
     <section>
+
         <div class="userwp">
             <ul class="crumbs">
                 <li><a href="{% url 'index' %}">首页</a>></li>
@@ -21,9 +24,9 @@
             <div class="apply_list">
                 {% for user_apply in all_user_apply %}
                     <div class="combox box">
-                        <div class="des">
+                        <div class="applybox des">
                             <a href="{% url 'users:apply_detail' user_apply.id %}">
-                                <h2>{{ user_apply.competition_name }}</h2>
+                                <h2 class="applyname">{{ user_apply.competition_name }}</h2>
                             </a>
                             <span class="fl">级别：<i
                                     class="key">{{ user_apply.level }}</i></span>

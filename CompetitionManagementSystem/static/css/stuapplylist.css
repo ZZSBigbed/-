@@ -1,0 +1,16 @@
+.applybox{
+        width: 70%;
+    margin-left: 5%;
+    height: 90px;
+    border-style: groove;
+    margin-top: 5px;
+}
+.applyname{
+    font-size: 20px;
+    margin-left: 10px;
+}
+.list span {
+    color: #9f9f9f;
+    margin-left: 10px;
+    margin-right: 10px;
+}

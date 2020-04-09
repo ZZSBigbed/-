@@ -1,0 +1,34 @@
+.personal_des .inforcon .left .pic {
+    width: 200px;
+    height: 150px;
+    margin-top: 10px;
+}
+.personal_des .inforcon .left .pic img {
+
+    max-width: 200px;
+    max-height: 150px;
+    width: 200px;
+    height: 150px;
+}
+
+.zidingyi {
+    margin-left: 10px;
+
+}
+.personal_des .inforcon .right li input[type=text]{
+    margin-left: 10px;
+}
+.baocun{
+        width: 20%;
+    float: left;
+    /* margin-left: 20%; */
+    /* padding: 5px; */
+    margin-left: 20%;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 5px;
+}
+
+.personal_des .inforcon .left .pic {
+    border-radius: 0;
+}

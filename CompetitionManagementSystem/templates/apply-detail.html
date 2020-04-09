@@ -29,17 +29,44 @@
                                      src="{{ MEDIA_URL }}{{ user_apply.apply_image }}"/>
                             </span>
                             <span class="fl upload-inp-box" style="margin-left:70px;">
+                                 {% if user_apply.is_certified == False %}
                                 <span class="button btn-green btn-w100" id="jsAvatarBtn">修改申报材料</span>
                                 <input type="file" name="image" id="avatarUp" class="js-img-up"/>
+                                {% endif %}
+                               {% if user_apply.is_certified == True %}
+                                <img  name="image" id="avatarUp" class="js-img-up"/>
+                                {% endif %}
                             </span>
                         </label>
                         {% csrf_token %}
                     </form>
                 </div>
                 <form class="perinform" method="post" id="jsEditUserForm" autocomplete="off">
-                    <ul class="right">
+                     <ul class="right">
+                    {% if user_apply.is_certified == True %}
                         <li>竞&nbsp;&nbsp;赛&nbsp;&nbsp;名：
-                            <input type="text" name="competition_name" id="competition_name" value="{{ user_apply.competition_name }}"
+                           {{ user_apply.competition_name }}
+                            <i class="error-tips"></i>
+                        </li>
+                         <li>等&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;级：
+                            <select class="selectpicker" data-live-search="true" name="level" id="level">
+                               {{ user_apply.competition_name }}
+                            </select>
+                        </li>
+                        <li>奖&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;项：
+                         {{ user_apply.competition_name }}
+                            </select>
+                        </li>
+                        <li>认&nbsp;&nbsp;定&nbsp;&nbsp;情&nbsp;&nbsp;况：
+
+                            <label>已认定</label>
+                        </li>
+
+                    {% endif %}
+                     {% if user_apply.is_certified == False %}
+
+                        <li>竞&nbsp;&nbsp;赛&nbsp;&nbsp;名：
+                            <input class="zidingyi" type="text" name="competition_name" id="competition_name" value="{{ user_apply.competition_name }}"
                                    maxlength="10">
                             <i class="error-tips"></i>
                         </li>
@@ -63,9 +90,14 @@
                             </select>
                         </li>
                         <li>认&nbsp;&nbsp;定&nbsp;&nbsp;情&nbsp;&nbsp;况：
-                            <label><input type="radio" name="is_certified" value="male" {% if user_apply.is_certified == True %}checked="checked'"{% endif %}>已认定</label>
-                            <label><input type="radio" name="is_certified" value="female" {% if user_apply.is_certified == False %}checked="checked"{% endif %}>未认定</label>
-                        <input type="submit"  value="保存">
+
+                            <label>未认定</label>
+                        </li>
+                         <li>
+                          <input type="submit"  value="保存" class="baocun">
+                         </li>
+
+                    {% endif %}
                     </ul>
                     {% csrf_token %}
                 </form>
