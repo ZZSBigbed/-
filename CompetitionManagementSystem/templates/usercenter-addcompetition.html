@@ -1,0 +1,90 @@
+{% extends 'usercenter-base.html' %}
+{% block title %}添加竞赛-科创竞赛管理系统{% endblock %}
+
+{% block custom_bread %}
+    <section>
+        <div class="userwp">
+            <ul class="crumbs">
+                <li><a href="{% url 'index' %}">首页</a>></li>
+                <li><a href="{% url 'users:user_info' %}">个人中心</a>></li>
+                <li>添加竞赛</li>
+            </ul>
+        </div>
+    </section>
+{% endblock %}
+
+{% block right_content %}
+    <div class="userright">
+        <div class="personal_des Releasecont">
+            <div class="head">
+                <h1>添加竞赛</h1>
+            </div>
+
+        </div>
+        <div class="inforcon">
+            <form class="perinform" method="post" id="jsEditUserForm" autocomplete="off">
+                <ul class="right">
+                    <li>竞&nbsp;&nbsp;赛&nbsp;&nbsp;名：
+                        <input type="text" name="name" id="name" value=""
+                               maxlength="10">
+                        <i class="error-tips"></i>
+                    </li>
+                    <li>竞赛&nbsp;描述：
+                        <input type="text" name="desc"
+                               value=""/>
+                    </li>
+                    <li>竞赛&nbsp;类别：
+                        <input type="text" name="category"
+                               value=""/>
+                    </li>
+                    <li>竞赛&nbsp;详情：
+                        <input type="text" name="detail"
+                               value=""/>
+                    </li>
+                    <li>等&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;级：
+                        <select class="selectpicker" data-live-search="true" name="level" id="level">
+                            <option value="-1">请选择</option>
+                            <option value="nation">国家级</option>
+                            <option value="province">省级</option>
+                            <option value="city">市级</option>
+                            <option value="school">校级</option>
+                            <option value="college">院级</option>
+                        </select>
+                    </li>
+                    <li>开始&nbsp;日期：
+                        <input type="text" id="birth_day" name="start_date"
+                               value=""
+                        />
+                        <i class="error-tips"></i>
+                    </li>
+                    <li>结束&nbsp;日期：
+                        <input type="text" id="birth_day" name="end_date"
+                               value=""
+                        />
+                        <i class="error-tips"></i>
+                    </li>
+                    <li>最多参加人数：
+                        <select class="selectpicker" data-live-search="true" name="admitted_students"
+                                id="admitted_students">
+                            <option value="-1">请选择</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                        </select>
+                    </li>
+                    <li class="button heibtn">
+                        <div class="lalala">
+                            <input type="submit" value="保存">
+                        </div>
+                    </li>
+                </ul>
+                {% csrf_token %}
+            </form>
+        </div>
+    </div>
+{% endblock %}

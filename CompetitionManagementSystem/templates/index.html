@@ -33,12 +33,13 @@
             stroke: black;
             shape-rendering: crispEdges;
         }
-    .listoptions{
+
+        .listoptions {
             width: 66%;
-         margin: 0 auto;
-        margin-top: 10PX;
-        MARGIN-BOTTOM: 0PX;
-    }
+            margin: 0 auto;
+            margin-top: 10PX;
+            MARGIN-BOTTOM: 0PX;
+        }
     </style>
 {% endblock %}
 {% block content %}
@@ -176,12 +177,13 @@
             <div class="module">
                 <div class="wp">
                     <div class="compe">排名信息</div>
-{#                    <div class="fisrt_word">我的积分:{{ request.user.get_score }}</div>#}
+                    <li class="active"><a href="{% url 'users:output' %}">[输出到Excel表格]</a></li>
+                    {#                    <div class="fisrt_word">我的积分:{{ request.user.get_score }}</div>#}
                     <div class="module1 eachmod">
                         <div class="module1_1 left">
                             <div id="barChart"></div>
 
-{#                            <p class="fisrt_word">我的积分:<br/>{{ request.user.get_score }}</p>#}
+                            {#                            <p class="fisrt_word">我的积分:<br/>{{ request.user.get_score }}</p>#}
                         </div>
                         <div class="right group_list">
 
@@ -227,14 +229,14 @@
                                     }
                                     {#if (flag == 0) {#}
                                     {#    if ("{{ request.special_id }}" == idnowArray[leng + 1]) {#}
-                                            {#alert("here");#}
+                                    {#alert("here");#}
                                     {#        dataArray.push(datanowArray[leng + 1]);#}
                                     {#        dataName.push(datanowArray[leng + 1]);#}
                                     {#        flag = 1#}
                                     {#    } else {#}
                                     {#        dataArray.push(0);#}
                                     {#        dataName.push("...");#}
-                                            {#alert("here")#}
+                                    {#alert("here")#}
                                     {#        dataArray.push({{ request.user.get_score }})#}
                                     {#        dataName.push("{{ request.user.last_name }}{{ request.user.first_name }}")#}
                                     {#    }#}

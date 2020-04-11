@@ -5,6 +5,7 @@ from django import forms
 from captcha.fields import CaptchaField
 from .models import UserProfile
 from operation.models import UserApply
+from competitions.models import Competition
 
 
 class LoginForm(forms.Form):
@@ -52,3 +53,9 @@ class UserApplyForm(forms.ModelForm):
     class Meta:
         model = UserApply
         fields = ['competition_name', 'level', 'rank']
+
+
+class AddCompetitionForm(forms.ModelForm):
+    class Meta:
+        model = Competition
+        fields = ['name', 'desc', 'category', 'detail', 'level', 'start_date', 'end_date', 'admitted_students']

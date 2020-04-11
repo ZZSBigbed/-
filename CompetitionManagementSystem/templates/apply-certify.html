@@ -1,0 +1,64 @@
+{% extends 'usercenter-base.html' %}
+{% block title %}认定审核-科创竞赛管理系统{% endblock %}
+{% block custom_bread %}
+    <section>
+        <div class="userwp">
+            <ul class="crumbs">
+                <li><a href="{% url 'index' %}">首页</a>></li>
+                <li><a href="{% url 'users:user_info' %}">个人中心</a>></li>
+                <li>认定审核</li>
+            </ul>
+        </div>
+    </section>
+{% endblock %}
+
+{% block right_content %}
+    <div class="col-lg-10 userright">
+        <div class="personal_des ">
+            <div class="head" style="border:1px solid #eaeaea;">
+                <h1>{{ user_apply.competition_name }}认证申请</h1>
+            </div>
+            <div class="inforcon">
+                <div class=" left">
+                    <iframe id='frameFile' name='frameFile' style='display: none;'></iframe>
+
+                    <label class="changearea" for="avatarUp">
+                            <span id="avatardiv" class="pic">
+                                <img width="100" height="100" class="js-img-show" id="avatarShow"
+                                     src="{{ MEDIA_URL }}{{ user_apply.apply_image }}"/>
+                            </span>
+                    </label>
+
+                </div>
+                <form class="perinform" method="post" id="jsEditUserForm" autocomplete="off">
+                    <ul class="right">
+
+                        <li>竞&nbsp;&nbsp;赛&nbsp;&nbsp;名：
+                            {{ user_apply.competition_name }}
+                            <i class="error-tips"></i>
+                        </li>
+                        <li>等&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;级：
+
+                            {{ user_apply.level }}
+                        </li>
+                        <li>奖&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;项：
+                            {{ user_apply.rank }}
+
+                        </li>
+                        <li>认&nbsp;&nbsp;定&nbsp;&nbsp;情&nbsp;&nbsp;况：
+                            {% if user_apply.is_certified == False %}<label>未认定</label>{% endif %}
+                            {% if user_apply.is_certified == True %}<label>已认定</label>{% endif %}
+                        </li>
+                        <li class="active">
+                            {% if user_apply.is_certified == False %}
+                                <input type="submit" value="审核通过" class="baocun">{% endif %}
+                            {% if user_apply.is_certified == True %}
+                                <input type="submit" value="审核未通过" class="baocun">{% endif %}
+                        </li>
+                        {% csrf_token %}
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

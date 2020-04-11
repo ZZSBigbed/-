@@ -1,5 +1,5 @@
 # _*_ encoding: utf-8 _*_
-import json
+import json, xlwt
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.backends import ModelBackend
@@ -9,7 +9,8 @@ from django.contrib.auth.hashers import make_password
 from django.urls import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 
-from .forms import LoginForm, RegisterForm, ForgetForm, ModifyPwdForm, UploadImageForm, UserInfoForm, UploadApplyImageForm, UserApplyForm
+from .forms import LoginForm, RegisterForm, ForgetForm, ModifyPwdForm, UploadImageForm, UserInfoForm, \
+    UploadApplyImageForm, UserApplyForm, AddCompetitionForm
 from .models import UserProfile, EmailVerifyRecord, Banner
 from operation.models import UserTeam, UserFavorite, UserMessage, UserApply
 from competitions.models import Competition
@@ -185,16 +186,17 @@ class UserApplylistView(LoginRequiredMixin, View):
             "all_user_apply": all_user_apply,
         })
 
+
 class NewApplyView(LoginRequiredMixin, View):
 
     def get(self, request):
-        user_apply = UserApply(user = request.user)
-        user_apply.competition_name="请添加"
+        user_apply = UserApply(user=request.user)
+        user_apply.competition_name = "请添加"
         user_apply.save()
         return HttpResponseRedirect("{0}".format(user_apply.id))
 
 
-class ApplyDetailView(View):
+class ApplyDetailView(LoginRequiredMixin, View):
 
     def get(self, request, apply_id):
         user_apply = UserApply.objects.get(id=int(apply_id))
@@ -211,9 +213,39 @@ class ApplyDetailView(View):
             user_apply.level = user_apply_form.cleaned_data['level']
             user_apply.rank = user_apply_form.cleaned_data['rank']
             user_apply.save()
-            return HttpResponse('{"status":"success"}', content_type='application/json')
+            return HttpResponseRedirect("/user/myapply/")
         else:
             return HttpResponse(json.dumps(user_apply_form.errors), content_type='application/json')
+
+
+class ApplyCertifyView(LoginRequiredMixin, View):
+
+    def get(self, request, apply_id):
+        user_apply = UserApply.objects.get(id=int(apply_id))
+        return render(request, "apply-certify.html", {
+            "user_apply": user_apply,
+        })
+
+    def post(self, request, apply_id):
+        user_apply = UserApply.objects.get(id=int(apply_id))
+
+        if not user_apply.is_certified:
+            user_apply.is_certified = True
+        else:
+            user_apply.is_certified = False
+        user_apply.save()
+        return HttpResponseRedirect("/user/certifylist/")
+
+
+class CertifyView(LoginRequiredMixin, View):
+
+    def get(self, request):
+        uncertified_user_apply = UserApply.objects.filter(is_certified=False)
+        certified_user_apply = UserApply.objects.filter(is_certified=True)
+        return render(request, 'usercenter-certify.html', {
+            "uncertified_user_apply": uncertified_user_apply,
+            "certified_user_apply": certified_user_apply,
+        })
 
 
 class UploadImageView(LoginRequiredMixin, View):
@@ -299,6 +331,19 @@ class MyCompetitionView(LoginRequiredMixin, View):
         })
 
 
+class AddCompetitionView(LoginRequiredMixin, View):
+    def get(self, request):
+        return render(request, 'usercenter-addcompetition.html', {})
+
+    def post(self, request):
+        competition_form = AddCompetitionForm(request.POST)
+        if competition_form.is_valid():
+            competition_form.save()
+            return HttpResponse('{"status":"success"}', content_type='application/json')
+        else:
+            return HttpResponse(json.dumps(competition_form.errors), content_type='application/json')
+
+
 class MyFavView(LoginRequiredMixin, View):
     def get(self, request):
         competition_list = []
@@ -374,6 +419,41 @@ class IndexView(View):
             "college_major": college_major,
             "grade": grade
         })
+
+
+def output(request):
+    response = HttpResponse(content_type='application/ms-excel')
+    response['Content-Disposition'] = 'attachment; filename="users.xls"'
+    wb = xlwt.Workbook(encoding='utf-8')
+    ws = wb.add_sheet('Users')
+    # Sheet header, first row
+    row_num = 0
+    font_style = xlwt.XFStyle()
+    font_style.font.bold = True
+    columns = ['用户名', '姓', '名', '学号', '电子邮箱', ]
+    for col_num in range(len(columns)):
+        ws.write(row_num, col_num, columns[col_num], font_style)
+    # Sheet body, remaining rows
+    font_style = xlwt.XFStyle()
+
+    all_students = UserProfile.objects.filter(is_teacher=False)
+    # 取出筛选学院专业
+    grade = request.GET.get('grade', "")
+    if grade:
+        all_students = all_students.filter(Q(special_id__contains=grade))
+    # 学院专业筛选
+    college_major = request.GET.get('cm', "")
+    if college_major:
+        all_students = all_students.filter(stu_college_major=college_major)
+
+    all_students = all_students.order_by("-score")
+    rows = all_students.values_list('username', 'last_name', 'special_id', 'first_name', 'email')
+    for row in rows:
+        row_num += 1
+        for col_num in range(len(row)):
+            ws.write(row_num, col_num, row[col_num], font_style)
+    wb.save(response)
+    return response
 
 
 def page_not_found(request, exception):

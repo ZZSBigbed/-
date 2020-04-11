@@ -1,0 +1,62 @@
+{% extends 'usercenter-base.html' %}
+{% block title %}认定审核-科创竞赛管理系统{% endblock %}
+{% block custom_bread %}
+    {#     <link rel="stylesheet" type="text/css" href="{% static 'css/stuapplylist.css' %}">#}
+    {#           <link rel="stylesheet" type="text/css" href="{% static 'css/stuapplylist.css' %}">#}
+    <section>
+
+        <div class="userwp">
+            <ul class="crumbs">
+                <li><a href="{% url 'index' %}">首页</a>></li>
+                <li><a href="{% url 'users:user_info' %}">个人中心</a>></li>
+                <li>认定审核</li>
+            </ul>
+        </div>
+    </section>
+{% endblock %}
+
+{% block right_content %}
+    <div class="col-lg-10 userright">
+        <div class="personal_des ">
+            <div class="head" style="border:1px solid #eaeaea;">
+                <h1>认定审核</h1>
+            </div>
+            <div class="apply_list">
+                <div class="head" style="border:1px solid #eaeaea;">
+                    <h1>待审核</h1>
+                </div>
+                {% for user_apply in uncertified_user_apply %}
+                    <div class="combox box">
+                        <div class="applybox des">
+                            <a href="{% url 'users:apply_certify' user_apply.id %}">
+                                <h2 class="applyname">{{ user_apply.competition_name }}</h2>
+                            </a>
+                            <span class="fl">级别：<i
+                                    class="key">{{ user_apply.level }}</i></span>
+                            <span class="fr">奖项：{{ user_apply.rank }}&nbsp;&nbsp;认证情况：
+                                {% if user_apply.is_certified == True %}√{% endif %}
+                                {% if user_apply.is_certified == False %}×{% endif %}</span>
+                        </div>
+                    </div>
+                {% endfor %}
+                <div class="head" style="border:1px solid #eaeaea;">
+                    <h1>已审核</h1>
+                </div>
+                {% for user_apply in certified_user_apply %}
+                    <div class="combox box">
+                        <div class="applybox des">
+                            <a href="{% url 'users:apply_certify' user_apply.id %}">
+                                <h2 class="applyname">{{ user_apply.competition_name }}</h2>
+                            </a>
+                            <span class="fl">级别：<i
+                                    class="key">{{ user_apply.level }}</i></span>
+                            <span class="fr">奖项：{{ user_apply.rank }}&nbsp;&nbsp;认证情况：
+                                {% if user_apply.is_certified == True %}√{% endif %}
+                                {% if user_apply.is_certified == False %}×{% endif %}</span>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

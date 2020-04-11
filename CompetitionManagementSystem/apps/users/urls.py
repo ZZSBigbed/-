@@ -4,7 +4,8 @@ __date__ = '2020/2/7 14:42'
 
 from django.conf.urls import url
 from .views import UserinfoView, UploadImageView, UpdatePwdView, SendEmailCodeView, UpdateEmailView, MyCompetitionView, \
-    MyFavView, MymessageView, UserApplylistView, ApplyDetailView,NewApplyView
+    MyFavView, MymessageView, UserApplylistView, ApplyDetailView, NewApplyView, CertifyView, ApplyCertifyView, \
+    AddCompetitionView, output
 
 urlpatterns = [
     url(r'^info/$', UserinfoView.as_view(), name="user_info"),
@@ -20,7 +21,9 @@ urlpatterns = [
 
     url(r'^myapply/$', UserApplylistView.as_view(), name="myapply"),
     url(r'^detail/$', NewApplyView.as_view(), name="newapply"),
-    url(r'^add_competition/$', MymessageView.as_view(), name="add_competition"),
+    url(r'^add_competition/$', AddCompetitionView.as_view(), name="add_competition"),
     url(r'^detail/(?P<apply_id>\d+)/$', ApplyDetailView.as_view(), name="apply_detail"),
-
+    url(r'^certify/(?P<apply_id>\d+)/$', ApplyCertifyView.as_view(), name="apply_certify"),
+    url(r'^certifylist/$', CertifyView.as_view(), name="certifylist"),
+    url(r'^output/$',output, name="output"),
 ]
