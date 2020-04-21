@@ -86,3 +86,19 @@
     border-style: groove;
     border-color: #79554830;
 }
+
+.excle{
+        float: right;
+    margin: auto;
+    height: 50px;
+    width: 150px;
+    background-color: #c3e89d;
+    border-style: none;
+    /* border-radius: 10%; */
+    margin-right: 20px;
+    margin-top: 10px;
+    border-radius: 50px;
+}
+.excle:hover{
+    background-color: #93af76;
+}

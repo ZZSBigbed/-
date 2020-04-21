@@ -4,6 +4,7 @@
 {% block custom_bread %}{% endblock %}
 {% block custom_js %}
     <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+     <link rel="stylesheet" type="text/css" href="/static/css/index.css">
     <style>
         body {
             margin: 0px;
@@ -177,7 +178,7 @@
             <div class="module">
                 <div class="wp">
                     <div class="compe">排名信息</div>
-                    <li class="active"><a href="{% url 'users:output' %}">[输出到Excel表格]</a></li>
+                    <button class="excle"><a href="{% url 'users:output' %}">[输出到Excel表格]</a></button>
                     {#                    <div class="fisrt_word">我的积分:{{ request.user.get_score }}</div>#}
                     <div class="module1 eachmod">
                         <div class="module1_1 left">

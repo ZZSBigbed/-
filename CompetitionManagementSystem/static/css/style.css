@@ -1333,7 +1333,6 @@ textarea:focus {
 
 .header .middle .wp {
     height: 100%;
-    background: url(../images/header_middle.png) no-repeat right 10px;
 }
 
 /*select*/
@@ -1346,7 +1345,7 @@ textarea:focus {
 }
 
 .selectOption {
-    color: #67ae56;
+    color: #3F51B5;
     background: url('../images/select_arrow.png') no-repeat 85% 60%;
     display: block;
     cursor: pointer;
@@ -1429,7 +1428,7 @@ textarea:focus {
 }
 
 .header .nav a:hover, .header .nav .active {
-    background: #3D9328;
+    background: #3f51b5c7;;
 }
 
 .header .nav li:last-child a {

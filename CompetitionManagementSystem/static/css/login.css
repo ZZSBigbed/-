@@ -15,7 +15,8 @@ a:hover{
     background:#fff;
 }
 .bg-box{
-    background:url(../images/login-bg.png) no-repeat center center;
+    background:url(../images/login.jpg) no-repeat center center;
+    background-size: 100% 100%;
 }
 .header-box{
     width:1190px;
@@ -42,7 +43,8 @@ a:hover{
 }
 .hd-bar > li.active > a,
 .hd-bar > li > a:hover {
-    color:#67ac53;
+    /*color:#67ac53;*/
+    color: #5287b1;
 }
 
 
@@ -55,9 +57,9 @@ a:hover{
     height:68px;
     line-height:68px;
     margin-bottom:15px;
-    padding-top:32px;
-    padding-left:190px;
-    background:url(../images/logo.png) no-repeat 0 center;
+    padding-top:20px;
+    padding-left:40px;
+    /*background:url(../images/logo.png) no-repeat 0 center;*/
 }
 .index-logo{
     position:absolute;
@@ -222,7 +224,7 @@ a:hover{
     background: #FB8344;
 }
 .error{
-    background: #fb8344;
+    /*background: #fb8344;*/
     color:#fff !important;
     text-align: center;
     line-height: 40px !important;
@@ -344,8 +346,8 @@ a:hover{
 }
 .form-box .form-group.focus,
 .form-box .valcode.error {
-    border-color: #6ec558;
-    box-shadow: 0 0 5px #6ec558;
+    border-color: #4794c5;
+    box-shadow: 0 0 5px #3ca0c5;
 }
 .form-box .form-group.blur,
 .form-box  .valcode.blur {
@@ -353,8 +355,8 @@ a:hover{
 }
 .form-box .form-group.errorput,
 .form-box .valcode.errorput input {
-    border-color: #f00;
-    box-shadow: 0 0 5px #aa0b0b;
+    /*border-color: #f00;*/
+    /*box-shadow: 0 0 5px #aa0b0b;*/
 }
 
 .dialog-open,

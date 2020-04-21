@@ -2,11 +2,65 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e654f886-5e75-4aa9-8020-20395e4f3f94" name="Default Changelist" comment="竞赛认定">
-      <change afterPath="$PROJECT_DIR$/static/css/applydetail.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/stuapplylist.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/usercenter.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/usercenter.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/01_mid.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/01_small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/02_mid.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/02_small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/57a801860001c34b12000460.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/57aa86a0000145c512000460.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/about_nav_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/aobama.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/bank1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/bank2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/bank3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/bank4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/bank5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/banner.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/bjdx.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/code.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/companydes.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/companylogo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/companyrank.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/compright.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/contract.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/course.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/filebg/avi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/filebg/cdr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/filebg/csv.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/filebg/doc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/filebg/jpg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/filebg/mp3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/filebg/pdf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/filebg/png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/filebg/ppt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/filebg/rar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/filebg/txt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/filebg/xls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/filebg/zip.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/filebg/复件 txt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/group.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/module4_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/module4_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/module4_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/module4_4_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/module4_6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/module5_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/module5_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/module6_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/module6bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/my.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/apply-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/apply-detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/usercenter-applylist.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/usercenter-applylist.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/usercenter-base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/usercenter-base.html" afterDir="false" />
     </list>
@@ -22,140 +76,113 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/competition-signup.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1406">
-              <caret line="74" selection-start-line="74" selection-end-line="74" />
-              <folding>
-                <element signature="e#4551#4557#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/css/stuapplylist.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/usercenter-info.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="1" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/templates/usercenter-certify.html">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/usercenter-base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="64" lean-forward="true" selection-start-line="7" selection-start-column="64" selection-end-line="7" selection-end-column="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/usercenter-fav.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/usercenter-message.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/usercenter-applylist.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/apply-detail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="34" column="28" lean-forward="true" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+            <state relative-caret-position="179">
+              <caret line="78" column="41" selection-start-line="78" selection-start-column="41" selection-end-line="78" selection-end-column="41" />
               <folding>
-                <element signature="e#2080#2086#0#HTML" expanded="true" />
-                <element signature="e#2086#2092#0#HTML" expanded="true" />
-                <element signature="e#2093#2099#0#HTML" expanded="true" />
-                <element signature="e#2099#2105#0#HTML" expanded="true" />
-                <element signature="e#2401#2407#0#HTML" expanded="true" />
-                <element signature="e#2407#2413#0#HTML" expanded="true" />
-                <element signature="e#2413#2419#0#HTML" expanded="true" />
-                <element signature="e#2419#2425#0#HTML" expanded="true" />
-                <element signature="e#2425#2431#0#HTML" expanded="true" />
-                <element signature="e#2431#2437#0#HTML" expanded="true" />
-                <element signature="e#2437#2443#0#HTML" expanded="true" />
-                <element signature="e#3050#3056#0#HTML" expanded="true" />
-                <element signature="e#3056#3062#0#HTML" expanded="true" />
-                <element signature="e#3062#3068#0#HTML" expanded="true" />
-                <element signature="e#3068#3074#0#HTML" expanded="true" />
-                <element signature="e#3074#3080#0#HTML" expanded="true" />
-                <element signature="e#3080#3086#0#HTML" expanded="true" />
-                <element signature="e#3086#3092#0#HTML" expanded="true" />
-                <element signature="e#3634#3640#0#HTML" expanded="true" />
-                <element signature="e#3640#3646#0#HTML" expanded="true" />
-                <element signature="e#3647#3653#0#HTML" expanded="true" />
-                <element signature="e#3653#3659#0#HTML" expanded="true" />
-                <element signature="e#3660#3666#0#HTML" expanded="true" />
-                <element signature="e#3666#3672#0#HTML" expanded="true" />
-                <element signature="e#4083#4089#0#HTML" expanded="true" />
-                <element signature="e#4089#4095#0#HTML" expanded="true" />
-                <element signature="e#4096#4102#0#HTML" expanded="true" />
-                <element signature="e#4102#4108#0#HTML" expanded="true" />
-                <element signature="e#4140#4146#0#HTML" expanded="true" />
-                <element signature="e#4146#4152#0#HTML" expanded="true" />
-                <element signature="e#4152#4158#0#HTML" expanded="true" />
-                <element signature="e#4158#4164#0#HTML" expanded="true" />
-                <element signature="e#4164#4170#0#HTML" expanded="true" />
-                <element signature="e#4170#4176#0#HTML" expanded="true" />
-                <element signature="e#4176#4182#0#HTML" expanded="true" />
-                <element signature="e#4789#4795#0#HTML" expanded="true" />
-                <element signature="e#4795#4801#0#HTML" expanded="true" />
-                <element signature="e#4801#4807#0#HTML" expanded="true" />
-                <element signature="e#4807#4813#0#HTML" expanded="true" />
-                <element signature="e#4813#4819#0#HTML" expanded="true" />
-                <element signature="e#4819#4825#0#HTML" expanded="true" />
-                <element signature="e#4825#4831#0#HTML" expanded="true" />
-                <element signature="e#5373#5379#0#HTML" expanded="true" />
-                <element signature="e#5379#5385#0#HTML" expanded="true" />
-                <element signature="e#5386#5392#0#HTML" expanded="true" />
-                <element signature="e#5392#5398#0#HTML" expanded="true" />
-                <element signature="e#5399#5405#0#HTML" expanded="true" />
-                <element signature="e#5405#5411#0#HTML" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#header#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#header#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#0;n#div#2;n#div#0;n#div#0;n#header#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#li#6;n#ul#0;n#div#0;n#div#0;n#section#2;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/css/applydetail.css">
+        <entry file="file://$PROJECT_DIR$/templates/usercenter-addcompetition.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+            <state relative-caret-position="-399" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/usercenter-mycompetition.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/competition-detail.html">
+        <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="86" />
+            <state relative-caret-position="271">
+              <caret line="282" column="71" selection-start-line="282" selection-start-column="71" selection-end-line="282" selection-end-column="71" />
+              <folding>
+                <element signature="e#7228#7272#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="103">
+              <caret line="47" column="87" selection-start-line="47" selection-start-column="87" selection-end-line="47" selection-end-column="87" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#1;n#form#0;n#div#1;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="1347" column="19" selection-start-line="1347" selection-start-column="19" selection-end-line="1347" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/register.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="103">
+              <caret line="69" column="31" lean-forward="true" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#1;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#form#0;n#div#1;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#1;n#form#0;n#div#1;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#2;n#form#0;n#div#1;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#3;n#form#0;n#div#1;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#4;n#form#0;n#div#1;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#5;n#form#0;n#div#1;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/css/login.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="359" column="1" lean-forward="true" selection-start-line="359" selection-start-column="1" selection-end-line="359" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="101" column="19" selection-start-line="101" selection-start-column="19" selection-end-line="105" selection-end-column="41" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#header#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#0;n#div#2;n#div#0;n#header#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -176,6 +203,14 @@
       <find>install</find>
       <find>...</find>
       <find>para</find>
+      <find>form</find>
+      <find>input</find>
+      <find>18</find>
+      <find>error</find>
+      <find>手机号</find>
+      <find>fff</find>
+      <find>img</find>
+      <find>logo</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -194,15 +229,22 @@
       <list>
         <option value="$PROJECT_DIR$/CompetitionManagementSystem/settings.py" />
         <option value="$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/Django-2.2.2-py3.7.egg/django/forms/boundfield.py" />
-        <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/templates/team_list.html" />
         <option value="$PROJECT_DIR$/static/css/teacherindex.css" />
         <option value="$PROJECT_DIR$/static/css/competition_signup.css" />
         <option value="$PROJECT_DIR$/templates/competition-signup.html" />
-        <option value="$PROJECT_DIR$/templates/usercenter-applylist.html" />
-        <option value="$PROJECT_DIR$/templates/usercenter-base.html" />
         <option value="$PROJECT_DIR$/static/css/applydetail.css" />
+        <option value="$PROJECT_DIR$/static/css/index.css" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/templates/apply-detail.html" />
+        <option value="$PROJECT_DIR$/templates/usercenter-applylist.html" />
+        <option value="$PROJECT_DIR$/static/css/usercenter.css" />
+        <option value="$PROJECT_DIR$/static/css/login.css" />
+        <option value="$PROJECT_DIR$/templates/register.html" />
+        <option value="$PROJECT_DIR$/templates/login.html" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/templates/usercenter-base.html" />
+        <option value="$PROJECT_DIR$/static/css/style.css" />
       </list>
     </option>
   </component>
@@ -239,6 +281,12 @@
               <item name="E:\BigGoat\-\CompetitionManagementSystem" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="static" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="css" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="CompetitionManagementSystem" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="E:\BigGoat\-\CompetitionManagementSystem" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="static" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="images" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="CompetitionManagementSystem" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
@@ -379,6 +427,8 @@
       <workItem from="1585658340660" duration="345000" />
       <workItem from="1585658725908" duration="2597000" />
       <workItem from="1585907951458" duration="10140000" />
+      <workItem from="1586847070546" duration="2611000" />
+      <workItem from="1587457366767" duration="6831000" />
     </task>
     <task id="LOCAL-00001" summary="首页的退出、以及一些调整，全局404and500页面配置">
       <created>1581753979825</created>
@@ -412,13 +462,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15941000" />
+    <option name="totallyTimeSpent" value="25996000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="704" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21307506" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21953188" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -619,46 +669,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/send_success.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-646">
-          <caret line="11" column="36" lean-forward="true" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="12" lean-forward="true" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-          <folding>
-            <element signature="e#4486#4517#0#HTML" expanded="true" />
-            <element signature="e#4569#4695#0#HTML" expanded="true" />
-            <element signature="e#5713#5839#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/teacherindex.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="89">
           <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-494">
-          <caret line="16" selection-start-line="16" selection-end-line="16" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/team_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="32" column="110" lean-forward="true" selection-start-line="32" selection-start-column="110" selection-end-line="32" selection-end-column="110" />
         </state>
       </provider>
     </entry>
@@ -679,6 +693,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/applydetail.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="97" column="23" lean-forward="true" selection-start-line="97" selection-start-column="23" selection-end-line="97" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/competition-list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -686,7 +714,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/usercenter-info.html">
+    <entry file="file://$PROJECT_DIR$/templates/active_fail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/usercenter-message.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="1" />
@@ -700,13 +735,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/usercenter-mycompetition.html">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/templates/apply-certify.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-456">
+          <caret selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/usercenter.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/stuapplylist.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/usercenter-applylist.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+        <state relative-caret-position="684">
+          <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/send_success.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/usercenter-info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" />
         </state>
       </provider>
     </entry>
@@ -717,81 +780,112 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/usercenter-base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="64" lean-forward="true" selection-start-line="7" selection-start-column="64" selection-end-line="7" selection-end-column="64" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/templates/signup-success.html">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/stuapplylist.css">
+    <entry file="file://$PROJECT_DIR$/templates/team_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/applydetail.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+        <state relative-caret-position="184">
+          <caret line="32" column="110" selection-start-line="32" selection-start-column="110" selection-end-line="32" selection-end-column="110" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/apply-detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="34" column="28" lean-forward="true" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+        <state relative-caret-position="228">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/usercenter-certify.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/usercenter-addcompetition.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-399" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/usercenter-mycompetition.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="47" column="87" selection-start-line="47" selection-start-column="87" selection-end-line="47" selection-end-column="87" />
           <folding>
-            <element signature="e#2080#2086#0#HTML" expanded="true" />
-            <element signature="e#2086#2092#0#HTML" expanded="true" />
-            <element signature="e#2093#2099#0#HTML" expanded="true" />
-            <element signature="e#2099#2105#0#HTML" expanded="true" />
-            <element signature="e#2401#2407#0#HTML" expanded="true" />
-            <element signature="e#2407#2413#0#HTML" expanded="true" />
-            <element signature="e#2413#2419#0#HTML" expanded="true" />
-            <element signature="e#2419#2425#0#HTML" expanded="true" />
-            <element signature="e#2425#2431#0#HTML" expanded="true" />
-            <element signature="e#2431#2437#0#HTML" expanded="true" />
-            <element signature="e#2437#2443#0#HTML" expanded="true" />
-            <element signature="e#3050#3056#0#HTML" expanded="true" />
-            <element signature="e#3056#3062#0#HTML" expanded="true" />
-            <element signature="e#3062#3068#0#HTML" expanded="true" />
-            <element signature="e#3068#3074#0#HTML" expanded="true" />
-            <element signature="e#3074#3080#0#HTML" expanded="true" />
-            <element signature="e#3080#3086#0#HTML" expanded="true" />
-            <element signature="e#3086#3092#0#HTML" expanded="true" />
-            <element signature="e#3634#3640#0#HTML" expanded="true" />
-            <element signature="e#3640#3646#0#HTML" expanded="true" />
-            <element signature="e#3647#3653#0#HTML" expanded="true" />
-            <element signature="e#3653#3659#0#HTML" expanded="true" />
-            <element signature="e#3660#3666#0#HTML" expanded="true" />
-            <element signature="e#3666#3672#0#HTML" expanded="true" />
-            <element signature="e#4083#4089#0#HTML" expanded="true" />
-            <element signature="e#4089#4095#0#HTML" expanded="true" />
-            <element signature="e#4096#4102#0#HTML" expanded="true" />
-            <element signature="e#4102#4108#0#HTML" expanded="true" />
-            <element signature="e#4140#4146#0#HTML" expanded="true" />
-            <element signature="e#4146#4152#0#HTML" expanded="true" />
-            <element signature="e#4152#4158#0#HTML" expanded="true" />
-            <element signature="e#4158#4164#0#HTML" expanded="true" />
-            <element signature="e#4164#4170#0#HTML" expanded="true" />
-            <element signature="e#4170#4176#0#HTML" expanded="true" />
-            <element signature="e#4176#4182#0#HTML" expanded="true" />
-            <element signature="e#4789#4795#0#HTML" expanded="true" />
-            <element signature="e#4795#4801#0#HTML" expanded="true" />
-            <element signature="e#4801#4807#0#HTML" expanded="true" />
-            <element signature="e#4807#4813#0#HTML" expanded="true" />
-            <element signature="e#4813#4819#0#HTML" expanded="true" />
-            <element signature="e#4819#4825#0#HTML" expanded="true" />
-            <element signature="e#4825#4831#0#HTML" expanded="true" />
-            <element signature="e#5373#5379#0#HTML" expanded="true" />
-            <element signature="e#5379#5385#0#HTML" expanded="true" />
-            <element signature="e#5386#5392#0#HTML" expanded="true" />
-            <element signature="e#5392#5398#0#HTML" expanded="true" />
-            <element signature="e#5399#5405#0#HTML" expanded="true" />
-            <element signature="e#5405#5411#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#1;n#form#0;n#div#1;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="69" column="31" lean-forward="true" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#form#0;n#div#1;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#1;n#form#0;n#div#1;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#2;n#form#0;n#div#1;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#3;n#form#0;n#div#1;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#4;n#form#0;n#div#1;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#5;n#form#0;n#div#1;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="359" column="1" lean-forward="true" selection-start-line="359" selection-start-column="1" selection-end-line="359" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="101" column="19" selection-start-line="101" selection-start-column="19" selection-end-line="105" selection-end-column="41" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#header#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#2;n#div#0;n#header#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/usercenter-base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="78" column="41" selection-start-line="78" selection-start-column="41" selection-end-line="78" selection-end-column="41" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#header#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#header#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#2;n#div#0;n#div#0;n#header#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#6;n#ul#0;n#div#0;n#div#0;n#section#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="282" column="71" selection-start-line="282" selection-start-column="71" selection-end-line="282" selection-end-column="71" />
+          <folding>
+            <element signature="e#7228#7272#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="1347" column="19" selection-start-line="1347" selection-start-column="19" selection-end-line="1347" selection-end-column="19" />
         </state>
       </provider>
     </entry>
