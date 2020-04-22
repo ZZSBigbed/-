@@ -430,7 +430,7 @@ def output(request):
     row_num = 0
     font_style = xlwt.XFStyle()
     font_style.font.bold = True
-    columns = ['用户名', '姓', '名', '学号', '电子邮箱', ]
+    columns = ['用户名', '姓', '名', '学号', '电子邮箱', '积分']
     for col_num in range(len(columns)):
         ws.write(row_num, col_num, columns[col_num], font_style)
     # Sheet body, remaining rows
@@ -447,7 +447,7 @@ def output(request):
         all_students = all_students.filter(stu_college_major=college_major)
 
     all_students = all_students.order_by("-score")
-    rows = all_students.values_list('username', 'last_name', 'special_id', 'first_name', 'email')
+    rows = all_students.values_list('username', 'last_name', 'first_name', 'special_id', 'email', 'score')
     for row in rows:
         row_num += 1
         for col_num in range(len(row)):

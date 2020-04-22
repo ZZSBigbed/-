@@ -2,69 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e654f886-5e75-4aa9-8020-20395e4f3f94" name="Default Changelist" comment="竞赛认定">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_pure_pagination-0.3.0-py3.7.egg-info/PKG-INFO" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_pure_pagination-0.3.0-py3.7.egg-info/SOURCES.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_pure_pagination-0.3.0-py3.7.egg-info/dependency_links.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_pure_pagination-0.3.0-py3.7.egg-info/installed-files.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_pure_pagination-0.3.0-py3.7.egg-info/not-zip-safe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_pure_pagination-0.3.0-py3.7.egg-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pure_pagination/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pure_pagination/mixins.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pure_pagination/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pure_pagination/paginator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pure_pagination/templates/pure_pagination/pagination-bootstrap.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pure_pagination/templates/pure_pagination/pagination.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pure_pagination/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/CompetitionManagementSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CompetitionManagementSystem.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/usercenter.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/usercenter.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/01.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/01_mid.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/01_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/02.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/02_mid.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/02_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/57a801860001c34b12000460.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/57aa86a0000145c512000460.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/about_nav_bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/aobama.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/bank1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/bank2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/bank3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/bank4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/bank5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/banner.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/bjdx.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/code.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/companydes.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/companylogo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/companyrank.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/compright.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/contract.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/course.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/filebg/avi.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/filebg/cdr.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/filebg/csv.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/filebg/doc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/filebg/jpg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/filebg/mp3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/filebg/pdf.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/filebg/png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/filebg/ppt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/filebg/rar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/filebg/txt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/filebg/xls.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/filebg/zip.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/filebg/复件 txt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/group.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/module4_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/module4_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/module4_4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/module4_4_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/module4_6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/module5_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/module5_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/module6_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/module6bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/my.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/apply-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/apply-detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/usercenter-applylist.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/usercenter-applylist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/usercenter-base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/usercenter-base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users/views.py" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,122 +29,6 @@
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/usercenter-certify.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/usercenter-base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="78" column="41" selection-start-line="78" selection-start-column="41" selection-end-line="78" selection-end-column="41" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#header#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#header#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#0;n#div#2;n#div#0;n#div#0;n#header#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#6;n#ul#0;n#div#0;n#div#0;n#section#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/usercenter-addcompetition.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-399" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/usercenter-mycompetition.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="282" column="71" selection-start-line="282" selection-start-column="71" selection-end-line="282" selection-end-column="71" />
-              <folding>
-                <element signature="e#7228#7272#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="47" column="87" selection-start-line="47" selection-start-column="87" selection-end-line="47" selection-end-column="87" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#1;n#form#0;n#div#1;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/static/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="1347" column="19" selection-start-line="1347" selection-start-column="19" selection-end-line="1347" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/register.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="69" column="31" lean-forward="true" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#1;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#div#0;n#form#0;n#div#1;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#1;n#form#0;n#div#1;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#2;n#form#0;n#div#1;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#3;n#form#0;n#div#1;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#4;n#form#0;n#div#1;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#5;n#form#0;n#div#1;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/css/login.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="359" column="1" lean-forward="true" selection-start-line="359" selection-start-column="1" selection-end-line="359" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="101" column="19" selection-start-line="101" selection-start-column="19" selection-end-line="105" selection-end-column="41" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#header#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#0;n#div#2;n#div#0;n#header#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -203,14 +44,6 @@
       <find>install</find>
       <find>...</find>
       <find>para</find>
-      <find>form</find>
-      <find>input</find>
-      <find>18</find>
-      <find>error</find>
-      <find>手机号</find>
-      <find>fff</find>
-      <find>img</find>
-      <find>logo</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -224,30 +57,6 @@
       </set>
     </option>
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/CompetitionManagementSystem/settings.py" />
-        <option value="$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/Django-2.2.2-py3.7.egg/django/forms/boundfield.py" />
-        <option value="$PROJECT_DIR$/templates/team_list.html" />
-        <option value="$PROJECT_DIR$/static/css/teacherindex.css" />
-        <option value="$PROJECT_DIR$/static/css/competition_signup.css" />
-        <option value="$PROJECT_DIR$/templates/competition-signup.html" />
-        <option value="$PROJECT_DIR$/static/css/applydetail.css" />
-        <option value="$PROJECT_DIR$/static/css/index.css" />
-        <option value="$PROJECT_DIR$/templates/index.html" />
-        <option value="$PROJECT_DIR$/templates/apply-detail.html" />
-        <option value="$PROJECT_DIR$/templates/usercenter-applylist.html" />
-        <option value="$PROJECT_DIR$/static/css/usercenter.css" />
-        <option value="$PROJECT_DIR$/static/css/login.css" />
-        <option value="$PROJECT_DIR$/templates/register.html" />
-        <option value="$PROJECT_DIR$/templates/login.html" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
-        <option value="$PROJECT_DIR$/templates/usercenter-base.html" />
-        <option value="$PROJECT_DIR$/static/css/style.css" />
-      </list>
-    </option>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-12" />
     <option name="y" value="-12" />
@@ -257,52 +66,6 @@
   <component name="ProjectId" id="1XnhrSMrvuvW4QViokdiQRmktqc" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
-  </component>
-  <component name="ProjectView">
-    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane" />
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="CompetitionManagementSystem" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="E:\BigGoat\-\CompetitionManagementSystem" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="CompetitionManagementSystem" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="E:\BigGoat\-\CompetitionManagementSystem" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="static" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CompetitionManagementSystem" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="E:\BigGoat\-\CompetitionManagementSystem" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="static" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="css" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CompetitionManagementSystem" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="E:\BigGoat\-\CompetitionManagementSystem" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="static" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="images" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CompetitionManagementSystem" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="E:\BigGoat\-\CompetitionManagementSystem" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CompetitionManagementSystem" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="E:\BigGoat\-\CompetitionManagementSystem" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="venv" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -341,18 +104,6 @@
       <recent name="D:\文档\GitHub\-\CompetitionManagementSystem\venv\Lib\site-packages" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="CompetitionManagementSystem" type="Python.DjangoServer" factoryName="Django server">
       <module name="CompetitionManagementSystem" />
@@ -362,7 +113,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="DJANGO_SETTINGS_MODULE" value="CompetitionManagementSystem.settings" />
       </envs>
-      <option name="SDK_HOME" value="E:\qunaer\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="D:\文档\GitHub\-\CompetitionManagementSystem\venv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -427,8 +178,8 @@
       <workItem from="1585658340660" duration="345000" />
       <workItem from="1585658725908" duration="2597000" />
       <workItem from="1585907951458" duration="10140000" />
-      <workItem from="1586847070546" duration="2611000" />
-      <workItem from="1587457366767" duration="6831000" />
+      <workItem from="1587546253984" duration="908000" />
+      <workItem from="1587547204095" duration="502000" />
     </task>
     <task id="LOCAL-00001" summary="首页的退出、以及一些调整，全局404and500页面配置">
       <created>1581753979825</created>
@@ -461,37 +212,6 @@
     <option name="localTasksCounter" value="5" />
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25996000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="704" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21953188" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3298611" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3298611" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3298611" />
-      <window_info anchor="bottom" id="Python Console" order="12" />
-      <window_info anchor="bottom" id="manage.py@CompetitionManagementSystem" order="13" weight="0.4826389" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -504,6 +224,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="竞赛认定" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="422" y="49" key="#CompetitionManagementSystem" timestamp="1587546453105">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="422" y="49" key="#CompetitionManagementSystem/0.0.1536.824@0.0.1536.824" timestamp="1587546453105" />
     <state x="361" y="74" key="#Inspections" timestamp="1581939675393">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -516,74 +240,74 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="290" y="74" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1581688195209" />
-    <state x="293" y="9" key="CommitChangelistDialog2" timestamp="1585656262890">
+    <state x="293" y="9" key="CommitChangelistDialog2" timestamp="1587547726134">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="293" y="9" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585656262890" />
+    <state x="293" y="9" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1587547726134" />
     <state x="147" y="65" width="1242" height="686" key="DiffContextDialog" timestamp="1581939305927">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="147" y="65" width="1242" height="686" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1581939305927" />
-    <state width="1495" height="204" key="GridCell.Tab.0.bottom" timestamp="1585656169632">
+    <state width="1495" height="228" key="GridCell.Tab.0.bottom" timestamp="1587547679850">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="204" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585656169632" />
-    <state width="1495" height="204" key="GridCell.Tab.0.center" timestamp="1585656169632">
+    <state width="1495" height="228" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587547679850" />
+    <state width="1495" height="228" key="GridCell.Tab.0.center" timestamp="1587547679850">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="204" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585656169632" />
-    <state width="1495" height="204" key="GridCell.Tab.0.left" timestamp="1585656169632">
+    <state width="1495" height="228" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587547679850" />
+    <state width="1495" height="228" key="GridCell.Tab.0.left" timestamp="1587547679850">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="204" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585656169632" />
-    <state width="1495" height="204" key="GridCell.Tab.0.right" timestamp="1585656169632">
+    <state width="1495" height="228" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587547679850" />
+    <state width="1495" height="228" key="GridCell.Tab.0.right" timestamp="1587547679850">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="204" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585656169632" />
-    <state width="1495" height="204" key="GridCell.Tab.1.bottom" timestamp="1585656169633">
+    <state width="1495" height="228" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587547679850" />
+    <state width="1495" height="228" key="GridCell.Tab.1.bottom" timestamp="1587547679851">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="204" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585656169633" />
-    <state width="1495" height="204" key="GridCell.Tab.1.center" timestamp="1585656169632">
+    <state width="1495" height="228" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587547679851" />
+    <state width="1495" height="228" key="GridCell.Tab.1.center" timestamp="1587547679850">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="204" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1585656169632" />
-    <state width="1495" height="204" key="GridCell.Tab.1.left" timestamp="1585656169632">
+    <state width="1495" height="228" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1587547679850" />
+    <state width="1495" height="228" key="GridCell.Tab.1.left" timestamp="1587547679850">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="204" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1585656169632" />
-    <state width="1495" height="204" key="GridCell.Tab.1.right" timestamp="1585656169632">
+    <state width="1495" height="228" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1587547679850" />
+    <state width="1495" height="228" key="GridCell.Tab.1.right" timestamp="1587547679850">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="204" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1585656169632" />
+    <state width="1495" height="228" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1587547679850" />
     <state x="147" y="65" key="MergeDialog" timestamp="1581988849429">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="147" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1581988849429" />
-    <state x="465" y="129" key="MultipleFileMergeDialog" timestamp="1581988849434">
+    <state x="465" y="129" key="MultipleFileMergeDialog" timestamp="1587546404588">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="129" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1581988849434" />
+    <state x="465" y="129" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1587546404588" />
     <state x="497" y="125" key="RollbackChangesDialog" timestamp="1581939313303">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="497" y="125" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1581939313303" />
-    <state x="294" y="57" key="SettingsEditor" timestamp="1581688227299">
+    <state x="294" y="57" key="SettingsEditor" timestamp="1587547257810">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="294" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1581688227299" />
+    <state x="294" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1587547257810" />
     <state x="391" y="146" key="Vcs.Push.Dialog.v2" timestamp="1585656281600">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="391" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1585656281600" />
-    <state x="408" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1585656223158">
+    <state x="408" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1587547204590">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="408" y="240" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1585656223158" />
-    <state x="511" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582013853972">
+    <state x="408" y="240" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1587547204590" />
+    <state x="511" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587546379561">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="511" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1582013853972" />
+    <state x="511" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1587546379561" />
     <state x="422" y="167" width="800" height="490" key="find.popup" timestamp="1585651103233">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -596,298 +320,5 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1585655263034" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/apps/users/models.py</url>
-          <line>1</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="django-line">
-          <url>file://$PROJECT_DIR$/templates/usercenter-info.html</url>
-          <line>41</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/CompetitionManagementSystem/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/operation/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-858">
-          <folding>
-            <element signature="e#26#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/competitions/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/competitions/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/competitions/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-341">
-          <caret line="19" column="53" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CompetitionManagementSystem/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="166" column="31" selection-start-line="166" selection-start-column="31" selection-end-line="166" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/templatetags/xadmin_tags.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/Django-2.2.2-py3.7.egg/django/forms/boundfield.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1534">
-          <caret line="92" column="42" selection-start-line="92" selection-start-column="42" selection-end-line="92" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/teacherindex.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/competition_signup.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/competition-signup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1406">
-          <caret line="74" selection-start-line="74" selection-end-line="74" />
-          <folding>
-            <element signature="e#4551#4557#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/applydetail.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="97" column="23" lean-forward="true" selection-start-line="97" selection-start-column="23" selection-end-line="97" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/competition-list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/active_fail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/usercenter-message.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/competition-detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/apply-certify.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-456">
-          <caret selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/usercenter.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/stuapplylist.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/usercenter-applylist.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/send_success.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/usercenter-info.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/usercenter-fav.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/signup-success.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/team_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="32" column="110" selection-start-line="32" selection-start-column="110" selection-end-line="32" selection-end-column="110" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/apply-detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/usercenter-certify.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/usercenter-addcompetition.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-399" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/usercenter-mycompetition.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="47" column="87" selection-start-line="47" selection-start-column="87" selection-end-line="47" selection-end-column="87" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#form#0;n#div#1;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="69" column="31" lean-forward="true" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#form#0;n#div#1;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#1;n#form#0;n#div#1;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#2;n#form#0;n#div#1;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#3;n#form#0;n#div#1;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#4;n#form#0;n#div#1;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#5;n#form#0;n#div#1;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="359" column="1" lean-forward="true" selection-start-line="359" selection-start-column="1" selection-end-line="359" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="101" column="19" selection-start-line="101" selection-start-column="19" selection-end-line="105" selection-end-column="41" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#header#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#2;n#div#0;n#header#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/usercenter-base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="78" column="41" selection-start-line="78" selection-start-column="41" selection-end-line="78" selection-end-column="41" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#header#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#header#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#2;n#div#0;n#div#0;n#header#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#6;n#ul#0;n#div#0;n#div#0;n#section#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="282" column="71" selection-start-line="282" selection-start-column="71" selection-end-line="282" selection-end-column="71" />
-          <folding>
-            <element signature="e#7228#7272#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="1347" column="19" selection-start-line="1347" selection-start-column="19" selection-end-line="1347" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>
